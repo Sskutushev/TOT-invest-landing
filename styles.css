@@ -186,3 +186,160 @@ main{padding-top:var(--header-h);}
   max-height: 100%;            /* чтобы не выходило за высоту */
   object-fit: cover;           /* обрезает края, сохраняя пропорции */
 }
+/* ========== Pain & Solve Section ========== */
+.pain-solve-section {
+  width: 100%;
+  background: #fff;
+  padding: 60px 0;
+}
+
+.ps-container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.ps-title {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  text-align: center;
+  color: var(--c-text);
+  margin-bottom: 40px;
+}
+
+/* Две колонки по 600px + gap 30px */
+.ps-columns {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Общие стили колонок */
+.ps-column {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* вертикальный промежуток между элементами */
+}
+
+/* Одиночный элемент */
+.ps-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 600px;
+  height: 180px;
+  padding: 25px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  gap: 20px; /* между иконкой и текстом */
+}
+
+/* Проблема: серый фон с лёгким градиентом */
+.ps-problems .ps-item {
+  background: #f4f4f4;
+  /* при желании можно добавить градиент:
+     background: linear-gradient(90deg, rgba(226,138,164,0.1), rgba(151,151,177,0.1));
+  */
+}
+
+/* Решение: ярко-оранжевый фон */
+.ps-solutions .ps-item {
+  background: var(--c-main-light);
+}
+
+/* Иконка */
+.ps-item-image {
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+}
+.ps-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+/* 1) Разрешаем фону выходить за пределы и задаём позиционирование */
+.ps-item-image {
+  position: relative;    /* для ::before */
+  overflow: visible;     /* фон не обрежется */
+}
+
+/* 2) Псевдо-элемент «фон» чуть больше контейнера + размытие */
+.ps-item-image::before {
+  content: "";
+  position: absolute;
+  top: -20px;            /* смещение вверх на 20px */
+  left: -20px;           /* смещение влево на 20px */
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  background-image: var(--bg); /* или путь из inline-стиля */
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  opacity: 0.4;
+  z-index: 0;            /* позади иконки */
+}
+
+/* 3) Ставим основную иконку поверх фонового слоя */
+.ps-item-image img {
+  position: relative;
+  z-index: 1;
+}
+
+/* Текст */
+.ps-item-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  flex-grow: 1;
+}
+.ps-item-text h3 {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  /* цвет зависит от колонки */
+}
+.ps-problems .ps-item-text h3 {
+  color: var(--c-text);
+}
+.ps-solutions .ps-item-text h3 {
+  color: #fff;
+}
+.ps-item-text p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0;
+}
+.ps-problems .ps-item-text p {
+  color: #666;
+}
+.ps-solutions .ps-item-text p {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Флаг */
+.ps-item-flag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 90px;
+  height: 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+}
+.ps-problems .ps-item-flag {
+  background: var(--c-main);
+}
+.ps-solutions .ps-item-flag {
+  background: #25de85fa; /* зелёный для решения */
+}
