@@ -128,3 +128,58 @@ main{padding-top:var(--header-h);}
 }
 .secondary:hover{background:var(--c-main-light);color:#fff;}
 .secondary:active{background:var(--c-main-dark);border-color:var(--c-main-dark);color:#fff;}
+/* ==================== Feature Section ==================== */
+.feature-section {
+  width: 100%;
+  height: 430px;
+  background: #fff;           /* при необходимости задайте фон */
+}
+
+.feature-container {
+  max-width: 1240px;
+  height: 430px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;        /* центрируем по вертикали */
+  justify-content: space-between;
+  gap: 30px;                  /* расстояние между текстом и картинкой */
+  padding: 0 20px;            /* горизонтальные отступы на мобильных */
+}
+
+.feature-text {
+  width: 600px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    /* текст по вертикали выровнен по центру */
+}
+
+.feature-text h2 {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0 0 50px 0;         /* 50px между заголовком и параграфом */
+}
+
+.feature-text p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #666666;
+  margin: 0;
+}
+
+.feature-image {
+  width: 600px;
+  height: 430px;
+  overflow: hidden;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* масштабируем картинку, сохраняя пропорции */
+}
