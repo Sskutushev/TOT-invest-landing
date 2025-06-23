@@ -1,0 +1,130 @@
+/*====================  VARIABLES  ====================*/
+:root {
+  /* размеры */
+  --header-h: 70px;
+  --max-w: 1280px;
+
+  /* цвета бренда */
+  --c-main: #ff2b00;
+  --c-main-light: #ff7255;
+  --c-main-dark: #aa1d00;
+  --c-border: #e3e3e3;
+  --c-text: #000;
+  --c-text-light: #868686;
+
+  /* градиент-капсула */
+  --pill-grad: linear-gradient(90deg, #7e9dac 0%, #e28aa4 100%);
+
+  /* фон-градиент секции */
+  --hero-grad: linear-gradient(90deg,#e28aa4 0%,#e19c96 50%,#9797b1 100%);
+}
+
+/*====================  RESET  ====================*/
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body,html{height:100%;}
+body{font-family:"Open Sans",sans-serif;color:var(--c-text);}
+
+/*====================  HEADER  ====================*/
+header{
+  position:fixed;top:0;left:0;width:100%;height:var(--header-h);
+  background:#fff;border-bottom:1px solid var(--c-border);z-index:1000;
+}
+.header-container{
+  max-width:var(--max-w);height:100%;
+  margin:0 auto;padding:0 40px;
+  display:flex;align-items:center;
+}
+.logo img{height:40px;}
+
+nav{margin-left:auto;}
+.nav-list{display:flex;gap:32px;list-style:none;}
+.nav-list a{
+  display:block;line-height:var(--header-h);
+  font-size:16px;font-weight:600;
+  color:var(--c-text-light);text-decoration:none;
+  transition:color .2s;
+}
+.nav-list a:hover{color:var(--c-text);}
+
+/* language */
+.lang-switcher{position:relative;margin-left:32px;}
+.lang-btn{
+  display:flex;align-items:center;gap:8px;
+  height:48px;padding:0 16px;
+  background:#fff;border:1px solid var(--c-border);border-radius:24px;
+  font-size:14px;cursor:pointer;transition:border-color .2s;
+}
+.lang-btn:hover{border-color:var(--c-main);}
+.lang-menu{
+  position:absolute;top:110%;right:0;
+  background:#fff;border:1px solid var(--c-border);border-radius:4px;
+  list-style:none;display:none;overflow:hidden;
+}
+.lang-switcher.open .lang-menu{display:block;}
+.lang-menu li{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 12px;cursor:pointer;transition:background .2s;
+}
+.lang-menu li:hover{background:#f4f4f4;}
+
+/*====================  HERO  ====================*/
+main{padding-top:var(--header-h);}
+.hero{
+  position:relative;height:430px;overflow:hidden;
+  background:var(--hero-grad);
+  background:url("images/Background\ Image.svg") center/cover;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;padding:0 20px;
+}
+/* размытые свечи по сторонам */
+.hero::before,.hero::after{
+  content:"";position:absolute;top:0;width:45%;height:100%;
+  background:url("images/") center/cover;
+  opacity:.85;
+}
+.hero::before{left:0;}
+.hero::after{right:0;transform:scaleX(-1);}
+.hero-inner{
+  position:relative;z-index:1;
+  width:1240px;height:280px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+
+.hero-label{
+  font-size:15px;font-weight:600;line-height:20px;
+  padding:6px 16px;border-radius:24px;
+  background:rgba(255,255,255,.7);
+  background:url("images/Container.svg") center/cover;
+  color:#000;margin-bottom:20px;
+  backdrop-filter:blur(4px);
+}
+.hero-title{
+  font-family:"TT Travels Next",sans-serif;
+  font-size:46px;line-height:54px;font-weight:700;
+  color:#000;margin-bottom:18px;
+}
+.hero-subtitle{
+  font-size:18px;line-height:26px;
+  color:#666;margin-bottom:36px;
+}
+
+.hero-actions{display:inline-flex;gap:32px;}
+
+/*====================  BUTTONS  ====================*/
+.btn{
+  display:inline-block;height:54px;line-height:54px;
+  padding:0 40px;border-radius:27px;
+  font-size:18px;font-weight:600;text-decoration:none;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.primary{background:var(--c-main);color:#fff;border:none;}
+.primary:hover{background:var(--c-main-light);}
+.primary:active{background:var(--c-main-dark);}
+
+.secondary{
+  background:transparent;color:var(--c-main);
+  border:2px solid var(--c-main);
+}
+.secondary:hover{background:var(--c-main-light);color:#fff;}
+.secondary:active{background:var(--c-main-dark);border-color:var(--c-main-dark);color:#fff;}
