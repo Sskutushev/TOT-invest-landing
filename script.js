@@ -79,3 +79,12 @@ document.addEventListener('click', e => {
   // init
   update();
 })();
+document.querySelector('.js-phone').addEventListener('click', e => {
+  const tel = e.currentTarget.getAttribute('href');
+  if (!navigator.share && !navigator.userAgent.match(/Mobile/)) {
+    e.preventDefault();
+    navigator.clipboard.writeText(tel.replace('tel:', ''))
+      .then(() => alert('Номер скопирован в буфер обмена'))
+      .catch(() => {});
+  }
+});

@@ -1494,9 +1494,9 @@ main{padding-top:var(--header-h);}
 .preseed-img-wrapper {
   position: relative;
   width: 565px;
-  height: 420px;
+  height: 390.05px;
   margin-top: 20px;
-  overflow: visible;
+  overflow: hidden;
 }
 .preseed-img__bg {
   position: absolute;
@@ -1524,4 +1524,170 @@ main{padding-top:var(--header-h);}
   height: auto;
   object-fit: contain;
   z-index: 3;
+}
+/* ===== Contacts Section ===== */
+.section-contacts {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+}
+.section-contacts__inner {
+  width: 1240px;
+  height: 420px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Left side */
+.contacts-left {
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+}
+.contacts-title {
+  margin: 0;
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 35px;
+  line-height: 35px;
+}
+.contacts-subtitle {
+  margin: 50px 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #333;
+  }
+.contacts-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.contact-card {
+  width: 290px;
+  height: 80px;
+  background: #EAE8E8;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.contact-card__icon {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+}
+
+.contact-card__texts {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-card__label {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  color: #666666;
+}
+
+.contact-card__value {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  margin-top: 2px;
+}
+
+.contact-card:hover {
+  background: #DDD; /* опционально при наведении */
+}
+.contact-card {
+  width: 250px;      /* точно 290px */
+  height: 80px;      /* точно 80px */
+  min-width: 250px;  /* не меньше */
+  max-width: 250px;  /* не больше */
+  min-height: 80px;  /* не меньше */
+  max-height: 80px;  /* не больше */
+  background: #EAE8E8;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  opacity: 90%;        /* убрать полупрозрачность */
+  z-index: 3;
+}
+.contact-card__icon {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+}
+.contact-card__text {
+  margin-left: 30px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000;
+}
+.btn--apply {
+  margin-top: 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 235px;
+  height: 60px;
+  background: #FF2B00;
+  color: #fff;
+  font-family: "Open Sans",  sans-serif;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.btn--apply::after {
+  content: "→";
+  margin-left: 0px;
+  font-size: 16px;
+  line-height: 2;
+  color: #fff;  
+}
+.btn--apply:hover {
+  background: var(--c-main-light);
+}
+
+/* Right side */
+.contacts-right {
+  position: relative;
+  width: 650px;
+  height: 550px;
+}
+.contacts-bg {
+  position: absolute;
+  inset: 0;
+  background: url('images/Ellipse\ 51.svg');
+  z-index: 1;
+}
+.contacts-main {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 680px;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
 }
