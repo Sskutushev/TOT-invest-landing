@@ -793,7 +793,7 @@ main{padding-top:var(--header-h);}
   justify-content: center;
   background: rgba(0,0,0,0.4);
   opacity: 0;
-  transition: opacity .3s;
+  transition: opacity .7s;
 }
 .carousel-slide:hover .slide-overlay {
   opacity: 1;
