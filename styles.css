@@ -362,3 +362,209 @@ main{padding-top:var(--header-h);}
 .ps-solutions .ps-item-flag {
   background: #25de85fa; /* зелёный для решения */
 }
+/* ======= Router Section ======= */
+.router-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+/* Header */
+.router-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.router-title {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  color: var(--c-text);
+}
+/* Кнопка «Как это работает?» */
+.router-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 135px;
+  height: 30px;
+  background: var(--c-main);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.router-btn:hover {
+  background: var(--c-main-light);
+}
+
+/* Таблица */
+.router-table {
+  border-top: 1px solid #E3E3E3;
+  border-bottom: 1px solid #E3E3E3;
+}
+/* Строка */
+.router-row {
+  display: grid;
+  grid-template-columns: 430px 380px 380px;
+  column-gap: 20px;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #E3E3E3;
+}
+.router-row:last-child {
+  border-bottom: none;
+}
+/* Шапка */
+.router-row--head {
+  font-weight: 600;
+  color: var(--c-text-light);
+}
+.router-row--head .router-cell {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Ячейка «Шаг» */
+.router-cell--step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.step-icon {
+  width: 60px;
+  flex-shrink: 0;
+}
+/* Плашка + заголовок шага */
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.step-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 30px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 15px;
+}
+.step-title {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  color: var(--c-text);
+}
+
+/* Ячейки «Что происходит» и «Ценность» */
+.router-cell--desc,
+.router-cell--value {
+  font-size: 16px;
+  line-height: 24px;
+  color: #666;
+}
+
+/* ======= Highlight Block ======= */
+.router-highlight {
+  margin-top: 60px;
+  padding: 40px;
+  background: #F9F9F9;
+  border-radius: 20px;
+  display: flex;
+  gap: 40px;
+}
+/* Левый текстовый блок */
+.highlight-text {
+  flex: 0 0 400px;
+}
+.highlight-text h3 {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+.highlight-text p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #666;
+}
+
+/* Правый блок с тремя карточками */
+.highlight-list {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+.highlight-list li {
+  flex: 1;
+  padding: 0 20px;
+  position: relative;
+  text-align: center;
+}
+/* Вертикальные разделители между карточками */
+.highlight-list li + li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: #000;
+  opacity: 0.1;
+}
+.highlight-list img {
+  width: 80px;
+  margin-bottom: 16px;
+}
+.highlight-list h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.highlight-list p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+}
+/* === Корректировка размеров и выравнивания картинок === */
+
+/* В таблице шагов: иконки 120×90px */
+.step-icon {
+  width: 120px !important;
+  height: 90px !important;
+  object-fit: contain;
+}
+
+/* Внизу, в highlight-блоке: картинки 86×86px и выравнивание слева */
+.highlight-list {
+  display: flex;
+  justify-content: flex-start; /* чтобы контент был прижат слева */
+}
+.highlight-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;    /* все элементы — слева */
+  width: 100%;
+}
+.highlight-list img {
+  width: 86px;
+  height: 86px;
+  object-fit: contain;
+  margin-bottom: 12px;        /* расстояние до заголовка */
+}
+
+/* Если вам нужно, чтобы текст заголовка и абзаца был прижат ровно под картинкой: */
+.highlight-list h4,
+.highlight-list p {
+  text-align: left;
+}
