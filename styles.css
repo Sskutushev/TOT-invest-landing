@@ -949,3 +949,345 @@ main{padding-top:var(--header-h);}
   margin: 0;
   flex-shrink: 0;
 }
+/* ===== Путь к глобальному доминированию ===== */
+.domination-section {
+  width: 100%;
+  padding: 90px 0;
+  background: #ffffff00;
+}
+.domination-container {
+  width: 1240px;
+  height: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 90px;               /* расстояние между заголовком и этапами */
+}
+
+/* Заголовок */
+.domination-header h2 {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 35px;
+  color: #000;
+  text-align: center;
+  margin: 0;
+  height: 35px;
+}
+
+/* Блоки этапов */
+.domination-items {
+  width: 1240px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Вертикальные разделители между этапами */
+.domination-item {
+  position: relative;
+}
+.domination-item + .domination-item::before {
+  content: "";
+  position: absolute;
+  left: -15px;      /* 15px — чтобы линия была ровно по границе между двумя 215px-блоками и 30px gap */
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #000;
+  opacity: .15;
+}
+.domination-items::before { left: 215px; }
+.domination-items div:nth-child(1)::after { left: 215px; }
+.domination-items div:nth-child(2)::after { left: 430px; }
+.domination-items div:nth-child(3)::after { left: 645px; }
+.domination-items div:nth-child(4)::after { left: 860px; }
+.domination-items::after { left: 1075px; }
+
+/* Один этап */
+.domination-item {
+  position: relative;
+  width: 215px;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  overflow: visible;
+}
+/* Фоновый градиент */
+.domination-bg {
+  position: absolute;
+  top: -20px; left: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  background-size: cover;
+  background-position: top;
+  opacity: 0.7;
+  filter: blur(10px);
+  z-index: 0;
+  border-radius: 12px;
+}
+/* Иконка */
+.domination-icon {
+  position: relative;
+  z-index: 1;
+  width: 73px;
+  height: 73px;
+}
+
+/* Бейдж */
+.domination-badge {
+  position: relative;
+  z-index: 1;
+
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+
+  background: var(--c-main-light, #FF2B00);
+  color: #fff;
+
+  font-family: "open sans", sans-serif;
+  font-size: 13px;      /* было слишком крупным */
+  font-weight: 200;     /* чуть полегче */
+  text-align: center;
+  border-radius: 15px;
+}
+
+/* Заголовок этапа */
+.domination-title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000;
+}
+
+/* Описание этапа */
+.domination-text {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #666;
+}
+
+/* Примечание внизу текста */
+.domination-note {
+  display: block;
+  margin-top: 8px;
+  font-style: italic;
+  color: #999;
+  font-size: 12px;
+  line-height: 16px;
+}
+/* ================== Стоимость ================== */
+.domination-value {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 24px;       /* по макету */
+  line-height: 30px;     /* по макету */
+  font-weight: 700;      /* жирный */
+  color: var(--c-main);  /* брендовый красный */
+  margin: 8px 0;         /* небольшой отступ сверху/снизу */
+}
+/* ===== Секция «Раунд инвестирования» ===== */
+.invest-section {
+  padding: 80px 0;
+  background: #fff;
+}
+.invest-container {
+  width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  gap: 100px;
+}
+
+/* Левая колонка */
+.invest-left {
+  width: 570px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Плашка */
+.invest-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 30px;
+  background: var(--c-main-light);
+  color: #fff;
+  border-radius: 15px;
+  font: 200 12px/15px "open sans", sans-serif;
+}
+
+/* Заголовок */
+.invest-heading {
+  margin: 0;
+  font: 800 32px/35px "TT Travels Next", sans-serif;
+}
+.invest-cost {
+  display: block;
+  margin-top: 8px;
+  font: 800 32px/35px "TT Travels Next", sans-serif;
+}
+
+/* Подзаголовок */
+.invest-subheading {
+  margin: 0;
+  font: 800 18px/20px "open sans", sans-serif;
+  color: #000;
+}
+
+/* Список с зелёными галочками */
+.invest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.invest-list li {
+  position: relative;
+  padding-left: 41px;         /* 16px ширина иконки + 25px gap */
+  margin-bottom: 12px;
+  font: 300 14px/16px "Open Sans", sans-serif;
+  color: #666;
+}
+.invest-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: url("images/Vector\ 5\ \(Stroke\).png") center/contain no-repeat;
+}
+
+/* Фиксированная кнопка 290×60 */
+.invest-left .btn.primary {
+  width: 290px;
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
+  text-align: center;      /* <-- вот это */
+  border-radius: 30px;      /* по вкусу: чтобы получилось ровно 30px высоты */
+}
+
+/* Правая колонка */
+.invest-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Заголовок правого блока */
+.invest-right-title {
+  margin: 0;
+  font: 400 20px/20px "TT Travels Next", sans-serif;
+  color: #868686;
+}
+
+/* Сетка карточек */
+.invest-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Одна карточка */
+.invest-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 570px;
+  height: 170px;
+  padding: 20px;
+  background: #F0F0F0;         /* чуть темнее белого */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Текст внутри карточки */
+.invest-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1;
+}
+.invest-card-amount {
+  margin: 0;
+  font: 800 32px/35px "TT Travels Next", sans-serif;
+}
+.invest-card-label {
+  margin: 0;
+  font: 650 18px/20px "Open Sans", sans-serif;
+}
+.invest-card-desc {
+  margin: 0;
+  font: 300 14px/16px "Open Sans", sans-serif;
+  color: #666;
+}
+
+/* Фоновый блюр и иконка справа */
+.invest-card-img {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.invest-card-img::before {
+  content: "";
+  position: absolute;
+  width: 190px;  /* 150 + 40 */
+  height: 190px;
+  background-image: var(--bg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  opacity: 0.6;
+  z-index: 0;
+}
+.invest-card-img img {
+  position: relative;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+/* Плашка-% */
+.invest-card-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 30px;
+  background: var(--c-main-dark);
+  color: #fff;
+  font: 600 16px/18px "Open Sans", sans-serif;
+  border-radius: 15px;
+  z-index: 2;
+}
