@@ -1745,3 +1745,449 @@ main{padding-top:var(--header-h);}
 .footer-link:focus {
   color: #FF2B00;
 }
+.mobile-nav, .mobile-overlay {display:none;}  /* по-умолчанию меню нет */
+/* ====================== TABLET 800-1279 px ====================== */
+@media (min-width:800px) and (max-width:1279px){
+
+  /* Универсальный контейнер */
+  .header-container,
+  .feature-container,
+  .ps-container,
+  .router-container,
+  .power-container,
+  .market-scale-container,
+  .domination-container,
+  .invest-container,
+  .roadmap-container,
+  .preseed-container,
+  .section-contacts__inner,
+  .section-footer__inner{
+    width:800px;
+    padding:0 30px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{height:72px;}
+  .logo img{height:40px;}
+  .nav-list{display:flex;gap:20px;}
+  .lang-btn{height:40px;padding:0 16px;}
+
+  /* ---------- HERO ---------- */
+  .hero{height:auto;padding:63px 30px 90px;}
+  .hero-inner{width:100%;height:auto;}
+  .hero-title{font-size:36px;line-height:44px;}
+  .hero-subtitle{font-size:16px;line-height:24px;margin-bottom:24px;}
+  .hero-actions{gap:24px;flex-wrap:wrap;}
+  .btn{height:48px;line-height:48px;padding:0 32px;font-size:16px;}
+
+  /* ---------- FEATURE ---------- */
+  .feature-section{height:auto;padding:40px 30px;}
+  .feature-container{flex-direction:column;gap:20px;}
+  .feature-text,
+  .feature-image{width:100%;height:auto;}
+  .feature-text h2{font-size:28px;margin-bottom:24px;}
+  .feature-text p{font-size:16px;line-height:24px;}
+
+  /* ---------- PAIN & SOLVE ---------- */
+  .ps-title{font-size:28px;}
+  .ps-columns{flex-direction:column;gap:20px;}
+  .ps-column,
+  .ps-item{width:100%;}
+  .ps-item{height:auto;padding:20px;gap:16px;}
+  .ps-item-image{width:100px;height:100px;}
+  .ps-item-text h3{font-size:18px;}
+  .ps-item-text p{font-size:14px;line-height:20px;}
+
+  /* ---------- ROUTER ---------- */
+  .router-header{flex-direction:column;gap:20px;}
+  .router-title{font-size:28px;text-align:center;}
+  .router-btn{width:auto;padding:6px 18px;}
+  .router-table{display:block;}            /* показываем сетку */
+  .router-row{grid-template-columns:250px 1fr 1fr;}
+
+  /* ---------- POWER ---------- */
+  .power-container{flex-direction:column;gap:30px;height:auto;}
+  .power-left,.power-right{width:100%;}
+  .power-image img{width:100%;}
+
+  /* ---------- CAROUSEL ---------- */
+  .carousel-wrapper{display:flex;margin-top:20px;}
+  .carousel{width:800px;}
+  .carousel-slide.active{width:400px;height:200px;}
+  .carousel-slide.prev,
+  .carousel-slide.next{transform:translateX(-50%) scale(0.8);}
+
+  /* ---------- MARKET SCALE ---------- */
+  .market-scale-section{padding:40px 30px;}
+  .market-scale-container{width:800px;height:auto;}
+  .market-scale-cards{flex-direction:column;height:auto;}
+  .market-card{width:100%;}
+
+  /* ---------- DOMINATION ---------- */
+  .domination-container{width:800px;height:auto;}
+  .domination-items{flex-direction:column;gap:40px;height:auto;}
+  .domination-item{width:100%;height:auto;}
+
+  /* ---------- INVEST ---------- */
+  .invest-container{flex-direction:column;gap:40px;width:800px;}
+  .invest-left,.invest-right{width:100%;}
+  .invest-card{width:100%;}
+
+  /* ---------- ROADMAP ---------- */
+  .roadmap-items,
+  .roadmap-timeline,
+  .roadmap-cards{display:none;}  /* на планшете скрываем сложную схему */
+
+  /* ---------- PRE-SEED ---------- */
+  .preseed-section{height:auto;padding:40px 30px 0;}
+  .preseed-container{flex-direction:column;gap:30px;width:800px;}
+  .preseed-left,.preseed-right{width:100%;}
+  .preseed-right{height:420px;}
+
+  /* ---------- CONTACTS ---------- */
+  .section-contacts{height:auto;padding:50px 30px;}
+  .section-contacts__inner{width:800px;flex-direction:column;gap:40px;}
+  .contacts-right{width:100%;height:auto;}
+
+  /* ---------- FOOTER ---------- */
+  .section-footer__inner{width:800px;flex-direction:column;gap:10px;height:auto;}
+  .footer-nav{justify-content:center;}
+}
+/* ====================== MOBILE ≤ 799 px ====================== */
+@media (max-width:799px){
+
+  /* Снимаем фикс-ширины и большие отступы */
+  :root{--header-h:60px;}
+  body{font-size:14px;}
+  main{padding-top:var(--header-h);}
+
+  /* ---------- HEADER ---------- */
+  header{height:var(--header-h);padding:0 20px;}
+  .logo img{height:32px;}
+  .nav-list{display:none;}                 /* меню скрыто (бургер не реализуем) */
+  .lang-btn{height:36px;padding:0 12px;font-size:12px;}
+
+  /* ---------- HERO ---------- */
+  .hero{height:auto;padding:40px 20px 60px;}
+  .hero-label{font-size:12px;line-height:20px;padding:0 12px;margin-bottom:12px;}
+  .hero-title{font-size:28px;line-height:34px;}
+  .hero-subtitle{font-size:14px;line-height:20px;margin-bottom:24px;}
+  .hero-actions{flex-direction:column;gap:12px;width:100%;}
+  .btn{width:100%;height:44px;line-height:44px;font-size:14px;padding:0;}
+
+  /* ---------- FEATURE ---------- */
+  .feature-section{padding:40px 20px;}
+  .feature-container{flex-direction:column;gap:16px;width:100%;}
+  .feature-text{width:100%;}
+  .feature-text h2{font-size:24px;margin-bottom:16px;}
+  .feature-text p{font-size:14px;line-height:21px;}
+  .feature-image{width:100%;height:auto;}
+
+  /* ---------- PAIN & SOLVE ---------- */
+  .ps-section{padding:40px 20px;}
+  .ps-title{font-size:24px;}
+  .ps-columns{flex-direction:column;gap:16px;}
+  .ps-column{width:100%;}
+  .ps-item{width:100%;height:auto;flex-direction:row;padding:16px;gap:12px;}
+  .ps-item-image{width:80px;height:80px;}
+  .ps-item-text h3{font-size:16px;}
+  .ps-item-text p{font-size:13px;line-height:18px;}
+
+  /* ---------- ROUTER ---------- */
+  .router-section{padding:40px 20px;}
+  .router-header{flex-direction:column;gap:16px;}
+  .router-title{font-size:24px;text-align:center;}
+  .router-btn{width:100%;height:36px;font-size:13px;border-radius:18px;}
+  .router-table{display:none;}             /* таблицу прячем */
+  .router-highlight{flex-direction:column;gap:24px;padding:24px;}
+
+  /* ---------- POWER ---------- */
+  .power-section{padding:40px 20px;}
+  .power-container{flex-direction:column;gap:24px;width:100%;height:auto;}
+  .power-left,.power-right{width:100%;}
+  .power-image img{width:100%;}
+  .power-pill{margin-bottom:16px;}
+  .power-features{flex-direction:column;gap:20px;}
+  .features-col li{align-items:flex-start;}
+
+  /* ---------- CAROUSEL ---------- */
+  .screenshots-section{padding:40px 20px;}
+  .screenshots-title{font-size:28px;margin-bottom:24px;}
+  .carousel-wrapper{display:none;}        /* на мобилке скрываем карусель */
+
+  /* ---------- MARKET SCALE ---------- */
+  .market-scale-section{padding:40px 20px;}
+  .market-scale-title{font-size:24px;}
+  .market-scale-cards{flex-direction:column;gap:16px;}
+  .market-card{width:100%;height:auto;}
+
+  /* ---------- DOMINATION ---------- */
+  .domination-section{padding:40px 20px;}
+  .domination-header h2{font-size:24px;}
+  .domination-items{flex-direction:column;gap:32px;}
+  .domination-item{width:100%;height:auto;}
+
+  /* ---------- INVEST ---------- */
+  .invest-section{padding:40px 20px;}
+  .invest-container{flex-direction:column;gap:32px;width:100%;}
+  .invest-left,.invest-right{width:100%;}
+  .invest-card{width:100%;flex-direction:column;height:auto;gap:12px;}
+  .invest-card-img{width:100px;height:100px;margin:0 auto;}
+
+  /* ---------- ROADMAP ---------- */
+  .roadmap-section{padding:40px 20px;}
+  .roadmap-title{font-size:24px;}
+  .roadmap-items,
+  .roadmap-timeline,
+  .roadmap-cards{display:none;}            /* скрываем сложную графику */
+
+  /* ---------- PRE-SEED ---------- */
+  .preseed-section{padding:40px 20px 0;}
+  .preseed-container{flex-direction:column;gap:24px;width:100%;}
+  .preseed-left,.preseed-right{width:100%;}
+  .preseed-item{width:100%;}
+  .preseed-right{height:380px;}
+
+  /* ---------- CONTACTS ---------- */
+  .section-contacts{padding:50px 20px;height:auto;}
+  .section-contacts__inner{flex-direction:column;gap:40px;width:100%;}
+  .contacts-left{width:100%;}
+  .contacts-title{font-size:28px;line-height:32px;}
+  .contacts-subtitle{font-size:14px;line-height:22px;margin:24px 0;}
+  .contacts-row{flex-direction:column;gap:12px;margin-bottom:32px;}
+  .contact-card{width:100%;}
+  .btn--apply{width:100%;}
+
+  .contacts-right{width:100%;height:auto;}
+  .contacts-bg,.contacts-main{display:none;} /* убираем декоративное */
+
+  /* ---------- FOOTER ---------- */
+  .section-footer{height:auto;padding:20px;}
+  .section-footer__inner{flex-direction:column;gap:16px;width:100%;}
+  .footer-nav{flex-wrap:wrap;gap:16px;justify-content:center;}
+}/* ----------   ДОПОЛНЕНИЕ: HEADER & BURGER   ---------- */
+
+/* 800-1279 px — шапка, как на макете */
+@media (min-width:800px) and (max-width:1279px){
+  .header-container{justify-content:space-between;}
+  nav{flex:1;display:flex;justify-content:center;}     /* ссылки по центру */
+  .nav-list{gap:20px;}                                 /* уже настроено, только уточняем */
+  .burger-btn{display:none;}                           /* бургер не нужен */
+}
+
+/* ≤799 px — бургер + выезжающее меню */
+@media (max-width:799px){
+
+  /* прячем десктопное меню и показываем бургер */
+  nav{display:none;}               /* десктопные ссылки */
+  .burger-btn{
+      display:inline-flex;
+      width:36px;height:36px;
+      margin-left:12px;
+      background:#F4F4F4;
+      border:none;border-radius:50%;
+      align-items:center;justify-content:center;
+      cursor:pointer;position:relative;
+  }
+  .burger-btn span,
+  .burger-btn span::before,
+  .burger-btn span::after{
+      content:"";
+      display:block;
+      width:18px;height:2px;
+      background:#000;border-radius:1px;
+      transition:.3s;
+  }
+  .burger-btn span::before{position:absolute;top:-6px;}
+  .burger-btn span::after {position:absolute;top: 6px;}
+
+  /* крестик при открытом меню */
+  .burger-btn.open span{background:transparent;}
+  .burger-btn.open span::before{top:0;transform:rotate(45deg);}
+  .burger-btn.open span::after {top:0;transform:rotate(-45deg);}
+
+  /* само меню */
+  .mobile-nav{
+      position:fixed;top:0;right:-100%;
+      width:260px;height:100vh;
+      background:#fff;box-shadow:-4px 0 12px rgba(0,0,0,.15);
+      transition:right .35s;
+      z-index:1100;padding:120px 24px 40px;
+  }
+  .mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px;}
+  .mobile-nav a{
+      font:600 18px/22px "Open Sans",sans-serif;
+      color:#000;text-decoration:none;
+  }
+  .mobile-nav.open{right:0;}
+
+  /* тёмный фон за меню */
+  .mobile-overlay{
+      position:fixed;inset:0;
+      background:rgba(0,0,0,.4);
+      opacity:0;pointer-events:none;
+      transition:opacity .35s;
+      z-index:1090;
+  }
+  .mobile-overlay.show{opacity:1;pointer-events:auto;}
+}
+body.no-scroll{overflow:hidden;}
+/* ----------- 800-1279 px (планшет) ----------- */
+@media (min-width:800px) and (max-width:1279px){
+  .header-container{justify-content:space-between;}
+  nav{flex:1;display:flex;justify-content:center;}
+  .nav-list{
+      display:flex!important;
+      flex-wrap:nowrap;        /* не переносим строки */
+      gap:20px;
+      white-space:nowrap;
+  }
+  .burger-btn{display:none;}
+  .mobile-nav, .mobile-overlay{display:none;}   /* подстраховка */
+}
+
+/* ----------- ≤799 px (мобила) ----------- */
+@media (max-width:799px){
+  /* прячем стационарное меню, показываем бургер */
+  nav{display:none;}
+  .burger-btn{
+      display:inline-flex;
+      width:36px;height:36px;
+      margin-left:12px;
+      background:#F4F4F4;border:none;border-radius:50%;
+      align-items:center;justify-content:center;cursor:pointer;position:relative;
+  }
+  .burger-btn span,
+  .burger-btn span::before,
+  .burger-btn span::after{
+      content:"";display:block;width:18px;height:2px;
+      background:#000;border-radius:1px;transition:.3s;
+  }
+  .burger-btn span::before{position:absolute;top:-6px;}
+  .burger-btn span::after {position:absolute;top: 6px;}
+
+  .burger-btn.open span{background:transparent;}
+  .burger-btn.open span::before{top:0;transform:rotate(45deg);}
+  .burger-btn.open span::after {top:0;transform:rotate(-45deg);}
+
+  /* делаем само меню и затемнение видимыми именно на мобилке */
+  .mobile-nav, .mobile-overlay{display:block;}
+  .mobile-nav{
+      position:fixed;top:0;right:-100%;
+      width:260px;height:100vh;
+      background:#fff;box-shadow:-4px 0 12px rgba(0,0,0,.15);
+      transition:right .35s;z-index:1100;
+      padding:120px 24px 40px;     /* сверху -- чтоб не залезло под шапку */
+  }
+  .mobile-nav ul{list-style:none;display:flex;flex-direction:column;gap:24px;}
+  .mobile-nav a{
+      font:600 18px/22px "Open Sans",sans-serif;
+      color:#000;text-decoration:none;
+  }
+  .mobile-nav.open{right:0;}
+
+  .mobile-overlay{
+      position:fixed;inset:0;
+      background:rgba(0,0,0,.4);
+      opacity:0;pointer-events:none;
+      transition:opacity .35s;z-index:1090;
+  }
+  .mobile-overlay.show{opacity:1;pointer-events:auto;}
+
+  body.no-scroll{overflow:hidden;}  /* убираем прокрутку за меню */
+}
+/* ===================================================== *
+ *   МОБИЛЬНЫЙ < 800 px                                  *
+ * ===================================================== */
+@media (max-width:799px){
+
+  /* ── переключатель языка ──────────────────────────── */
+  .lang-btn{
+    height:48px;                 /* базовый размер «пилюли» */
+    padding:0 14px;              /* чуть компактнее, чем раньше */
+  }
+  .lang-btn img{
+    /* флаг 24×24, но автоматически сжимается вместе с «пилюлей» */
+    width:clamp(20px, 6vw, 24px);
+    height:clamp(20px, 6vw, 24px);
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid var(--c-main-dark);
+  }
+
+  /* ── бургер-кнопка ─────────────────────────────────── */
+  .burger-btn{
+    width:48px; height:48px;     /* круг такой же, как «пилюля» */
+    margin-left:14px;            /* расстояние от выбора языка */
+  }
+
+  /* три полоски — всегда идеально по центру */
+  .burger-btn span,
+  .burger-btn span::before,
+  .burger-btn span::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    width:clamp(14px, 5vw, 18px);
+    height:2px;
+    background:#000;
+    transition:.35s;
+  }
+  .burger-btn span{ top:50%; transform:translate(-50%,-50%); }
+  .burger-btn span::before{ top:-6px; transform:translateX(-50%); }
+  .burger-btn span::after { top: 6px; transform:translateX(-50%); }
+
+  /* анимация «крестик» */
+  .burger-btn.open span        { background:transparent; }
+  .burger-btn.open span::before{ transform:translateX(-50%) rotate(45deg); }
+  .burger-btn.open span::after { transform:translateX(-50%) rotate(-45deg); }
+}
+
+/* ещё меньше —  ultra-mobile ≤ 460 px */
+@media (max-width:459px){
+  .lang-btn      { height:40px; padding:0 10px; }
+  .burger-btn    { width:40px; height:40px;   }
+  .burger-btn span::before{ top:-5px; }
+  .burger-btn span::after { top: 5px; }
+}
+/* ===================================================== *
+ *   ПЛАНШЕТ:  800-1279 px                                *
+ * ===================================================== */
+@media (min-width:800px) and (max-width:1279px){
+
+  /* Отступ между логотипом и навигацией */
+  .header-container nav{ margin-left:20px; }
+
+  /* Флаг внутри «пилюли» */
+  .lang-btn{
+    height:48px;
+    padding:0 18px;             /* хватает, чтобы текст не давил флаг */
+  }
+  .lang-btn img{
+    width:24px; height:24px;    /* фиксируем, чтобы не «выпрыгивал» */
+    object-fit:cover;
+    border-radius:50%;
+    border:2px solid var(--c-main-dark);
+  }
+}
+
+/* ===================================================== *
+ *   МОБИЛЬНЫЙ:  ≤ 799 px                                 *
+ * ===================================================== */
+@media (max-width:799px){
+
+  /* — распределяем элементы: logo ║ … ║ lang + burger — */
+  .header-container{ justify-content:flex-start; }
+  .lang-switcher{ margin-left:auto; }   /* уводим к правому краю */
+  .burger-btn   { margin-left:12px; }   /* небольшой зазор */
+
+  /* Сохраняем идеальные центры кружков (если нужно, но уже было) */
+  .lang-btn{
+    height:clamp(40px,11vw,48px);
+    padding:0 clamp(10px,3vw,14px);
+  }
+  .lang-btn img{
+    width:clamp(20px,6vw,24px);
+    height:clamp(20px,6vw,24px);
+  }
+}

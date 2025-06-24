@@ -23,7 +23,8 @@
           <li><a href="#contacts">Контакты</a></li>
         </ul>
       </nav>
-
+</nav>
+<div class="mobile-overlay"></div>
       <div class="lang-switcher">
         <button class="lang-btn">
           <img src="images/Ellipse 2.svg" alt="RU"/> Рус <span class="arrow">▾</span>
@@ -33,7 +34,17 @@
           <li data-lang="en"><img src="images/eng.svg"      alt="EN"/> Eng</li>
         </ul>
       </div>
-    </div>
+      <!-- burger (появится только на мобилках) -->
+        <button class="burger-btn" aria-label="Открыть меню"><span></span></button>
+      <!-- выезжающее мобильное меню -->
+      <nav class="mobile-nav" aria-label="Мобильное меню">
+        <ul>
+          <li><a href="#about">О проекте</a></li>
+          <li><a href="#potential">Потенциал</a></li>
+          <li><a href="#investment">Раунд инвестиций</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+  </div>
   </header>
 
   <!-- Hero -->

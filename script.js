@@ -7,6 +7,21 @@ document.addEventListener('click', e => {
     sw.classList.remove('open');
   }
 });
+/* ===== burger menu ===== */
+const burger   = document.querySelector('.burger-btn');
+const mNav     = document.querySelector('.mobile-nav');
+const mOverlay = document.querySelector('.mobile-overlay');
+
+if (burger){
+  burger.addEventListener('click', ()=>{
+    burger.classList.toggle('open');
+    mNav.classList.toggle('open');
+    mOverlay.classList.toggle('show');
+    document.body.classList.toggle('no-scroll');
+  });
+  mOverlay.addEventListener('click', ()=> burger.click());
+  mNav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> burger.click()));
+}
 
 ;(function(){
   const slides    = Array.from(document.querySelectorAll('.carousel-slide'));
