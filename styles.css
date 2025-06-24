@@ -568,3 +568,135 @@ main{padding-top:var(--header-h);}
 .highlight-list p {
   text-align: left;
 }
+/* ===== Основа нашей мощности ===== */
+.power-section {
+  width: 100%;
+  background: #fff;
+  padding: 60px 0;
+  /* секция 1280×770 — паддинги по 60 сверху/снизу дают итоговую высоту */
+}
+
+.power-container {
+  width: 1240px;
+  height: 645px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;               /* расстояние между левым и правым столбцом */
+  align-items: flex-start;
+}
+
+/* ЛЕВЫЙ СТОЛБЕЦ */
+.power-left {
+  flex: 0 0 600px;
+  display: flex;
+  flex-direction: column;
+}
+.power-title {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0 0 16px;
+}
+.power-subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666666;
+  margin: 0 0 55px;       /* 55px gap до картинки */
+}
+.power-image {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;  /* картинка по центру */
+}
+.power-image img {
+  width: 600px;             /* фиксированная ширина */
+  height: auto;
+}
+
+/* ПРАВЫЙ СТОЛБЕЦ */
+.power-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1) Плашка «Технологическая глубина» */
+.power-pill {
+  display: inline-block;
+  width: 180px;               /* фиксированная ширина */
+  height: 30px;               /* фиксированная высота */
+  line-height: 30px;          /* чтобы текст по центру по вертикали */
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 450;
+  text-align: center;         /* текст по центру по горизонтали */
+  border-radius: 15px;        /* полувысоты, чтобы получилось 30px/2 */
+  background: #000;           /* чёрный фон */
+  color: #fff;                /* белый текст */
+  margin-bottom: 24px;
+}
+
+/* Список признаков — две колонки */
+.power-features {
+  display: flex;
+  gap: 40px;               /* расстояние между двумя ul */
+  margin-bottom: 36px;
+}
+
+.features-col {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;                /* между пунктами */
+}
+
+.features-col li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;                /* между галочкой и текстом */
+}
+
+.feat-icon {
+  font-size: 20px;
+  line-height: 1;
+  color: #25DE85;
+  margin-top: 4px;
+}
+
+.feat-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.feat-text strong {
+  font-family: "TT Travels Next", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--c-text);
+  margin: 0 0 4px;
+}
+
+.feat-text p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #666666;
+  margin: 0;
+}
+
+/* Кнопка внизу */
+.power-cta {
+  margin-top: auto;         /* «прижимает» кнопку к низу правого столбца */
+}
+.power-cta .btn {
+  padding: 0 40px;
+  height: 54px;
+  line-height: 54px;
+  font-size: 18px;
+}
