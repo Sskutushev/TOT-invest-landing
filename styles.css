@@ -2191,3 +2191,206 @@ body.no-scroll{overflow:hidden;}
     height:clamp(20px,6vw,24px);
   }
 }
+/* =================================================================== */
+/*  ОБЩЕЕ: никогда не даём элементам «вылезти» за пределы вьюпорта     */
+/* =================================================================== */
+html,body{overflow-x:hidden;}      /* подстраховка */
+*{max-width:100vw;}
+
+/* =================================================================== */
+/*  М О Б И Л Ь  :   360 – 799 px                                       */
+/* =================================================================== */
+@media (max-width:799px){
+
+  /* ---------- Базовый «рамочный» контейнер для всех секций ---------- */
+  .header-container,
+  .hero-inner,
+  .feature-container,
+  .ps-container,
+  .router-container,
+  .power-container,
+  .container,
+  .market-scale-container,
+  .domination-container,
+  .invest-container,
+  .roadmap-container,
+  .preseed-container,
+  .section-contacts__inner,
+  .section-footer__inner{
+    width:100%;
+    max-width:100%;
+    padding-inline:20px;       /* универсальный боковой отступ */
+  }
+
+  /* ---------- Flex-переходы: строка → колонка ---------- */
+  .feature-container,
+  .ps-columns,
+  .router-header,
+  .power-container,
+  .market-scale-cards,
+  .domination-items,
+  .invest-container,
+  .roadmap-cards{
+    flex-direction:column;
+    align-items:center;        /* всё по центру */
+    gap:20px;
+  }
+
+  /* ---------- Широкие таблицы шага (router) ---------- */
+  .router-table{
+    overflow-x:auto;           /* в крайнем случае скролл горизонтально */
+    -webkit-overflow-scrolling:touch;
+  }
+  .router-row{
+    grid-template-columns:1fr; /* весь контент в одну колонку */
+    row-gap:10px;
+    border:none;               /* убираем лишние линии, если хочется */
+  }
+  .router-row .router-cell--step{
+    flex-direction:row;
+  }
+
+  /* ---------- Инвест-карточки: 100% ширины, по одной ---------- */
+  .invest-card,
+  .market-card{
+    width:100%;
+  }
+
+  /* ---------- Карусель скриншотов: «простая» верстка ---------- */
+  .carousel-wrapper{
+    flex-direction:column;
+  }
+  .carousel-arrow{display:none;}
+  .carousel-slide,
+  .carousel-slide.active{
+    position:relative;
+    transform:none;   /* отменяем translateX/scale */
+    width:100%;
+    height:auto;
+    margin-bottom:12px;
+    opacity:1;
+    border:none;
+  }
+
+  /* ---------- Roadmap: блоки друг под другом ---------- */
+  .roadmap-items{
+    height:auto;
+    position:static;
+  }
+  .roadmap-item{
+    position:static;
+    transform:none;
+    margin-bottom:30px;
+  }
+  .roadmap-timeline,
+  .timeline-point{display:none;} /* убираем линию на мобиле */
+
+  /* ---------- Доминация: 1 колоночка ---------- */
+  .domination-items{gap:40px;}
+
+  /* ---------- Контакты: карточки по одной строкой ---------- */
+  .contacts-row{flex-direction:column;}
+  .contact-card{width:100%;}
+
+  /* ---------- Изображения / иконки ---------- */
+  img{height:auto;}
+
+}
+
+/* =================================================================== */
+/*  П Л А Н Ш Е Т  :   800 – 1279 px                                    */
+/* =================================================================== */
+@media (min-width:800px) and (max-width:1279px){
+
+  /* Тот же универсальный контейнер, но фиксируем на 800 px */
+  .header-container,
+  .hero-inner,
+  .feature-container,
+  .ps-container,
+  .router-container,
+  .power-container,
+  .container,
+  .market-scale-container,
+  .domination-container,
+  .invest-container,
+  .roadmap-container,
+  .preseed-container,
+  .section-contacts__inner,
+  .section-footer__inner{
+    width:800px;
+    max-width:100%;
+    margin-inline:auto;
+    padding-inline:30px;
+  }
+
+  /* Flex-колонка там, где три-четыре больших элемента */
+  .feature-container,
+  .ps-columns,
+  .power-container,
+  .invest-container{
+    flex-direction:column;
+    gap:30px;
+    align-items:center;
+  }
+
+  /* Таблица router чуть ужимаем и допускаем авто-скролл при 800px */
+  .router-table{
+    overflow-x:auto;
+  }
+  .router-row{
+    grid-template-columns:1fr 1fr;   /* 2 столбца */
+  }
+
+  /* Карусель: показываем 1 активный слайд, без боковых */
+  .carousel-wrapper{flex-direction:column;}
+  .carousel-arrow{display:none;}
+  .carousel-slide,
+  .carousel-slide.active{
+    position:relative;transform:none;opacity:1;
+    width:100%;height:auto;margin-bottom:20px;border:none;
+  }
+
+  /* Инвест-карточки & Market-card: full-width */
+  .invest-card,
+  .market-card{width:100%;}
+
+  /* Roadmap: сетка 2×2 вместо линии */
+  .roadmap-items{
+    position:static;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    height:auto;
+  }
+  .roadmap-item{position:relative;transform:none;}
+
+  .roadmap-timeline,
+  .timeline-point{display:none;}
+}
+
+/* =================================================================== */
+/*  Мелкие корректировки, общие для любых ширин после «ломки»          */
+/* =================================================================== */
+
+/* Центрируем текст в «центральных» заголовках после смены сетки */
+.feature-text h2,
+.ps-title,
+.router-title,
+.power-title,
+.market-scale-title,
+.domination-header h2,
+.invest-heading,
+.roadmap-title,
+.preseed-title,
+.contacts-title,
+.screenshots-title{
+  text-align:center;
+}
+
+/* Убираем ненужные бордюры/тени, из-за которых появляются скроллы */
+.router-row,
+.invest-card,
+.market-card{box-shadow:none;}
+
+/* Финальная страховка: ничего не «вылезет» за пределы */
+body *{box-sizing:border-box;}
