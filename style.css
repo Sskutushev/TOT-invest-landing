@@ -841,21 +841,27 @@ a {
     margin-bottom: 90px;
   }
   .roadmap-steps {
+    position: relative; /* чтобы ::after относился к самому шагу */
     display: flex;
     justify-content: space-between;
     gap: 20px;
     position: relative;
   }
   .roadmap-steps::before {
-    content: '';
-    position: absolute;
-    top: 36px; /* vertically center with icons */
-    left: 10%;
-    right: 10%;
-    height: 1px;
-    background-color: #e3e3e3;
-    z-index: 1;
+   display: none;
   }
+  .roadmap-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 110%;                   /* по центру каждого шага */
+  transform: translateX(-50%);
+  top: 20px;                   /* отступ сверху: чуть ниже иконки */
+  bottom: 150px;               /* отступ снизу: чуть выше даты */
+  width: 1px;  
+  height: 292px;                /* толщина линии */
+  background-color: #e3e3e3;   /* цвет линии */
+  z-index: 1;                  /* за контентом */
+}
   .roadmap-step {
     display: flex;
     flex-direction: column;
@@ -875,8 +881,8 @@ a {
     z-index: 2;
   }
   .step-icon img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 76px;
+    max-height: 76px;
   }
   .step-text {
     display: flex;
