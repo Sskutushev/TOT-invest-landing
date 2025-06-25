@@ -1,0 +1,22 @@
+/* =============== styleguide.css =============== */
+:root {
+  /* Colors */
+  --textgray: rgba(134, 134, 134, 1);
+  --textblack: #000000;
+  --white: #ffffff;
+  --primarymain: rgba(255, 43, 0, 1);
+  --primarydark: rgba(170, 29, 0, 1);
+  --primarylight: rgba(255, 114, 85, 1);
+  --servicegreen: rgba(37, 222, 133, 1);
+  --backgroundgray: rgba(244, 244, 244, 1);
+
+  /* Typography – Open Sans */
+  --desktop-body-text-open-sans-12: 400 12px/15px "Open Sans", Helvetica;
+  --desktop-body-text-open-sans-14: 400 14px/16px "Open Sans", Helvetica;
+  --desktop-body-text-open-sans-16: 400 16px/19px "Open Sans", Helvetica;
+  --desktop-body-text-open-sans-18-regular: 400 18px/20px "Open Sans", Helvetica;
+  --desktop-body-text-open-sans-18-bold: 700 18px/20px "Open Sans", Helvetica;
+
+  /* Typography – TT Travels Next */
+  --desktop-heading-TT-32: 700 32px/35px "TT Travels Next", Helvetica;
+}

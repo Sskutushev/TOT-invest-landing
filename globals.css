@@ -1,0 +1,27 @@
+/* =============== globals.css =============== */
+/* Reset via Meyerweb */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+html, body {
+  margin: 0;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: inherit;
+}
+
+/* Remove link underlines */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Focus styles */
+button:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline-offset: 2px;
+}
