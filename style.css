@@ -1066,11 +1066,13 @@ a {
     gap: 12px;
   }
   .phase-icons {
+    background-image: url("img/ellipse\ 56.svg");
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;
     padding: 0 5%;
     margin-bottom: 30px;
+    gap: 70px;
   }
   .phase-icons img {
     width: 150px;
@@ -1095,33 +1097,72 @@ a {
     font-size: 14px;
   }
   .timeline-bar {
-    width: 100%;
-    margin: 10px 0;
+    width: 102%;
+    margin: -32.5px 0;
   }
   .phase-details {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding-top: 20px;
+    gap: 25px;
+    padding-top: 30px;
   }
   .phase-card {
-    background-image: url('/page/443e48c8-48b5-4654-87a4-f3abfc27541f/images/25_1582.svg');
+  background-image: none !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  }
+
+  /* 1-я карточка */
+  .phase-details .phase-card:nth-child(1) {
+    background-image: url("img/Rectangle\ 9377\ \(3\).svg") !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 60px 26px 33px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
+    width: 285px; /* Устанавливаем ширину карточки */
+    height: 195px; /* Устанавливаем высоту карточки */
+  }
+
+  /* 2-я карточка */
+  .phase-details .phase-card:nth-child(2) {
+    background-image: url("img/Rectangle\ 9377\ \(2\).svg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 285px; /* Устанавливаем ширину карточки */
+    height: 245px; /* Устанавливаем высоту карточки */
+  }
+
+  /* 3-я карточка */
+  .phase-details .phase-card:nth-child(3) {
+    background-image: url("img/Rectangle\ 9377\ \(1\).svg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 285px; /* Устанавливаем ширину карточки */
+    height: 233px; /* Устанавливаем высоту карточки */
+  }
+
+  /* 4-я карточка */
+  .phase-details .phase-card:nth-child(4) {
+    background-image: url("img/Rectangle\ 9377.svg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 285px; /* Устанавливаем ширину карточки */
+    height: 275px; /* Устанавливаем высоту карточки */
   }
   .phase-card h4 {
     font-family: 'Open Sans', sans-serif;
+    padding-top: 50px;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.2;
-    margin: 0;
+    margin: 15px;
   }
   .phase-card ul {
     list-style: none;
@@ -1129,13 +1170,14 @@ a {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 15px;
     text-align: left;
   }
   .phase-card li {
     display: flex;
     align-items: flex-start;
-    gap: 24px;
+    padding-left: 18px;
+    gap: 16px;
     font-size: 14px;
     line-height: 16px;
     color: #868686;
