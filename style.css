@@ -1066,18 +1066,45 @@ a {
     gap: 12px;
   }
   .phase-icons {
-    background-image: url("img/ellipse\ 56.svg");
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: center;
-    padding: 0 5%;
-    margin-bottom: 30px;
-    gap: 70px;
-  }
-  .phase-icons img {
-    width: 150px;
-    height: 150px;
-  }
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  gap: 100px;
+  padding: 0 5%;
+  margin-bottom: 20px;
+}
+
+/* Псевдо-элемент с 4 фонами */
+.phase-icons::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;              /* ровно под размер фона */
+  pointer-events: none;       /* клики по иконкам свободны */
+  background-image:
+    url("img/Ellipse 68.svg"),
+    url("img/Ellipse 68.svg"),
+    url("img/Ellipse 68.svg"),
+    url("img/Ellipse 68.svg");
+  background-repeat: no-repeat;
+  background-position:
+    10% center,
+    37.5% center,
+    62.5% center,
+    95% center;
+  background-size: 180px 180px;  /* размер каждого эллипса */
+}
+
+.phase-icons img {
+  position: relative;
+  z-index: 1;                   /* чтобы иконки всегда были над фоном */
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
   .phase-timeline {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1215,8 +1242,15 @@ a {
     gap: 63px;
   }
   .pre-seed-left h2 {
-    font-size: 32px;
-    line-height: 35px;
+  font-size: 32px;
+  line-height: 35px;
+
+  /* Запрещаем перенос строк внутри заголовка */
+  white-space: nowrap;
+
+  /* На всякий случай сбросим автоматические переносы */
+  word-break: keep-all;
+  overflow-wrap: normal;
   }
   .proof-list {
     display: flex;
@@ -1252,15 +1286,17 @@ a {
   .pre-seed-blur {
     width: 601px;
     height: 529px;
-    top: 0;
+    top: 140px;
     left: 0;
     filter: blur(130px);
+    z-index: 1;
   }
   .pre-seed-lines {
-    width: 713px;
-    height: 499px;
-    top: -38px;
-    left: -85px;
+    width: 850px;
+    height: 450px;
+    top: 160px;
+    left: -125px;
+    z-index: 1;
   }
   .pre-seed-card {
     background-color: #ff7255;
@@ -1268,7 +1304,8 @@ a {
     padding: 33px 39px;
     top: 68px;
     left: 81px;
-    width: 487px;
+    width: 565px;
+    height: 418px;
     box-sizing: border-box;
   }
   .pre-seed-card h3 {
@@ -1279,10 +1316,11 @@ a {
     color: #ffffff;
   }
   .pre-seed-rocket {
-    width: 968px;
-    height: 968px;
-    top: -242px;
-    left: -507px;
+    width: 687px;
+    height: 687px;
+    top: -22px;
+    left: -80px;
+    z-index: 2;
   }
   @media (max-width: 1200px) {
     .pre-seed-grid {
