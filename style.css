@@ -109,12 +109,6 @@ a {
   color: #ffffff;
 }
 
-@media (max-width: 992px) {
-  .container {
-    padding: 0 15px;
-  }
-}
-
 /* CSS from section:header */
 /* ===== Header ===== */
 .site-header {
@@ -235,6 +229,62 @@ a {
   height: 20px;
   object-fit: cover;
 }
+/* планшетная версия: экраны от 800 до 1279px */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* сам хэдер */
+  .site-header {
+    height: 72px;
+    padding: 13px 0;
+  }
+  /* контейнер внутри */
+  .header-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* логотип */
+  .logo img {
+    width: 117px;
+    height: 30px;
+  }
+  /* навигация */
+  .main-nav {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    top: 13px;
+    left: 172px; /* смещение от левого края контейнера */
+  }
+  .main-nav a {
+    padding: 5px 10px;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  /* переключатель языка */
+  .lang-switcher {
+    position: absolute;
+    right: 30px;  /* смещение от правого края контейнера */
+    width: 101px;
+    height: 46px;
+    padding: 9px 7px;
+    border-radius: 90px;
+  }
+  .lang-switcher > img:first-child {
+    width: 28px;
+    height: 28px;
+  }
+  .lang-switcher span {
+    font-size: 14px;
+  }
+  .lang-switcher > img:last-child {
+    width: 20px;
+    height: 20px;
+  }
+}
 /* CSS from section:hero */
 .hero-section {
     background-image: url('img/Background\ Image.svg');
@@ -271,19 +321,76 @@ a {
     gap: 24px;
     margin-top: 10px;
   }
-  @media (max-width: 768px) {
-    .hero-section {
-      padding: 60px 0;
-    }
-    .hero-title {
-      font-size: 32px;
-    }
-    .hero-buttons {
-      flex-direction: column;
-      gap: 16px;
-    }
+/* ===== Планшетная версия хиро-секции (800px–1279px) ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* Обёртка фона */
+  .hero-section {
+    height: 433px;               /* заданная вами высота */
+    position: relative;
+    top: 72px;                   /* чтобы не накрывать шапку */
+    padding: 63px 0 90px;        /* padding-top и bottom */
   }
 
+  /* Контент внутри хиро */
+  .hero-content {
+    width: 799px;                /* ваша «section» ширина */
+    margin: 0 auto;              /* центруем по горизонтали */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;                   /* расстояние между элементами */
+  }
+
+  /* Плашка-тег */
+  .hero-tag {
+    width: 398px;
+    height: 49px;
+    border-radius: 90px;
+    padding: 15px 20px;
+    margin: 0 auto;             /* центруем */
+  }
+
+  /* Заголовок */
+  .hero-title {
+    width: 799px;
+    font-size: 40px;
+    line-height: 40px;
+    margin: 0 auto;             /* центруем */
+    text-align: center;
+  }
+
+  /* Подзаголовок */
+  .hero-subtitle {
+    width: 799px;
+    font-size: 16px;
+    line-height: 19px;
+    margin: 0 auto;
+    text-align: center;
+    color: #868686;
+  }
+
+  /* Контейнер кнопок */
+  .hero-buttons {
+    width: 799px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin: 20px auto 0;        /* отступ сверху, центруем */
+  }
+
+  /* Основная кнопка */
+  .hero-buttons .btn-primary {
+    width: 291px;
+    height: 60px;
+    padding: 15px 35px;
+  }
+
+  /* Вторая (outline) кнопка */
+  .hero-buttons .btn-outline {
+    width: 268px;
+    height: 60px;
+    padding: 18px 37px;
+  }
+}
 /* CSS from section:about */
 .about-section {
     padding: 60px 0;
@@ -365,20 +472,127 @@ a {
     top: 0;
     left: 30px;
   }
-  @media (max-width: 992px) {
-    .about-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-    .about-text {
-      align-items: center;
-    }
-    .about-image-group {
-      height: 350px;
-      transform: scale(0.8);
-      margin-top: 20px;
-    }
+/* ===== Планшетная версия about-секции (800px–1279px) ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* Секция и её внутренний контейнер */
+  .about-section {
+    padding: 40px 0;               /* убираем слишком большие отступы */
   }
+  .about-section .container {
+    max-width: 800px;              /* фиксированная ширина в медиазоне */
+    padding: 40px 30px;            /* ваши 40px сверху/снизу и 30px по бокам */
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  /* Переключаем на flex-раскладку двух колонок */
+  .about-section .about-grid {
+    display: flex;
+    gap: 28px;                     /* ваш отступ между колонками */
+    align-items: flex-start;
+  }
+
+  /* Левая колонка текста */
+  .about-section .about-text {
+    flex: 0 0 356px;               /* фиксированная ширина из макета */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;                     /* оставляем ваш gap */
+  }
+  .about-section .about-text h2 {
+    font-size: 32px;               /* ваш размер для планшета */
+    line-height: 35px;
+    margin: 0;
+  }
+  .about-section .about-text p {
+    font-size: 16px;
+    line-height: 19px;
+    color: #858585;
+    margin: 0;                     /* сбрасываем дефолт */
+  }
+
+  /* Правая колонка с изображениями */
+  .about-section .about-image-group {
+    flex: 0 0 356px;               /* такая же фикс. ширина */
+    height: 260.92px;              /* из макета ~260.919px */
+    position: relative;            /* для абсолютов внутри */
+  }
+
+  /* Блюр-фон (Ellipse) */
+  .about-section .img-blur-1 {
+    position: absolute;
+    width: 125.67px;               /* ваш ellipse56.width */
+    height: 220.49px;              /* ваш ellipse56.height */
+    top: 226.39px;
+    left: 43.32px;
+    border-radius: 50%;
+    filter: blur(80px);
+    transform: rotate(108deg);
+    z-index: 1;
+  }
+
+  /* Большая рамка-чарт */
+  .about-section .img-chart-frame {
+    position: absolute;
+    width: 234.94px;               /* vector203.width */
+    height: 124.38px;              /* vector203.height */
+    top: 94.32px;
+    left: 77.39px;
+    z-index: 2;
+  }
+
+  /* Иконка «рукопожатие» */
+  .about-section .img-handshake {
+    position: absolute;
+    width: 116.64px;               /* container6.width */
+    height: 119.44px;              /* container6.height */
+    top: 62.92px;
+    left: 205.52px;
+    z-index: 3;
+  }
+
+  /* Маленький чарт */
+  .about-section .img-chart-small {
+    position: absolute;
+    width: 208.96px;               /* container7.width */
+    height: 208.96px;              /* container7.height */
+    top: 0;
+    left: 38.14px;
+    z-index: 4;
+  }
+
+  /* Дополнительный блюр-элемент */
+  .about-section .img-group-inner {
+    position: absolute;
+    width: 110.56px;               /* container8.width */
+    height: 110.56px;              /* container8.height */
+    top: 137.19px;
+    left: 22px;
+    filter: blur(7.3px);
+    transform: scale(0.8);
+    z-index: 5;
+  }
+
+  /* Задний фон внутри */
+  .about-section .img-inner-bg {
+    position: absolute;
+    width: 100%;
+    top: 45px;
+    left: 0;
+    z-index: 6;
+  }
+
+  /* Самая верхняя иконка */
+  .about-section .img-inner-icon {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    top: 0;
+    left: 30px;
+    z-index: 7;
+  }
+}
+
 
 /* CSS from section:problems-solutions */
 .problems-solutions-section {
@@ -459,68 +673,248 @@ a {
     top: 21px;
     right: 25px;
   }
-  @media (max-width: 1200px) {
-    .ps-card {
-      flex-direction: column;
-      text-align: center;
-    }
-    .ps-card .tag {
-      position: static;
-      margin-top: 10px;
-    }
+/* ===== Планшетная версия problems-solutions (800–1279px) ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .problems-solutions-section {
+    padding: 40px 0;
   }
-  @media (max-width: 768px) {
-    .ps-grid {
-      grid-template-columns: 1fr;
-    }
+  .problems-solutions-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    box-sizing: border-box;
+  }
+  .problems-solutions-section .section-title {
+    margin-bottom: 60px;
+    text-align: center;
   }
 
-/* CSS from section:how-it-works */
-.how-it-works-section {
-    padding: 60px 0;
-  }
-  .how-it-works-header {
+  /* две колонки по 355px, вторая смещена на 40px вниз */
+  .problems-solutions-section .ps-grid {
     display: flex;
-    justify-content: space-between;
+    gap: 30px;
+    justify-content: center;
     align-items: flex-start;
-    margin-bottom: 48px;
   }
-  .how-it-works-header h2 {
-    font-size: 32px;
-    line-height: 35px;
-    max-width: 715px;
+  .problems-solutions-section .ps-column {
+    flex: 0 0 355px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
+  .problems-solutions-section .ps-column:nth-child(2) {
+    margin-top: 40px;
+  }
+
+  /* каждая карточка — колоночный flex, фикс. размер, контент слева */
+  .problems-solutions-section .ps-card {
+    width: 355px;
+    height: 305px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    gap: 10px;
+    position: relative;
+  }
+
+  /* иконка прижата к левому краю */
+  .problems-solutions-section .ps-card-img-wrapper {
+    margin: 0;
+    flex: 0 0 auto;
+  }
+
+  /* тег (Проблема/Решение) */
+  .problems-solutions-section .ps-card .tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  /* текстовый блок — весь оставшийся по высоте, текст слева */
+  .problems-solutions-section .ps-card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 8px;
+  }
+  .problems-solutions-section .ps-card-text h3,
+  .problems-solutions-section .ps-card-text p {
+    margin: 0;
+  }
+}
+
+
+/* ===== Section: How It Works ===== */
+.how-it-works-section {
+  padding: 60px 0;
+}
+
+.how-it-works-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+
+.how-it-works-header h2 {
+  font-size: 32px;
+  line-height: 35px;
+  max-width: 715px;
+}
+
+/* Ограничить размер тэга «Шаг» */
+.how-it-works-section .step-info .tag-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 30px;
+  padding: 0;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 15px;
+}
+
+.how-it-works-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 431px 1fr 1fr;
+  gap: 25px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.table-header {
+  padding-bottom: 20px;
+}
+
+.header-cell {
+  color: #868686;
+  font-size: 14px;
+  padding: 0 12px;
+}
+
+.header-cell:not(:first-child) {
+  text-align: left;
+}
+
+.row-cell {
+  padding: 24px 12px;
+  display: flex;
+  align-items: center;
+}
+
+.row-cell p {
+  font-size: 14px;
+  color: #000000;
+}
+
+/* Здесь две колонки: шаг и тексты */
+.step-cell {
+  gap: 48px;
+  display: flex;
+}
+
+.step-icon-wrapper {
+  width: 121px;
+  height: 88px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.step-icon-wrapper img {
+  position: absolute;
+}
+
+.step-icon-single {
+  position: relative !important;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.step-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.step-info h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0;
+}
+/* ===== Tablet (800–1279px) ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* make the section container wider so right‐side content fits */
+  .how-it-works-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0;
+  }
+
+  /* keep the table at full width of its parent */
   .how-it-works-table {
     display: flex;
     flex-direction: column;
+    gap: 4px;
+    width: 100%;
   }
-  /* Ограничить размер тэга «Шаг» в разделе how-it-works */
-.how-it-works-section .step-info .tag-dark {
-  display: inline-flex;          /* превращаем в flex-контейнер, чтобы центрировать текст */
-  align-items: center;
-  justify-content: center;
-  width: 65px;                   /* желаемая ширина */
-  height: 30px;                  /* желаемая высота */
-  padding: 0;                    /* сбрасываем внутренние отступы */
-  font-size: 12px;               /* при необходимости подкорректируйте размер шрифта */
-  white-space: nowrap;           /* чтобы текст не переносился */
-  overflow: hidden;              /* обрезаем лишнее */
-  text-overflow: ellipsis;       /* если текста больше чем влезет */
-  border-radius: 15px;           /* полукруглая плашка */
-}
-  .table-header, .table-row {
+
+  /* grid columns will now stretch proportionally within 800px */
+  .table-header,
+  .table-row {
     display: grid;
-    grid-template-columns: 431px 1fr 1fr;
-    gap: 25px;
+    grid-template-columns: 350px 1fr 1fr;
+    gap: 50px;
     border-bottom: 1px solid #e3e3e3;
+    align-items: center;
   }
-  .table-header {
-    border-bottom: 1px solid #e3e3e3;
-    padding-bottom: 20px;
+
+  /* rest of your tablet styles remain unchanged */
+  .how-it-works-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+  .how-it-works-header h2 {
+    margin: 0 0 30px;
+    font-size: 32px;
+    line-height: 35px;
+    max-width: 100%;
+  }
+  .how-it-works-header .section-badge {
+    width: 135px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 15px;
+  }
+  .how-it-works-section .step-info .tag-dark {
+    width: 65px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 15px;
   }
   .header-cell {
-    color: #868686;
     font-size: 14px;
+    color: #858585;
     padding: 0 12px;
   }
   .header-cell:not(:first-child) {
@@ -533,25 +927,20 @@ a {
   }
   .row-cell p {
     font-size: 14px;
-    color: #000000;
+    line-height: 16px;
+    color: #000;
   }
   .step-cell {
+    display: flex;
     gap: 48px;
   }
   .step-icon-wrapper {
     width: 121px;
     height: 88px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
   }
-  .step-icon-wrapper img {
-    position: absolute;
-  }
+  .step-icon-wrapper img,
   .step-icon-single {
-    position: relative !important;
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -564,34 +953,12 @@ a {
   .step-info h3 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
   }
-  @media (max-width: 992px) {
-    .how-it-works-header {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 20px;
-    }
-    .table-header {
-      display: none;
-    }
-    .table-row {
-      grid-template-columns: 1fr;
-      gap: 15px;
-      padding: 20px 0;
-    }
-    .row-cell {
-      padding: 5px 0;
-      justify-content: center;
-      text-align: center;
-    }
-    .step-cell {
-      flex-direction: column;
-      gap: 15px;
-    }
-  }
+}
+
 
 /* CSS from section:broker-reinforcement */
 .broker-section {
@@ -655,207 +1022,499 @@ a {
     font-size: 14px;
     line-height: 16px;
   }
-  @media (max-width: 992px) {
-    .broker-content {
-      flex-direction: column;
-      text-align: center;
-    }
-    .broker-items {
-      flex-direction: column;
-      gap: 30px;
-      width: 100%;
-      align-items: center;
-    }
-    .broker-item {
-      align-items: center;
-    }
-    .broker-item:not(:first-child)::before {
-      display: none;
-    }
+  /* ===== Tablet (800–1279px) ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* How It Works adjustments */
+  .how-it-works-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0;
   }
 
-/* CSS from section:core-power */
-.core-power-section {
-    padding: 60px 0;
-  }
-  .core-power-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 46px;
+  .how-it-works-header {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 30px;
   }
-  .core-power-left {
-    display: flex;
-    flex-direction: column;
-    gap: 56px;
-  }
-  .core-power-text {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-  }
-  .core-power-text h2 {
+  .how-it-works-header h2 {
+    width: 100%;
     font-size: 32px;
     line-height: 35px;
+    margin: 0 0 30px;
+    white-space: normal;
   }
-  .core-power-image-group {
-    position: relative;
-    height: 436px;
+  .how-it-works-header .section-badge {
+    width: 135px;
+    height: 30px;
+    font-size: 12px;
+    border-radius: 15px;
   }
-  .core-power-image-group img {
-    position: absolute;
-  }
-  .core-img-blur {
-    width: 554px;
-    height: 401px;
-    top: 0;
-    left: -10px;
-    filter: blur(50px);
-    z-index: 1;
-  }
-  .core-img-1 {
-    width: 287px;
-    height: 287px;
-    top: 2px;
-    left: 226px;
-    filter: blur(20.5px);
-    z-index: 2;
-  }
-  .core-img-2 {
-    width: 501px;
-    height: 401px;
-    top: 3px;
-    left: 33px;
-    z-index: 3;
-  }
-  .core-power-right {
+
+  .how-it-works-table {
     display: flex;
     flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .table-header,
+  .table-row {
+    display: grid;
+    grid-template-columns: 350px 1fr 1fr;
     gap: 50px;
+    border-bottom: 1px solid #e3e3e3;
+    align-items: center;
+  }
+
+  .header-cell {
+    font-size: 14px;
+    color: #858585;
+    padding: 0 12px;
+    text-align: center;
+  }
+  .header-cell:first-child {
+    visibility: hidden;
+  }
+
+  .row-cell {
+    padding: 24px 12px;
+    display: flex;
     align-items: flex-start;
   }
+  .row-cell:nth-child(2) p,
+  .row-cell:nth-child(3) p {
+    width: 160px;
+    margin: 0;
+    text-align: left;
+    word-break: break-word;
+    line-height: 1.4;
+  }
+
+  /* Broker Reinforcement adjustments */
+  .broker-section .container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .broker-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .broker-text {
+    width: 100%;
+    max-width: none;
+  }
+  .broker-text h3,
+  .broker-text p {
+    width: 100%;
+    text-align: left;
+  }
+
+  .broker-items {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+  .broker-item {
+    max-width: 200px;
+  }
+  .broker-item:not(:first-child)::before {
+    left: -10px;
+  }
+}
+
+/* ===== Section: Core Power ===== */
+.core-power-section {
+  padding: 60px 0;
+}
+
+.core-power-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px;
+  align-items: flex-start;
+}
+
+.core-power-left {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.core-power-text {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.core-power-text h2 {
+  font-size: 32px;
+  line-height: 35px;
+  margin: 0;
+}
+
+.core-power-text p {
+  font-size: 16px;
+  line-height: 19px;
+  color: #858585;
+  margin: 0;
+}
+
+/* “Технологическая глубина” badge */
+.core-power-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  width: 135px;
+  height: 30px;
+  font-size: 12px;
+  border-radius: 15px;
+  margin: 0;
+}
+
+/* Image group */
+.core-power-image-group {
+  position: relative;
+  height: 436px;
+}
+
+.core-power-image-group img {
+  position: absolute;
+}
+
+.core-img-blur {
+  width: 554px;
+  height: 401px;
+  top: 0;
+  left: -10px;
+  filter: blur(50px);
+  z-index: 1;
+}
+
+.core-img-1 {
+  width: 287px;
+  height: 287px;
+  top: 2px;
+  left: 226px;
+  filter: blur(20.5px);
+  z-index: 2;
+}
+
+.core-img-2 {
+  width: 501px;
+  height: 401px;
+  top: 3px;
+  left: 33px;
+  z-index: 3;
+}
+
+.core-power-right {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 35px;
+  width: 100%;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.feature-item img {
+  width: 32px;
+  height: 32px;
+  margin-top: 4px;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.feature-text h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 20px;
+  margin: 0;
+}
+
+.feature-text p {
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+}
+
+/* Call-to-action button */
+.core-power-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff2b00;
+  color: #fff;
+  padding: 0 30px;
+  height: 60px;
+  font-size: 18px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 50px;
+}
+
+
+/* ===== Tablet (800–1279px) ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* constrain section */
+  .core-power-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* stack into single column */
+  .core-power-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 46px;
+    width: 740px;
+    margin: 0 auto;
+  }
+
+  /* spacing under title/text */
+  .core-power-text {
+    gap: 40px;
+  }
+  .core-power-text p {
+    margin-bottom: 50px;
+  }
+
+  /* image group: full width, reduced bottom gap */
+  .core-power-image-group {
+    position: center;
+    left: 50px;
+    width: 600px;
+    height: 400x;
+    margin: 0px; /* pulled up closer to badge */
+  }
+
+  /* badge: reduced bottom gap */
+  .core-power-badge {
+    margin-bottom: 0px;
+  }
+
+  /* features list: two columns */
   .features-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px 35px;
-    width: 100%;
-  }
-  .feature-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
-  }
-  .feature-item img {
-    width: 32px;
-    height: 32px;
-    margin-top: 4px;
-  }
-  .feature-text {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .feature-text h4 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 20px;
-    margin: 0;
+    width: 740px;
+    margin: 0 auto 50px;
   }
   .feature-text p {
-    font-size: 14px;
-    line-height: 16px;
-  }
-  @media (max-width: 992px) {
-    .core-power-grid {
-      grid-template-columns: 1fr;
-    }
-    .core-power-left, .core-power-right {
-      align-items: center;
-      text-align: center;
-    }
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
-    .feature-item {
-      text-align: left;
-    }
+    word-break: break-word;
   }
 
-/* CSS from section:screenshots */
+  /* button centered */
+  .core-power-button {
+    margin: 0 auto;
+  }
+}
+
+
+/* ===== Section: Screenshots ===== */
 .screenshots-section {
-    background-color: #f4f4f4;
-    padding: 70px 0 90px;
+  background-color: #f4f4f4;
+  padding: 70px 0 90px;
+}
+
+.screenshots-section .slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.screenshots-section .slider-track {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.screenshots-section .slide {
+  border: 4px solid #868686;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.screenshots-section .slide img {
+  display: block;
+  width: 100%;
+}
+
+.screenshots-section .slide:not(.main-slide) {
+  width: 355px;
+  height: 182px;
+  opacity: 0.7;
+  transform: scale(0.8);
+}
+
+.screenshots-section .slide:first-child {
+  mask-image: linear-gradient(to right, transparent, black 50%);
+}
+
+.screenshots-section .slide:last-child {
+  mask-image: linear-gradient(to left, transparent, black 50%);
+}
+
+.screenshots-section .main-slide {
+  width: 496px;
+  height: 250px;
+  z-index: 10;
+}
+
+.screenshots-section .slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #e3e3e3;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 20;
+}
+
+.screenshots-section .slider-arrow.prev {
+  left: -28px;
+}
+
+.screenshots-section .slider-arrow.next {
+  right: -28px;
+}
+/* ===== Popup Overlay ===== */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+}
+.popup-overlay.active {
+  display: flex;
+}
+
+/* ===== Popup Content ===== */
+.popup-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+.popup-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* ===== Popup Buttons ===== */
+.popup-close,
+.popup-prev,
+.popup-next {
+  position: absolute;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Кнопка закрытия */
+.popup-close {
+  top: -20px;
+  right: -20px;
+}
+
+/* Влево */
+.popup-prev {
+  top: 50%;
+  left: -50px;
+  transform: translateY(-50%);
+}
+
+/* Вправо */
+.popup-next {
+  top: 50%;
+  right: -50px;
+  transform: translateY(-50%);
+}
+
+/* ===== Tablet (800–1279px) ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .screenshots-section {
+    padding: 40px 0 60px;
   }
-  .slider-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .screenshots-section .container {
+    max-width: 800px;
   }
-  .slider-track {
-    display: flex;
-    align-items: center;
+  .screenshots-section .carousel-wrapper {
+    width: 740px;
+    padding: 0;
+  }
+  .screenshots-section .carousel-track {
     gap: 17px;
   }
-  .slide {
-    border: 4px solid #868686;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+
+  /* Все слайды одинаковы 235×120 */
+  .screenshots-section .carousel-slide,
+  .screenshots-section .carousel-slide:not(.main-slide),
+  .screenshots-section .carousel-slide.main-slide {
+    width: 235px !important;
+    height: 120px !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
   }
-  .slide img {
-    display: block;
-    width: 100%;
+
+  /* Убираем маски */
+  .screenshots-section .carousel-slide:first-child,
+  .screenshots-section .carousel-slide:last-child {
+    mask-image: none;
   }
-  .slide:not(.main-slide) {
-    width: 355px;
-    height: 182px;
-    opacity: 0.7;
-    transform: scale(0.8);
-  }
-  .slide:first-child {
-    mask-image: linear-gradient(to right, transparent, black 50%);
-  }
-  .slide:last-child {
-    mask-image: linear-gradient(to left, transparent, black 50%);
-  }
-  .main-slide {
-    width: 496px;
-    height: 250px;
-    z-index: 10;
-  }
-  .slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #e3e3e3;
-    border: none;
-    border-radius: 50%;
-    width: 56px;
-    height: 56px;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 20;
-  }
-  .slider-arrow.prev {
-    left: -28px;
-  }
-  .slider-arrow.next {
-    right: -28px;
-  }
-  @media (max-width: 992px) {
-    .slider-track {
-      flex-direction: column;
-    }
-    .slide:not(.main-slide) {
-      display: none;
-    }
-    .main-slide {
-      width: 100%;
-      height: auto;
-    }
-  }
+
+  /* Стрелки чуть ближе */
+  .screenshots-section .carousel-prev { left: -1px; }
+  .screenshots-section .carousel-next { right: -1px; }
+}
+
 
 /* CSS from section:market-scale */
 .market-scale-section {
@@ -887,7 +1546,44 @@ a {
     font-size: 16px;
     line-height: 19px;
   }
+/* ===== Tablet (800–1279px) adaptations for Market Scale ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  .market-scale-section {
+    padding: 60px 0;
+  }
 
+  /* constrain container to 740px and center */
+  .market-scale-section .market-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  /* card padding & sizing */
+  .market-scale-section .market-card {
+    padding: 30px 20px;
+  }
+
+  /* reduce headline size if needed */
+  .market-scale-section h2 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  /* value font tweak */
+  .market-scale-section .market-value {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  /* description spacing */
+  .market-scale-section .market-card p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
 /* CSS from section:roadmap */
 .roadmap-section {
     padding: 90px 0;
@@ -974,16 +1670,71 @@ a {
     line-height: 15px;
     color: #868686;
   }
-  @media (max-width: 1200px) {
-    .roadmap-steps {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-    }
-    .roadmap-steps::before {
-      display: none;
-    }
+/* ===== Tablet (800–1279px) adaptations for Roadmap ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* Section padding */
+  .roadmap-section {
+    padding: 60px 0;
   }
+
+  /* Center the title and constrain its width */
+  .roadmap-section .section-title {
+    margin: 0 auto 40px;
+    max-width: 740px;
+    text-align: center;
+  }
+
+  /* Steps wrapper: constrain width, center, tighten gap */
+  .roadmap-steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 740px;
+    margin: 0 auto;
+    top: 0;  /* remove desktop vertical shift */
+  }
+
+  /* Each step narrower, reduce vertical spacing */
+  .roadmap-step {
+    width: 132px;
+    gap: 10px;
+  }
+
+  /* Icon container smaller and lift less */
+  .step-icon {
+    width: 150px;
+    height: 150px;
+    margin-bottom: -20px;
+  }
+
+  /* Connectors: position under icon, shorter */
+  .roadmap-step:not(:last-child)::after {
+    left: 150px;
+    transform: translateX(-50%);
+    top: 90px;
+    bottom: auto;
+    height: 200px;
+  }
+
+  /* Text sizes */
+  .step-text h4 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .step-text p {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .step-amount {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .step-evaluation {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
 
 /* CSS from section:investment-round */
 .investment-section {
@@ -1110,6 +1861,83 @@ a {
   right: 6px;
   z-index: 3;
   }
+/* ===== Tablet (800–1279px) refinements for Investment Round ===== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* Section padding */
+  .investment-section {
+    padding: 40px 0;
+  }
+
+  /* Make grid single-column and center it */
+  .investment-section .investment-grid {
+    max-width: 740px;
+    margin: 0 auto;
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  /* Slightly smaller heading */
+  .investment-section .investment-info h2 {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  /* Purpose list: two columns, 3 items on left, 2 on right */
+  .investment-section .round-purpose ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 12px;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+  .investment-section .round-purpose ul li:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .investment-section .round-purpose ul li:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .investment-section .round-purpose ul li:nth-child(3) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .investment-section .round-purpose ul li:nth-child(4) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .investment-section .round-purpose ul li:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .investment-section .round-purpose {
+    gap: 16px;
+  }
+  .investment-section .round-purpose h4 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .investment-section .round-purpose li {
+    gap: 16px;
+    padding: 6px 0;
+  }
+  .investment-section .round-purpose li span {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  /* Distribution cards fixed 740×170px, centered */
+  .investment-section .dist-item {
+    width: 740px !important;
+    height: 170px !important;
+    margin: 0 auto;
+    padding: 10px 20px;
+    gap: 20px;
+    overflow: hidden;
+  }
+}
+
 
 /* CSS from section:detailed-roadmap */
 .detailed-roadmap-section {
@@ -1267,18 +2095,7 @@ a {
   .phase-card li img {
     flex-shrink: 0;
   }
-  @media (max-width: 992px) {
-    .phase-icons, .phase-timeline, .phase-details {
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-  }
-  @media (max-width: 768px) {
-    .phase-icons, .phase-timeline, .phase-details {
-      grid-template-columns: 1fr;
-    }
-    .timeline-bar { display: none; }
-  }
+  
 
 /* CSS from section:pre-seed-proof */
 .pre-seed-section {

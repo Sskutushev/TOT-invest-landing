@@ -107,39 +107,47 @@ if ('IntersectionObserver' in window) {
     });
   });
 // === Карусель скриншотов ===
-  //
-  const wrapper = document.querySelector('.carousel-wrapper');
-  if (!wrapper) return;  // секция не найдена — выходим
+  const wrapper    = document.querySelector('#screenshots .carousel-wrapper');
+  if (!wrapper) return;
 
-  const track     = wrapper.querySelector('.carousel-track');
-  const slides    = Array.from(track.children);
-  const prevBtn   = wrapper.querySelector('.carousel-prev');
-  const nextBtn   = wrapper.querySelector('.carousel-next');
-  const popup     = document.getElementById('carouselPopup');
-  const popupImg  = popup.querySelector('.popup-image');
-  const popupClose= popup.querySelector('.popup-close');
-  const popupPrev = popup.querySelector('.popup-prev');
-  const popupNext = popup.querySelector('.popup-next');
+  const track      = wrapper.querySelector('.carousel-track');
+  const slides     = Array.from(wrapper.querySelectorAll('.carousel-slide'));
+  const prevBtn    = wrapper.querySelector('.carousel-prev');
+  const nextBtn    = wrapper.querySelector('.carousel-next');
+
+  // Pop-up элементы
+  const popup      = document.getElementById('carouselPopup');
+  const popupImg   = popup.querySelector('.popup-image');
+  const closeBtn   = popup.querySelector('.popup-close');
+  const popupPrev  = popup.querySelector('.popup-prev');
+  const popupNext  = popup.querySelector('.popup-next');
 
   let currentIndex = 0;
-  let popupIndex   = 0;
   let timer        = setInterval(nextSlide, 10000);
 
   function update() {
     slides.forEach((slide, i) => {
-      slide.classList.toggle('center', i === currentIndex);
-      slide.classList.toggle('side',    i !== currentIndex);
+      slide.classList.toggle('main-slide', i === currentIndex);
+      slide.classList.toggle('side',       i !== currentIndex);
     });
-    // Центрируем текущий слайд в окне wrapper
-    const cw = wrapper.clientWidth;
-    const cs = slides[currentIndex];
-    const offset = cs.offsetLeft - (cw - cs.clientWidth) / 2;
-    track.style.transform = `translateX(-${offset}px)`;
+    // Центрируем текущий слайд
+    const cw     = wrapper.getBoundingClientRect().width;
+    const cs     = slides[currentIndex];
+    const sw     = cs.getBoundingClientRect().width;
+    const offset = cs.offsetLeft - (cw - sw) / 2;
+    track.style.transform = `translateX(-${Math.max(0, offset)}px)`;
   }
 
-  function nextSlide() { currentIndex = (currentIndex + 1) % slides.length; update(); }
-  function prevSlide() { currentIndex = (currentIndex - 1 + slides.length) % slides.length; update(); }
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    update();
+  }
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    update();
+  }
 
+  // Навигация карусели
   nextBtn.addEventListener('click', () => {
     clearInterval(timer);
     nextSlide();
@@ -151,28 +159,38 @@ if ('IntersectionObserver' in window) {
     timer = setInterval(nextSlide, 10000);
   });
 
+  // Открытие поп-апа
   slides.forEach((slide, i) => {
     slide.addEventListener('click', () => {
-      popupIndex = i;
+      currentIndex = i;
       popupImg.src = slide.querySelector('img').src;
-      popup.classList.add('show');
+      popup.classList.add('active');
+      clearInterval(timer);
     });
   });
 
-  popupClose.addEventListener('click', () => popup.classList.remove('show'));
+  // Закрытие поп-апа
+  closeBtn.addEventListener('click', () => {
+    popup.classList.remove('active');
+    timer = setInterval(nextSlide, 10000);
+  });
   popup.addEventListener('click', e => {
-    if (e.target === popup) popup.classList.remove('show');
+    if (e.target === popup) {
+      popup.classList.remove('active');
+      timer = setInterval(nextSlide, 10000);
+    }
   });
 
+  // Листание внутри поп-апа
   popupPrev.addEventListener('click', () => {
-    popupIndex = (popupIndex - 1 + slides.length) % slides.length;
-    popupImg.src = slides[popupIndex].querySelector('img').src;
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    popupImg.src = slides[currentIndex].querySelector('img').src;
   });
   popupNext.addEventListener('click', () => {
-    popupIndex = (popupIndex + 1) % slides.length;
-    popupImg.src = slides[popupIndex].querySelector('img').src;
+    currentIndex = (currentIndex + 1) % slides.length;
+    popupImg.src = slides[currentIndex].querySelector('img').src;
   });
 
-  // Запускаем
+  // Инициализация
   update();
 });
