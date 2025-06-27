@@ -1774,42 +1774,27 @@ a {
 }
 /* ============= Scroll-Reveal Animations ============= */
 
-/* общий контейнер, которому будем добавлять */
+/* базовый невидимый стейт */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity .6s ease-out, transform .6s ease-out;
 }
 
-/* как только элемент “засветится”, добавляем ему видимость */
+/* когда в зоне видимости */
 .scroll-reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* можно задать альтернативные варианты */
-/* slide in from left */
-.scroll-reveal.from-left {
-  transform: translateX(-30px);
-}
-.scroll-reveal.from-left.is-visible {
-  transform: translateX(0);
-  opacity: 1;
-}
+/* выезжает слева */
+.scroll-reveal.from-left { transform: translateX(-30px); }
+.scroll-reveal.from-left.is-visible { transform: translateX(0); }
 
-/* slide in from right */
-.scroll-reveal.from-right {
-  transform: translateX(30px);
-}
-.scroll-reveal.from-right.is-visible {
-  transform: translateX(0);
-  opacity: 1;
-}
+/* выезжает справа */
+.scroll-reveal.from-right { transform: translateX(30px); }
+.scroll-reveal.from-right.is-visible { transform: translateX(0); }
 
-/* fade-in без смещения */
-.scroll-reveal.fade {
-  transform: none;
-}
-.scroll-reveal.fade.is-visible {
-  opacity: 1;
-}
+/* просто появление без смещения */
+.scroll-reveal.fade { transform: none; }
+.scroll-reveal.fade.is-visible { opacity: 1; }

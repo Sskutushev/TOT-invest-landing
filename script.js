@@ -15,26 +15,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-    // === Scroll-Reveal: показываем секции по мере скролла ===
-  const revealElems = document.querySelectorAll('.scroll-reveal');
+// === Scroll-reveal: анимация при каждом скролле ===
+const revealElems = document.querySelectorAll('.scroll-reveal');
 
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.15 // сколько долей блока должно быть видно, чтобы сработало
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+      } else {
+        entry.target.classList.remove('is-visible');
+      }
     });
+  }, {
+    threshold: 0.15
+  });
 
-    revealElems.forEach(el => observer.observe(el));
-  } else {
-    // для старых браузеров просто делаем сразу видимыми
-    revealElems.forEach(el => el.classList.add('is-visible'));
-  }
+  revealElems.forEach(el => observer.observe(el));
+} else {
+  // для старых браузеров сразу показать всё
+  revealElems.forEach(el => el.classList.add('is-visible'));
+}
   }
   // Header logo (href="#") scrolls to top
   smoothScroll('header .logo, footer .logo');
