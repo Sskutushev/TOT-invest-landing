@@ -15,43 +15,81 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+    // === Scroll-Reveal: показываем секции по мере скролла ===
+  const revealElems = document.querySelectorAll('.scroll-reveal');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15 // сколько долей блока должно быть видно, чтобы сработало
+    });
+
+    revealElems.forEach(el => observer.observe(el));
+  } else {
+    // для старых браузеров просто делаем сразу видимыми
+    revealElems.forEach(el => el.classList.add('is-visible'));
+  }
   }
   // Header logo (href="#") scrolls to top
   smoothScroll('header .logo, footer .logo');
   // Header nav links
   smoothScroll('.main-nav a, .footer-nav a');
 
-  // Language switcher dropdown
+// Language switcher dropdown
   const langSwitcher = document.querySelector('.lang-switcher');
-  const langMenu = document.createElement('ul');
+  const langMenu     = document.createElement('ul');
   langMenu.className = 'lang-dropdown';
-  langMenu.style.position = 'absolute';
-  langMenu.style.top = '100%';
-  langMenu.style.left = '0';
-  langMenu.style.background = '#fff';
-  langMenu.style.listStyle = 'none';
-  langMenu.style.padding = '10px 0';
-  langMenu.style.margin = '5px 0 0';
-  langMenu.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
-  langMenu.style.display = 'none';
-  ['Русский','English'].forEach(label => {
+  langSwitcher.appendChild(langMenu);
+
+  // Список языков с путями к иконкам
+  const languages = [
+    { short: 'Рус', full: 'Русский', flag: 'img/Ellipse 2.svg' },
+    { short: 'Eng', full: 'English',  flag: 'img/eng.svg'     }
+  ];
+
+  // Инициализируем текущее состояние — русский по умолчанию
+  let current = languages[0];
+  langSwitcher.innerHTML = `
+    <img src="${current.flag}" alt="${current.full} Flag">
+    <span>${current.short}</span>
+    <img src="img/Vector 2 (Stroke).svg" alt="Dropdown Icon">
+  `;
+  langSwitcher.appendChild(langMenu);
+
+  // Наполняем выпадающий список
+  languages.forEach(lang => {
     const li = document.createElement('li');
-    li.textContent = label;
-    li.style.padding = '8px 20px';
-    li.style.cursor = 'pointer';
+    li.innerHTML = `<img src="${lang.flag}" alt="${lang.full} Flag"><span>${lang.full}</span>`;
     li.addEventListener('click', () => {
-      // TODO: switch language logic here
-      console.log('Language switched to', label);
+      // смена иконки и текста в кнопке
+      current = lang;
+      langSwitcher.querySelector('img:first-child').src   = lang.flag;
+      langSwitcher.querySelector('img:first-child').alt   = `${lang.full} Flag`;
+      langSwitcher.querySelector('span').textContent      = lang.short;
       langMenu.style.display = 'none';
+
+      // здесь ваша логика переключения языка...
+      console.log('Language switched to', lang.full);
     });
-    li.addEventListener('mouseover', () => li.style.background = '#f0f0f0');
-    li.addEventListener('mouseout', () => li.style.background = '');
     langMenu.appendChild(li);
   });
-  langSwitcher.style.position = 'relative';
-  langSwitcher.appendChild(langMenu);
+
+  // Показываем/скрываем меню по клику на переключатель
   langSwitcher.addEventListener('click', () => {
-    langMenu.style.display = langMenu.style.display === 'none' ? 'block' : 'none';
+    langMenu.style.display = (langMenu.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Закрываем меню по клику вне его
+  document.addEventListener('click', e => {
+    if (!langSwitcher.contains(e.target)) {
+      langMenu.style.display = 'none';
+    }
   });
 
   // Presentation and form buttons
@@ -67,22 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
       window.open('https://docs.google.com/forms/d/e/1FAIpQLSepxg-kvVxeZqhKA_bnhKKQf-z73vcy0xZMofaEwBlPdazt5Q/viewform', '_blank');
     });
   });
-
-  // Contact cards
-  const telegramCard = document.querySelector('.contact-card a[href="#"]:first-child');
-  if (telegramCard) {
-    telegramCard.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.open('https://t.me/val_world', '_blank');
-    });
-  }
-  const emailCard = Array.from(document.querySelectorAll('.contact-card')).find(card => card.querySelector('strong').textContent.includes('@'));
-  if (emailCard) {
-    emailCard.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.href = 'mailto:founders@tot.ai';
-    });
-  }
 // === Карусель скриншотов ===
   //
   const wrapper = document.querySelector('.carousel-wrapper');

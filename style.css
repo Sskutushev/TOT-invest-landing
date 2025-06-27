@@ -157,7 +157,8 @@ a {
   .main-nav a:hover {
     color: #000000;
   }
-  .lang-switcher {
+/* ===== Переключатель языка ===== */
+.lang-switcher {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -166,20 +167,74 @@ a {
   padding: 9px 7px;
   cursor: pointer;
   margin-left: 20px; /* Отступ от меню */
+  position: relative; /* для абсолютного позиционирования выпадашки */
 }
-  .lang-switcher span {
-    font-size: 14px;
-    color: #000000;
-  }
-  @media (max-width: 768px) {
-    .main-nav {
-      display: none; /* Simple hide for mobile, would need a burger menu for full functionality */
-    }
-    .header-container {
-      justify-content: space-between;
-    }
-  }
 
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f4f4f4;
+  border-radius: 90px;
+  padding: 9px 7px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* Флаги и стрелка внутри переключателя языка */
+.lang-switcher > img:first-child {
+  /* только флаг */
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.lang-switcher > img:last-child {
+  /* стрелка остаётся без изменений */
+  width: auto;
+  height: auto;
+}
+
+/* Название языка в кнопке */
+.lang-switcher span {
+  font-size: 14px;
+  color: #000000;
+}
+
+/* ===== Dropdown меню переключателя языка ===== */
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 1001;
+  display: none;
+}
+
+.lang-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.lang-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Флаги внутри списка */
+.lang-dropdown img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
 /* CSS from section:hero */
 .hero-section {
     background-image: url('img/Background\ Image.svg');
@@ -1365,81 +1420,120 @@ a {
   }
   .contact-methods {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 20px;
+    flex-wrap: nowrap; /* всё в одну строку */
   }
+
+  /* Общее для всех карточек */
   .contact-card {
-    background-color: rgba(234, 232, 232, 0.5);
-    backdrop-filter: blur(2px);
-    border-radius: 20px;
-    padding: 21px 22px;
     display: flex;
     align-items: center;
-    gap: 29px;
-    flex-grow: 1;
+    gap: 16px;
+    width: 290px;
+    height: 80px;
+    padding: 0 16px;
+    background-color: rgba(234,232,232,0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    text-decoration: none;  /* только для <a> убираем подчеркивание */
+    color: inherit;
   }
-  .contact-card div {
-    display: flex;
-    flex-direction: column;
+
+/* === Карточки контактов === */
+.contact-methods {
+  display: flex;          /* выстраиваем в ряд */
+  gap: 10px;              /* расстояние между ними */
+  flex-wrap: nowrap;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 290px;           /* ширина карточки */
+  height: 80px;           /* высота карточки */
+  padding: 0 16px;
+  background-color: rgba(234,232,232,0.5);
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.contact-card--clickable {
+  cursor: pointer;        /* рука при наведении */
+  transition: background-color .2s;
+}
+.contact-card--clickable:hover {
+  background-color: rgba(234,232,232,0.7);
+}
+
+.contact-card img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.contact-label {
+  font-size: 14px;
+  color: #868686;
+}
+.contact-value {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+}
+
+/* === Кнопка «Оставить заявку» === */
+.apply-btn {
+  margin-top: 40px;
+}
+
+/* === Правим позицию правой картинки === */
+.contact-right {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  left: -150px;
+  z-index: 0;          /* сдвиг влево, чтобы картинка не выходила за границы */
+}
+.contact-right img {
+  position: absolute;
+}
+.contact-blur {
+  top: 0;
+  left: 0;                /* по вкусу подвинь на −px */
+  width: 529px;
+  height: 650px;
+  filter: blur(120px);
+}
+.contact-main-img {
+  top: 75px;
+  left: -7px;             /* ключевой сдвиг влево */
+  width: 504px;
+  height: 505px;
+}
+
+/* — для планшетов/мобилок оставляем без изменений — */
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-  .contact-card span {
-    font-size: 14px;
-    color: #868686;
-  }
-  .contact-card strong {
-    font-size: 18px;
-    font-weight: 400;
-    color: #000000;
-  }
-  .contact-left .btn {
-    gap: 15px;
+  .contact-left {
+    align-items: center;
   }
   .contact-right {
-    position: relative;
-    width: 100%;
-    height: 650px;
+    display: none;
   }
-  .contact-right img {
-    position: absolute;
-  }
-  .contact-blur {
-    width: 529px;
-    height: 650px;
-    top: 0;
-    left: 0;
-    filter: blur(120px);
-  }
-  .contact-main-img {
-    width: 504px;
-    height: 505px;
-    top: 75px;
-    left: -7px;
-  }
-  .contact-icon-1 {
-    width: 226px;
-    height: 226px;
-    top: 108px;
-    left: 315px;
-  }
-  .contact-icon-2 {
-    width: 156px;
-    height: 156px;
-    top: 208px;
-    left: 32px;
-    transform: rotate(180deg);
-  }
-  @media (max-width: 992px) {
-    .contact-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-    .contact-left {
-      align-items: center;
-    }
-    .contact-right {
-      display: none;
-    }
-  }
+}
 
 /* CSS from section:footer */
 .site-footer {
@@ -1677,4 +1771,45 @@ a {
   background-color: #AA1D00;
   font-family: "TT Travels Next", sans-serif;
   font-size: 12px;
+}
+/* ============= Scroll-Reveal Animations ============= */
+
+/* общий контейнер, которому будем добавлять */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+
+/* как только элемент “засветится”, добавляем ему видимость */
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* можно задать альтернативные варианты */
+/* slide in from left */
+.scroll-reveal.from-left {
+  transform: translateX(-30px);
+}
+.scroll-reveal.from-left.is-visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* slide in from right */
+.scroll-reveal.from-right {
+  transform: translateX(30px);
+}
+.scroll-reveal.from-right.is-visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* fade-in без смещения */
+.scroll-reveal.fade {
+  transform: none;
+}
+.scroll-reveal.fade.is-visible {
+  opacity: 1;
 }
