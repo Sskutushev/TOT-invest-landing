@@ -1943,6 +1943,16 @@ a {
 .detailed-roadmap-section {
     padding: 90px 0;
   }
+  .detailed-roadmap-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+.detailed-roadmap-section .section-title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 60px;
+}
   .roadmap-container {
     display: flex;
     flex-direction: column;
@@ -2095,7 +2105,183 @@ a {
   .phase-card li img {
     flex-shrink: 0;
   }
-  
+  /* по умолчанию планшетная вёрстка скрыта */
+.roadmap-container-tablet {
+  display: none;
+}
+/* планшетная адаптация 800–1279px */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* прячем десктопный блок */
+  .roadmap-container {
+    display: none;
+  }
+  /* показываем планшетный */
+  .roadmap-container-tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 0 5%;
+  }
+
+  .tablet-phase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .tablet-phase-icon img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+
+  .tablet-phase-header {
+    text-align: center;
+  }
+  .tablet-phase-header p {
+    color: #868686;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .tablet-phase-header .tag-dark {
+    display: inline-block;
+  }
+
+  .tablet-phase-card {
+    width: 100%;
+    background: #fff;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* центрируем по вертикали */
+    padding: 0 20px 0 40px;          /* можно оставить отступы слева-справа */
+    box-sizing: border-box;   /* чтобы padding не влиял на общую ширину */
+  }
+  .tablet-phase-card h4 {
+    margin-top: 0;
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+  .tablet-phase-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .tablet-phase-card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: #868686;
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .tablet-phase-card li img {
+    flex-shrink: 0;
+    width: 14px;
+    height: 9px;
+    margin-top: 4px;
+  }
+  /* фоновые картинки для планшетных карточек */
+  /* чтобы абсолютные линии считали свой контейнер за reference */
+  .roadmap-container-tablet {
+    position: relative;
+  }
+
+  /* заменяем nth-child на конкретные классы, чтобы фоны не сдвигались */
+  .roadmap-container-tablet .phase-1 .tablet-phase-card {
+    background-image: url("img/Rectangle 9377 (3).svg");
+    /* остальные свойства те же */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 285px;
+    height: 195px;
+  }
+  .roadmap-container-tablet .phase-2 .tablet-phase-card {
+    background-image: url("img/Rectangle 9377 (2).svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 285px;
+    height: 245px;
+  }
+  .roadmap-container-tablet .phase-3 .tablet-phase-card {
+    background-image: url("img/Rectangle 9377 (1).svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 285px;
+    height: 233px;
+  }
+  .roadmap-container-tablet .phase-4 .tablet-phase-card {
+    background-image: url("img/Rectangle 9377.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 285px;
+    height: 275px;
+  }
+
+  /* фон под иконками (оставляем как было) */
+  .tablet-phase-icon {
+    position: relative;
+  }
+  .tablet-phase-icon::before {
+    /* …ваш код для эллипсов… */
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 150px;
+    pointer-events: none;
+    background-image:
+      url("img/Ellipse 68.svg"),
+      url("img/Ellipse 68.svg"),
+      url("img/Ellipse 68.svg"),
+      url("img/Ellipse 68.svg");
+    background-repeat: no-repeat;
+    background-position:
+      10%   center,
+      37.5% center,
+      62.5% center,
+      95%   center;
+    background-size: 135px 135px;
+    z-index: 0;
+  }
+  .tablet-phase-icon img {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* *** Новый блок для линий *** */
+  .horizontal-line {
+    position: absolute;
+    width: 800px;
+    height: 5px;               /* или 15px, как вам нужно */
+    background-color: rgba(0,0,0,0.1);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+  .horizontal-line.line-1 {
+    top: 150px;   /* подвиньте по вкусу */
+  }
+  .horizontal-line.line-2 {
+    top: 690px;  /* подвиньте по вкусу */
+  }
+  .horizontal-line--arrow::after {
+    content: "";
+    position: absolute;
+    right: -14px; /* сдвигаем стрелку вправо */
+    top: 2.5px;
+    transform: translateY(-50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid rgba(0,0,0,0.1);
+  }
+}
 
 /* CSS from section:pre-seed-proof */
 .pre-seed-section {
@@ -2194,23 +2380,95 @@ a {
     left: -80px;
     z-index: 2;
   }
-  @media (max-width: 1200px) {
-    .pre-seed-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-    .pre-seed-left {
-      align-items: center;
-    }
-    .proof-item {
-      text-align: left;
-    }
-    .pre-seed-image-group {
-      transform: scale(0.7);
-      height: 420px;
-    }
+  /* ==============================
+   Section: Pre-seed Proof (Tablet)
+   800px <= width <= 1279px
+   ============================== */
+@media (min-width: 800px) and (max-width: 1279px) {
+
+  .pre-seed-section {
+    padding: 40px 0;
   }
 
+  .pre-seed-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  .pre-seed-section h2 {
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: -40px;
+    text-align: left;
+  }
+
+  .pre-seed-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Список доказательств */
+  .proof-list {
+    width: 660px;
+    gap: 8px;
+  }
+
+  .proof-item {
+    padding: 9px 15px;
+    gap: 20px;
+  }
+
+  .proof-item p {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  /* Картинки и карточка справа */
+  .pre-seed-image-group {
+    width: 740px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    aspect-ratio: 740 / 606; /* сохраняем пропорции */
+  }
+
+  .pre-seed-blur {
+    width: 100%;
+    height: auto;
+    top: 120px;
+    left: 0;
+    filter: blur(100px);
+  }
+
+  .pre-seed-lines {
+    width: 700px;
+    height: auto;
+    top: 175px;
+    left: 0px;
+  }
+
+  .pre-seed-card {
+    width: 660px;
+    height: 500px;
+    padding: 28px 30px;
+    top: 50px;
+    left: 40px;
+  }
+
+  .pre-seed-card h3 {
+    font-size: 38px;
+    line-height: 35px;
+  }
+
+  .pre-seed-rocket {
+    width: 740px;
+    height: auto;
+    top: -50px;
+    left: -90px;
+  }
+}
 /* CSS from section:contact */
 .contact-section {
     padding: 132px 0;
@@ -2337,18 +2595,64 @@ a {
   width: 504px;
   height: 505px;
 }
+/* ====================== */
+/* Tablet (800–1279px)    */
+/* ====================== */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* — Скрываем десктопную сетку и ставим единый центрированный контейнер */
+  .contact-section .contact-grid {
+    display: block;
+    width: 740px;
+    margin: 0 auto;
+  }
 
-/* — для планшетов/мобилок оставляем без изменений — */
-@media (max-width: 992px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
+  /* — Левый блок (заголовок + текст) */
+  .contact-section .contact-left {
+    width: 100%;
+    margin-bottom: 30px;
   }
-  .contact-left {
-    align-items: center;
+
+  /* — Кнопки: две в ряд + одна снизу */
+  .contact-section .contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
   }
-  .contact-right {
-    display: none;
+  .contact-section .contact-methods .contact-card:nth-child(1) {
+    width: 200px;
+    height: 80px;
+  }
+  .contact-section .contact-methods .contact-card:nth-child(2) {
+    width: 270px;
+    height: 80px;
+  }
+  .contact-section .contact-methods .contact-card:nth-child(3) {
+    width: 255px;
+    height: 80px;
+  }
+
+  /* — Убираем отступы и выравниваем слева */
+  .contact-section .contact-methods .contact-card {
+    margin-left: 0;
+  }
+
+  /* — Правый блок: контейнер под фон */
+  .contact-section .contact-right {
+    position: relative;
+    width: 740px;
+    height: 0;          /* высота автоматом по содержимому */
+    margin: 0 auto;
+  }
+  /* — Сам фон: абсолютное позиционирование справа */
+  .contact-section .contact-right img {
+    position: absolute;
+    left: 510px;  /* сдвиг вправо */
+    top: -500px;          /* чуть ниже кнопок */
+    z-index: -1;        /* за кнопками */
+    max-width: none;    /* сброс ограничений */
+    width: auto;
+    height: auto;
   }
 }
 
@@ -2391,20 +2695,44 @@ a {
   .footer-nav a:hover {
     color: #000000;
   }
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      gap: 30px;
-      text-align: center;
-    }
-    .footer-logo-area {
-      align-items: center;
-    }
-    .footer-nav {
-      flex-direction: column;
-      gap: 10px;
-    }
+  /* footer-section */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* Сам футер */
+  .site-footer {
+    padding: 30px 0;
   }
+
+  /* Контейнер: строка, логотип слева, навигация справа */
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* Логотип + слоган — прижать к левому краю */
+  .footer-logo-area {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Навигация — прижать к правому, в одну строку */
+  .footer-nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Ссылки чуть компактней */
+  .footer-nav a {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+}
 /* === Секция === */
 .screenshots-section {
   width: 100%;
