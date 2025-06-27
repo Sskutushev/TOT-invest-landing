@@ -1725,30 +1725,34 @@ a {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 10;
 }
+
+/* показываем */
 .popup-overlay.show {
   display: flex;
 }
+
+/* Контейнер внутри */
 .popup-content {
   position: relative;
-  width: 700px;
-  max-width: 90%;
-  height: 600px;
-  max-height: 90%;
-  /* добавим, на всякий случай */
-  overflow: visible;
+  width: 75vw;              /* почти весь экран по ширине */
+  height: 80vh;             /* почти весь экран по высоте */
+  max-width: none;          /* сбрасываем старые max-ограничения */
+  max-height: none;
+  overflow: hidden;
 }
+
+/* само изображение */
+/* пусть заполняет весь popup-content */
 .popup-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  border-radius: 8px;
 }
-.popup-close,
-.popup-prev,
-.popup-next {
+.popup-close {
   position: absolute;
+  top: 10px;     /* отступ от верхнего края popup-content */
+  right: 10px;   /* отступ от правого края popup-content */
   background: rgba(255,255,255,0.8);
   border: none;
   font-size: 28px;
@@ -1756,10 +1760,35 @@ a {
   height: 36px;
   border-radius: 50%;
   cursor: pointer;
+  z-index: 2;
 }
-.popup-close { top: -18px; right: -18px; }
-.popup-prev  { top: 50%; left: -50px; transform: translateY(-50%); }
-.popup-next  { top: 50%; right: -50px; transform: translateY(-50%); }
+/* стрелки */
+.popup-prev,
+.popup-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 28px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1;
+}
+.popup-prev { left: 10px; }
+.popup-next { right: 10px; }
+.popup-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.popup-overlay.show { display: flex; }
 /* Зафиксировать размер логотипа */
 .site-header .logo img {
   width: 117px !important;
