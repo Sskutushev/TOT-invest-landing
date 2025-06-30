@@ -1868,6 +1868,131 @@ a {
     margin: 0 auto;
   }
 }
+/* —— Мобильная адаптация раздела "Основа нашей мощности" (≤799px) —— */
+@media (max-width: 799px) {
+  .core-power-section {
+    padding: 40px 16px;       /* отступы сверху/снизу и по бокам */
+  }
+
+  /* Переводим всю сетку в колонку, центрируем ширину 328px */
+  .core-power-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 328px;
+    margin: 0 auto;
+  }
+
+  /* Левая часть: заголовок + бейдж + абзац */
+  .core-power-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .core-power-text h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0;
+    text-align: left;
+  }
+  .core-power-badge {
+    width: 180px;      /* скорректированная ширина */
+    height: 30px;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 15px;
+    margin: 0;
+  }
+  .core-power-text p {
+    font-size: 16px;
+    line-height: 19px;
+    color: #858585;
+    margin: 0;
+  }
+
+  /* Картинки: вписываем в контейнер 328×240 */
+  .core-power-image-group {
+    position: relative;
+    width: 328px;
+    height: 240px;
+    margin: 0 auto;
+  }
+  .core-power-image-group img {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+  }
+  .core-img-blur {
+    top: 15;
+    left: 20px;
+    width: 300px;
+    height: 300px;
+    filter: blur(20px);
+    z-index: 1;
+  }
+  .core-img-2 {
+    top: 20px;
+    left: 30px;
+    width: 260px;
+    height: auto;
+    z-index: 3;
+  }
+  .core-img-1 {
+    top: 60px;
+    left: 140px;
+    width: 120px;
+    height: auto;
+    filter: blur(25px);
+    z-index: 2;
+  }
+
+  /* Правая часть: список фич и кнопка */
+  .core-power-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+    margin: 0;
+  }
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .feature-item img {
+    width: 32px;
+    height: 32px;
+    margin-top: 0;
+  }
+  .feature-text h4 {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+  }
+  .feature-text p {
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+  }
+
+  /* Кнопка призыва: растягиваем на всю ширину */
+  .core-power-button {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+    padding: 0;
+    border-radius: 30px;
+  }
+}
+
 
 
 /* ===== Section: Screenshots ===== */
@@ -2045,7 +2170,107 @@ a {
   .screenshots-section .carousel-prev { left: -1px; }
   .screenshots-section .carousel-next { right: -1px; }
 }
+/* —— Мобильная адаптация раздела “Как выглядит ТОТ изнутри” (≤799px) —— */
+@media (max-width: 799px) {
+  .screenshots-section {
+    padding: 40px 0 60px;
+    background: #f4f4f4;
+  }
 
+  .screenshots-section .container {
+    width: 360px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .screenshots-section .screenshots-title {
+    width: 328px;
+    margin: 0;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #000;
+  }
+
+  .screenshots-section .carousel-wrapper {
+    width: 328px;
+    height: 125px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  /* Трек оставляем видимым, чтобы JS мог центрировать */
+  .screenshots-section .carousel-track {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: transform .5s ease;
+  }
+
+  /* Скрываем боковые */
+  .screenshots-section .carousel-slide.side {
+    display: none;
+  }
+
+  /* Активный */
+  .screenshots-section .carousel-slide.main-slide {
+    display: block;
+    width: 248px !important;
+    height: 125px !important;
+    position: absolute;
+    top: 0;
+    left: -30px;
+    margin: 0;
+    border: 4px solid #868686;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  .screenshots-section .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Стрелки */
+  .screenshots-section .carousel-prev,
+  .screenshots-section .carousel-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 56px;
+    background: #e3e3e3;
+    border-radius: 30px;
+    position: absolute;
+    top: 62px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .screenshots-section .carousel-prev { left: 0; }
+  .screenshots-section .carousel-next { right: 0; }
+  .screenshots-section .carousel-prev::after,
+  .screenshots-section .carousel-next::after {
+    content: '';
+    width: 22px;
+    height: 21px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+  }
+  .screenshots-section .carousel-prev::after {
+    background-image: url('img/arrow-left.svg');
+  }
+  .screenshots-section .carousel-next::after {
+    background-image: url('img/arrow-right.svg');
+  }
+}
 
 /* CSS from section:market-scale */
 .market-scale-section {
