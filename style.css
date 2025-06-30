@@ -1596,13 +1596,18 @@ a {
   .broker-content.desktop-only  { display: none !important; }
   .broker-mobile.mobile-only    { display: flex !important; }
 
-  .broker-section {
-    padding-top: 50px;
+  /* Ставим фон и скругления на контейнер */
+  .broker-section .container {
+    max-width: 328px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: #f4f4f4;
+    border-radius: 20px;
   }
   .broker-mobile {
     margin: 0 auto;
     max-width: 328px;
-    padding: 0 16px 16px;
+    padding: 0;
     flex-direction: column;
     gap: 0;
   }
