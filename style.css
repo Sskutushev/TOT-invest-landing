@@ -285,6 +285,124 @@ a {
     height: 20px;
   }
 }
+/* Скрываем бургер-меню по умолчанию на десктопе и планшете */
+.menu-toggle {
+  display: none;
+}
+/* Мобильная версия: экраны от 360px до 799px */
+@media (min-width: 360px) and (max-width: 799px) {
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    padding: 13px 16px;
+    box-shadow: none;
+    z-index: 1000;
+  }
+
+  /* Логотип в потоке, слева */
+  .header-container {
+    position: relative;    /* для абсолютных правых кнопок */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+  .logo {
+    flex: 0 0 auto;
+  }
+  .logo img {
+    width: 117px;
+    height: 30px;
+  }
+
+  /* Прячем обычную навигацию */
+  .main-nav {
+    display: none;
+  }
+
+  /* Кнопка «язык» */
+  .lang-switcher {
+    position: absolute;
+    right: calc(16px + 46px + 15px); /* отступ справа: паддинг хедера + ширина бургера + gap */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 101px;
+    height: 46px;
+    padding: 9px 7px;
+    background: #f4f4f4;
+    border-radius: 90px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 1002;
+  }
+  .lang-switcher > img:first-child {
+    width: 28px;
+    height: 28px;
+  }
+  .lang-switcher span {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .lang-switcher > img:last-child {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Кнопка-бургер */
+  .menu-toggle {
+    position: absolute;
+    right: 16px;           /* ровно паддинг хедера */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    width: 46px;
+    height: 46px;
+    background: #f4f4f4;
+    border: none;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1003;
+  }
+  .menu-toggle svg {
+    width: 26.63px;
+    height: 26.63px;
+    transform: rotate(-1deg);
+  }
+  .menu-toggle.is-open svg path {
+    stroke: #ff2b00;
+  }
+
+  /* Всплывающее мобильное меню */
+  .main-nav.is-open {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1001;
+  }
+  .main-nav.is-open a {
+    padding: 12px 20px;
+    color: #868686;
+    transition: color .3s;
+  }
+  .main-nav.is-open a:hover {
+    color: #000;
+  }
+}
+
 /* CSS from section:hero */
 .hero-section {
     background-image: url('img/Background\ Image.svg');
@@ -391,6 +509,104 @@ a {
     padding: 18px 37px;
   }
 }
+/* Мобильная версия хиро-секции: экраны от 360px до 799px */
+@media (min-width: 360px) and (max-width: 799px) {
+  /* Фоновый контейнер */
+  .hero-section {
+    background-image: url('img/Background Image.svg');
+    background-size: cover;
+    background-position: center;
+    padding: 40px 16px;    /* сверху/снизу 40px, по бокам 16px */
+    position: relative;
+    top: 60px;             /* чтобы не пересекаться с шапкой */
+  }
+
+  /* Внутренний контент */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    max-width: 328px;      /* ширина контента на мобилке */
+    margin: 0 auto;
+  }
+
+  /* Тег */
+  .hero-tag {
+    width: 100%;
+    max-width: 309px;      /* 328px минус боковые паддинги 16+3 */
+    padding: 15px 20px;
+    border-radius: 90px;
+    background: linear-gradient(
+      270deg,
+      #e28aa4 0%,
+      #e19c96 25.48%,
+      #9797b1 51.44%,
+      #bbc7cd 75%,
+      #abbcc7 100%
+    );
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+  }
+
+  /* Заголовок */
+  .hero-title {
+    font-size: 28px;
+    line-height: 30px;
+    color: #000;
+    max-width: 328px;
+    text-align: center;
+  }
+
+  /* Подзаголовок */
+  .hero-subtitle {
+    font-size: 14px;
+    line-height: 16px;
+    color: #868686;
+    max-width: 328px;
+    text-align: center;
+  }
+
+  /* Кнопки */
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 328px;
+    margin-top: 10px;
+  }
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
+    width: 100%;
+    height: 60px;
+    border-radius: 90px;
+    font-size: 18px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 35px;
+  }
+  .hero-buttons .btn-primary {
+    background-color: #ff2b00;
+    color: #fff;
+    border: 1px solid #ff2b00;
+  }
+  .hero-buttons .btn-primary:hover {
+    background-color: #e02400;
+  }
+  .hero-buttons .btn-outline {
+    background-color: transparent;
+    color: #aa1d00;
+    border: 1px solid #aa1d00;
+  }
+  .hero-buttons .btn-outline:hover {
+    background-color: rgba(170, 29, 0, 0.1);
+  }
+}
+
 /* CSS from section:about */
 .about-section {
     padding: 60px 0;
@@ -592,6 +808,54 @@ a {
     z-index: 7;
   }
 }
+/* Мобильная версия about-секции: экраны от 360px до 799px */
+@media (min-width: 360px) and (max-width: 799px) {
+  .about-section {
+    padding: 40px 16px;
+    /* задаём минимальную высоту, чтобы вместить текст + контейнер картинок */
+    min-height: 505px;
+  }
+
+  /* Текстовая часть остаётся без изменений, gap=30px */
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;        /* между текстом и картинкой */
+    margin-top: 50px; /* отступ от заголовка до текста/контейнера, если нужно */
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;        /* между заголовком и абзацем */
+  }
+
+  /* Контейнер с картинками */
+  .about-image-group {
+    width: 328px;
+    height: 240px;
+    margin: 0 auto;      /* центрируем по горизонтали */
+    /* отступ сверху от текста */
+    margin-top: 30px;
+    position: relative;
+    /* убираем обрезание, чтобы все слои были видны */
+    overflow: visible;
+  }
+
+  /* Все вложенные img будут масштабироваться, сохраняя пропорции */
+  .about-image-group img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: absolute;  /* сохраняем слои, но картинки не будут выходить за контейнер */
+  }
+
+  /* Если у вас ещё есть псевдоконтейнеры вроде .img-group-inner, применяем то же правило */
+  .about-image-group > * {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
 
 
 /* CSS from section:problems-solutions */
@@ -747,6 +1011,123 @@ a {
     margin: 0;
   }
 }
+/* Мобильная версия problems-solutions: экраны от 360px до 799px */
+@media (min-width: 360px) and (max-width: 799px) {
+  .problems-solutions-section {
+    padding: 40px 16px;
+  }
+
+  /* Заголовок раздела с необходимыми переносами */
+  .section-title {
+    font-family: 'TT Travels Next', sans-serif;
+    font-size: 24px;
+    line-height: 30px;
+    white-space: pre-line;
+    text-align: center;
+    width: 328px;
+    margin: 0 auto 32px;
+  }
+  /* Текст должен быть в HTML так: "ТОТ решает\nреальные боли\nрынка" */
+
+  /* Список карточек — одна колонка, центр */
+  .ps-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  /* Общий стиль карточки */
+  .ps-card {
+    width: 328px;
+    height: 224px;
+    border-radius: 20px;
+    padding: 26px 25px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #f4f4f4; /* для проблемы */
+  }
+  .solution-card {
+    background-color: #ff7255; /* для решения */
+  }
+
+  /* Обёртка для изображения и блюра */
+  .ps-card-img-wrapper {
+    position: relative;
+    width: 90px;
+    height: 90px;
+  }
+  .ps-card-img-wrapper .ps-card-blur {
+    position: absolute;
+    top: -20px;
+    left: -5px;
+    width: 180px;
+    height: 180px;
+    filter: blur(25px);
+    border-radius: 50%;
+    z-index: 0;
+  }
+  .ps-card-img-wrapper .ps-card-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    z-index: 1;
+  }
+
+  /* Плашка «Проблема» / «Решение» */
+  .ps-card .tag {
+    position: absolute;
+    top: 26px;
+    right: 25px;
+  }
+
+  /* Текстовый блок под изображением */
+  .ps-card-text {
+    margin-top: -15px;            /* gap 5px от верхних элементов */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .ps-card-text h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+  }
+  .ps-card-text p {
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    color: #858585;             /* для проблем */
+  }
+  .solution-card .ps-card-text h3,
+  .solution-card .ps-card-text p {
+    color: #ffffff;             /* для решений */
+  }
+}
+/* Скрывать оригинальную двухколоночку на мобильных */
+@media (max-width: 799px) {
+  .ps-grid { display: none; }
+  .ps-grid-mobile { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 32px; 
+  }
+}
+/* На планшете и десктопе — наоборот */
+@media (min-width: 800px) {
+  .ps-grid-mobile { display: none; }
+}
+
 
 
 /* ===== Section: How It Works ===== */
@@ -958,20 +1339,153 @@ a {
     margin: 0;
   }
 }
+/* по умолчанию скрываем мобильный блок */
+.how-it-works-mobile {
+  display: none;
+}
+/* —— Мобильная адаптация раздела "Как это работает" (≤799px) —— */
+@media (max-width: 799px) {
+  /* Hide desktop/table version */
+  .how-it-works-table {
+    display: none;
+  }
 
+  /* Show mobile block */
+  .how-it-works-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px 16px 16px;
+  }
 
-/* CSS from section:broker-reinforcement */
-.broker-section {
+  /* Section header: title + badge */
+  .how-it-works-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .how-it-works-header h2 {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0;
+    max-width: 328px;
+    text-align: left;
+  }
+  .how-it-works-header .tag-problem {
+    display: inline-flex;
+    width: 135px;
+    height: 30px;
+    padding: 0 12px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 15px;
+    margin: 0;
+  }
+
+  /* Each step block */
+  .how-it-works-mobile .how-it-works-step {
+    display: flex;
+    flex-direction: column;
+    width: 328px;
+    gap: 8px;
+    position: relative;
+  }
+
+  /* Top of step: icon + badge */
+  .how-it-works-step .step-top {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    width: 328px;
+    height: 90px;
+  }
+  .how-it-works-step .step-top .step-icon-single {
+    top: 20px;
+    width: 120px;
+    height: 90px;
+    object-fit: contain;
+  }
+  .how-it-works-step .tag-dark {
+    position: absolute;
+    top: 30px;
+    left: 140px; /* 120px icon + 20px gap */
+    height: 30px;
+    padding: 0 12px;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 15px;
+  }
+
+  /* Step title under badge */
+  .how-it-works-step h3 {
+    margin: -15px 0 0 140px;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000;
+  }
+
+  /* Details container: full-width under step */
+  .how-it-works-step .step-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;  /* space between “Что происходит” and “Ценность…” */
+    width: 328px;
+    margin-top: 8px;
+  }
+
+  /* Subheadings */
+  .how-it-works-step .subtitle.what,
+  .how-it-works-step .subtitle.value {
+    font-size: 12px;
+    line-height: 15px;
+    color: #868686;
+    margin: 0;
+  }
+
+  /* Texts under subheadings */
+  .how-it-works-step .text.what-text,
+  .how-it-works-step .text.value-text {
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    margin: 0;
+  }
+}
+
+/* ============================
+   CSS for section: broker-reinforcement
+   ============================ */
+
+/* —— По умолчанию —— */
+/* Десктоп-блок */
+.broker-content.desktop-only {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+/* Скрываем мобайл-блок */
+.broker-mobile.mobile-only {
+  display: none;
+}
+
+/* —— Десктоп/планшетная версия (≥800px) —— */
+@media (min-width: 800px) {
+  /* показываем только десктоп */
+  .broker-content.desktop-only  { display: flex; }
+  .broker-mobile.mobile-only    { display: none; }
+
+  .broker-section {
     padding: 60px 0;
   }
   .broker-section .container {
     background-color: #f4f4f4;
     border-radius: 20px;
     padding: 34px 41px;
-  }
-  .broker-content {
     display: flex;
-    align-items: center;
     gap: 30px;
   }
   .broker-text {
@@ -984,6 +1498,12 @@ a {
   .broker-text h3 {
     font-size: 24px;
     line-height: 30px;
+    margin: 0;
+  }
+  .broker-text p {
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
   }
   .broker-items {
     flex: 2;
@@ -1021,80 +1541,15 @@ a {
   .broker-item p {
     font-size: 14px;
     line-height: 16px;
-  }
-  /* ===== Tablet (800–1279px) ===== */
-@media (min-width: 800px) and (max-width: 1279px) {
-  /* How It Works adjustments */
-  .how-it-works-section {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0;
-  }
-
-  .how-it-works-header {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 30px;
-  }
-  .how-it-works-header h2 {
-    width: 100%;
-    font-size: 32px;
-    line-height: 35px;
-    margin: 0 0 30px;
-    white-space: normal;
-  }
-  .how-it-works-header .section-badge {
-    width: 135px;
-    height: 30px;
-    font-size: 12px;
-    border-radius: 15px;
-  }
-
-  .how-it-works-table {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    width: 100%;
-  }
-
-  .table-header,
-  .table-row {
-    display: grid;
-    grid-template-columns: 350px 1fr 1fr;
-    gap: 50px;
-    border-bottom: 1px solid #e3e3e3;
-    align-items: center;
-  }
-
-  .header-cell {
-    font-size: 14px;
-    color: #858585;
-    padding: 0 12px;
-    text-align: center;
-  }
-  .header-cell:first-child {
-    visibility: hidden;
-  }
-
-  .row-cell {
-    padding: 24px 12px;
-    display: flex;
-    align-items: flex-start;
-  }
-  .row-cell:nth-child(2) p,
-  .row-cell:nth-child(3) p {
-    width: 160px;
     margin: 0;
-    text-align: left;
-    word-break: break-word;
-    line-height: 1.4;
   }
+}
 
-  /* Broker Reinforcement adjustments */
+/* —— Планшет (800–1279px) —— */
+@media (min-width: 800px) and (max-width: 1279px) {
+  /* Ограничиваем ширину «карточки» сверху до 680px и центрируем её */
   .broker-section .container {
-    max-width: 800px;
-    width: 100%;
+    max-width: 740px;
     margin: 0 auto;
     padding: 30px;
     display: flex;
@@ -1102,23 +1557,27 @@ a {
     gap: 30px;
   }
 
-  .broker-content {
+  /* Делим на две колонки: текстовая часть над карточками остаётся 680px */
+  .broker-content.desktop-only {
+    display: flex;
     flex-direction: column;
     gap: 30px;
   }
 
+  /* Расширяем текстовую область */
   .broker-text {
+    max-width: 680px;   /* вместо 377px */
     width: 100%;
-    max-width: none;
   }
   .broker-text h3,
   .broker-text p {
-    width: 100%;
+    margin: 0;
     text-align: left;
   }
 
+  /* Карточки ролей оставляем под текстом */
   .broker-items {
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
     gap: 20px;
     width: 100%;
@@ -1130,6 +1589,73 @@ a {
     left: -10px;
   }
 }
+
+/* —— Мобильная адаптация (≤799px) —— */
+@media (max-width: 799px) {
+  /* прячем десктоп, показываем мобайл */
+  .broker-content.desktop-only  { display: none !important; }
+  .broker-mobile.mobile-only    { display: flex !important; }
+
+  .broker-section {
+    padding-top: 50px;
+  }
+  .broker-mobile {
+    margin: 0 auto;
+    max-width: 328px;
+    padding: 0 16px 16px;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* 1. Заголовок */
+  .broker-mobile h3 {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 0 20px;
+    text-align: left;
+  }
+
+  /* 2. Вводный текст */
+  .broker-mobile .intro {
+    font-size: 14px;
+    line-height: 16px;
+    color: #858585;
+    margin: 0 0 30px;
+    text-align: left;
+  }
+
+  /* 3. Картинка ролей */
+  .broker-mobile img {
+    width: 86px;
+    height: 86px;
+    object-fit: contain;
+    margin: 0 0 15px;
+  }
+
+  /* 4. Заголовки ролей */
+  .broker-mobile h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0 0 20px;
+    color: #000;
+    text-align: left;
+  }
+
+  /* 5. Описания ролей */
+  .broker-mobile .detail {
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    margin: 0 0 20px;
+    text-align: left;
+  }
+  .broker-mobile .detail:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 
 /* ===== Section: Core Power ===== */
 .core-power-section {

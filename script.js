@@ -193,4 +193,23 @@ if ('IntersectionObserver' in window) {
 
   // Инициализация
   update();
+// Бургер-меню
+  const burger = document.querySelector('.menu-toggle');
+  const nav    = document.querySelector('.main-nav');
+
+  if (burger && nav) {
+    burger.addEventListener('click', e => {
+      e.stopPropagation();
+      nav.classList.toggle('is-open');
+      burger.classList.toggle('is-open');
+    });
+
+    // Закрываем при клике вне меню
+    document.addEventListener('click', e => {
+      if (!nav.contains(e.target) && !burger.contains(e.target)) {
+        nav.classList.remove('is-open');
+        burger.classList.remove('is-open');
+      }
+    });
+  }
 });
