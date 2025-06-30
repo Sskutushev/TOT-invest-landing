@@ -2340,131 +2340,155 @@ a {
     line-height: 18px;
   }
 }
-/* CSS from section:roadmap */
-.roadmap-section {
-    padding: 90px 0;
+@media (max-width: 799px) {
+  .market-scale-section {
+    padding: 40px 16px;
   }
-  .roadmap-section .section-title {
-    margin-bottom: 90px;
+
+  /* Заголовок раздела */
+  .market-scale-section h2 {
+    font-size: 24px;       /* размер шрифта */
+    line-height: 28px;     /* высота строки */
+    text-align: center;    /* по центру */
+    margin: 0 auto 20px;   /* отступ снизу */
+    width: 328px;          /* чтобы точно в границах контейнера */
+    color: #000;
+    font-family: "TT Travels Next", sans-serif;
   }
-  .roadmap-steps {
-    top: -50px; /* чтобы линия начиналась чуть выше */
-    position: relative; /* чтобы ::after относился к самому шагу */
+
+  /* Контейнер карточек: одна колонка, центр */
+  .market-scale-section .market-cards {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 20px;
-    position: relative;
+    width: 328px;
+    margin: 0 auto;        /* по центру */
   }
-  .roadmap-steps::before {
-   display: none;
-  }
-  .roadmap-step:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  left: 110%;                   /* по центру каждого шага */
-  transform: translateX(-50%);
-  top: 110px;                   /* отступ сверху: чуть ниже иконки */
-  bottom: 150px;               /* отступ снизу: чуть выше даты */
-  width: 1px;  
-  height: 292px;                /* толщина линии */
-  background-color: #e3e3e3;   /* цвет линии */
-  z-index: 1;                  /* за контентом */
-}
-  .roadmap-step {
+
+  .market-scale-section .market-card {
+    /* остальной стилинг без изменений */
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    width: 216px;
     text-align: center;
-    position: relative;
+    gap: 16px;
+    box-sizing: border-box;
   }
-  .step-icon {
+}
+
+/* ========== Общие стили для секции Roadmap ========== */
+.roadmap-section {
+  padding: 90px 0;
+}
+
+/* Скрываем мобильную версию по умолчанию, показываем десктопную */
+.roadmap-mobile {
+  display: none;
+}
+.roadmap-section .roadmap-steps {
+  display: flex;
+  top: -50px;
+  position: relative;
+  justify-content: space-between;
+  gap: 20px;
+}
+.roadmap-section .section-title {
+  margin-bottom: 90px;
+}
+
+/* Стили «десктопной» дорожки */
+.roadmap-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 216px;
+  text-align: center;
+  position: relative;
+}
+.roadmap-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 110%;
+  transform: translateX(-50%);
+  top: 110px;
+  bottom: 150px;
+  width: 1px;
+  height: 292px;
+  background-color: #e3e3e3;
+  z-index: 1;
+}
+.step-icon {
   width: 265px;
   height: 265px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  margin-bottom: -65px;  /* поднимает всю «плашку» вверх относительно иконки */
+  background-color: #fff;
+  margin-bottom: -65px;
   z-index: -1;
-  }
-  /* Само изображение внутри */
-  .step-icon img {
-    width: 100%;      /* растянуть на весь контейнер */
-    height: 100%;     /* растянуть на весь контейнер */
-    object-fit: contain; /* сохранить пропорции */
-    display: block;
-  }
-  .step-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .step-text h4 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 20px;
-    margin: 0;
-  }
-  .step-text p {
-    font-size: 14px;
-    line-height: 16px;
-    color: #000000;
-  }
-  .step-amount {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 20px;
-    color: #aa1d00;
-  }
-  .step-evaluation {
-    font-size: 12px;
-    line-height: 15px;
-    color: #868686;
-  }
-/* ===== Tablet (800–1279px) adaptations for Roadmap ===== */
+}
+.step-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.step-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.step-text h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  margin: 0;
+}
+.step-text p {
+  font-size: 14px;
+  line-height: 16px;
+  color: #000;
+  margin: 0;
+}
+.step-amount {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #aa1d00;
+}
+.step-evaluation {
+  font-size: 12px;
+  line-height: 15px;
+  color: #868686;
+}
+
+/* ===== Планшетная версия (800–1279px) ===== */
 @media (min-width: 800px) and (max-width: 1279px) {
-  /* Section padding */
   .roadmap-section {
     padding: 60px 0;
   }
-
-  /* Center the title and constrain its width */
   .roadmap-section .section-title {
     margin: 0 auto 40px;
     max-width: 740px;
     text-align: center;
   }
-
-  /* Steps wrapper: constrain width, center, tighten gap */
-  .roadmap-steps {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+  .roadmap-section .roadmap-steps {
     gap: 10px;
     max-width: 740px;
     margin: 0 auto;
-    top: 0;  /* remove desktop vertical shift */
+    top: 0;
   }
-
-  /* Each step narrower, reduce vertical spacing */
   .roadmap-step {
     width: 132px;
     gap: 10px;
   }
-
-  /* Icon container smaller and lift less */
-  .step-icon {
-    width: 150px;
-    height: 150px;
-    margin-bottom: -20px;
-  }
-
-  /* Connectors: position under icon, shorter */
   .roadmap-step:not(:last-child)::after {
     left: 150px;
     transform: translateX(-50%);
@@ -2472,8 +2496,11 @@ a {
     bottom: auto;
     height: 200px;
   }
-
-  /* Text sizes */
+  .step-icon {
+    width: 150px;
+    height: 150px;
+    margin-bottom: -20px;
+  }
   .step-text h4 {
     font-size: 16px;
     line-height: 18px;
@@ -2491,6 +2518,101 @@ a {
     line-height: 12px;
   }
 }
+
+/* ===== Мобильная версия (≤799px) ===== */
+@media (max-width: 799px) {
+  /* Скрываем десктопные шаги, показываем мобильный блок */
+  .roadmap-section .roadmap-steps {
+    display: none;
+  }
+  .roadmap-mobile {
+    display: flex !important;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0;
+  }
+
+  /* Общие отступы и выравнивание */
+  .roadmap-section {
+    padding: 40px 80px;
+  }
+  .roadmap-section .container {
+    max-width: 328px;
+    margin: 0 auto;
+  }
+  /* заголовок 24/28px, жирный, ширина 268px, центр */
+  .roadmap-section .section-title {
+    font-family: 'TT Travels Next Trl', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    width: 268px;
+    margin: 0 auto 20px;
+  }
+  /* Строки с карточками */
+  .roadmap-mobile .row1,
+  .roadmap-mobile .row2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .roadmap-mobile .row3 {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Карточка */
+  .roadmap-mobile .step-item {
+    flex: 0 0 154px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .roadmap-mobile .row3 .step-item {
+    flex: none;
+  }
+
+  /* Иконка */
+  .roadmap-mobile .step-item .step-icon {
+    width: 77px;
+    height: 77px;
+    margin: 0;
+  }
+  .roadmap-mobile .step-item .step-icon img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+  }
+
+  /* Текст внутри карточки */
+  .roadmap-mobile .step-item .tag {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .roadmap-mobile .step-item h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    word-break: break-word;
+  }
+  .roadmap-mobile .step-item .step-amount,
+  .roadmap-mobile .step-item .step-evaluation {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .roadmap-mobile .step-item p {
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    text-align: center;
+    word-break: break-word;
+  }
+}
+
 
 /* CSS from section:investment-round */
 .investment-section {
