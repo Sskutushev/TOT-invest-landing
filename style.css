@@ -191,7 +191,7 @@ a {
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
   z-index: 1002;
   display: none;
 }
