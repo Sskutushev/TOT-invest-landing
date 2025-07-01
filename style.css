@@ -2815,7 +2815,133 @@ a {
     overflow: hidden;
   }
 }
+/* —— Мобильная адаптация секции «Раунд инвестиций» (≤799px) —— */
+@media (max-width: 799px) {
+  /* превращаем грид в одну колонку шириной 328px */
+  .investment-section .investment-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 328px;
+    margin: 0 auto;
+  }
 
+  /* базовые стили для карточек */
+  .investment-section .dist-item {
+    position: relative;
+    width: 328px;
+    height: 272px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  /* 1-я карточка */
+  .investment-section .dist-item:nth-of-type(1) .dist-chart-bg {
+    top: -65px;
+    left: -35px;
+  }
+  .investment-section .dist-item:nth-of-type(1) img {
+    top: -45px;
+    left: 0px;
+  }
+  .investment-section .dist-item:nth-of-type(1) .tag {
+    top: -40px;
+    right: -135px;
+  }
+
+  /* 2-я карточка */
+  .investment-section .dist-item:nth-of-type(2) .dist-chart-bg {
+    top: -65px;
+    left: -35px;
+  }
+  .investment-section .dist-item:nth-of-type(2) img {
+    top: -45px;
+    left: -0px;
+  }
+  .investment-section .dist-item:nth-of-type(2) .tag {
+    top: -40px;
+    right: -135px;
+  }
+
+  /* 3-я карточка */
+  .investment-section .dist-item:nth-of-type(3) .dist-chart-bg {
+    top: -65px;
+    left: -35px;
+  }
+  .investment-section .dist-item:nth-of-type(3) img {
+    top: -45px;
+    left: -0px;
+  }
+  .investment-section .dist-item:nth-of-type(3) .tag {
+    top: -40px;
+    right: -135px;
+  }
+
+  /* единый фон-эллипс */
+  .investment-section .dist-chart-bg {
+    position: absolute;
+    width: 143px;
+    height: 182px;
+    background-image: url('img/Ellipse 55.svg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    filter: blur(16px);
+    z-index: 0;
+  }
+
+  /* единая иконка */
+  .investment-section .dist-item img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    z-index: 1;
+  }
+
+  /* единая плашка процентов */
+  .investment-section .dist-chart .tag {
+    position: absolute;
+    width: 65px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 15px;
+    z-index: 2;
+  }
+
+  /* текстовый блок фиксированного размера 288×144px */
+  .investment-section .dist-text {
+    position: absolute;
+    top: 120px;        /* 20px отступ + 100px высота иконки */
+    left: 20px;        /* отступ слева */
+    width: 288px;
+    height: 144px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1;
+  }
+  .investment-section .dist-amount {
+    font-size: 24px;
+    line-height: 28px;
+    margin: 0;
+  }
+  .investment-section .dist-category {
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+  }
+  .investment-section .dist-text p {
+    font-size: 12px;
+    line-height: 16px;
+    color: #858585;
+    margin: 15px 0 0;
+  }
+}
 
 /* CSS from section:detailed-roadmap */
 .detailed-roadmap-section {
@@ -3160,6 +3286,157 @@ a {
     border-left: 15px solid rgba(0,0,0,0.1);
   }
 }
+/* по умолчанию прячем мобилу */
+.mobile-only { display: none; }
+
+/* === Мобильная адаптация детального роадмапа (≤799px) === */
+@media (max-width: 799px) {
+
+  /* скрываем десктоп + планшет */
+  .roadmap-container,
+  .roadmap-container-tablet {
+    display: none;
+  }
+
+  /* обёртка моб. версий */
+  .roadmap-mobile {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 16px;
+    gap: 30px;
+  }
+
+  /* вертикальная линия */
+  .mobile-timeline-line {
+    position: absolute;
+    left: 80px;
+    top: 0; bottom: 0;
+    width: 5px;
+    background: #e3e3e3;
+    z-index: 0;
+  }
+
+  /* каждая фаза */
+  .mobile-phase {
+    position: relative;
+    padding-left: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1;
+  }
+
+  /* иконка */
+  .mobile-phase-icon {
+    position: absolute;
+    top: -25px;
+    left: 100px;
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    z-index: 2;
+  }
+
+  /* заголовок фазы + плашка */
+  .mobile-phase-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    margin-top: 10px;
+  }
+  .mobile-phase-header p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 18px;
+    color: #868686;
+  }
+  .mobile-phase-header .tag-dark {
+    font-size: 12px;
+    line-height: 14px;
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 15px;
+  }
+
+  /* контент-карточка */
+  .mobile-phase-content {
+    --bg-offset: 0; /* устанавливается ниже для каждой фазы */
+    position: relative;
+    width: 328px;
+    height: auto; /* мин. высота задаётся в селекторах ниже */
+    padding: 12px 12px 20px;
+    border-radius: 12px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* сдвиг фона: */
+    transform: translateX(var(--bg-offset));
+    overflow: hidden;
+  }
+  .mobile-phase-content h4 {
+    margin-top: 15px;
+    margin-left: 75px; /* отступ от левого края */
+    margin-bottom: 25px; /* отступ снизу */
+    position: center;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+    color: #000;
+  }
+  .mobile-phase-content ul {
+    list-style: none;
+    margin-left: 50px; /* отступ слева для списка */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .mobile-phase-content li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .mobile-phase-content li img {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .mobile-phase-content li span {
+    display: block;
+    width: 194px;
+    color: #868686;
+    text-align: left;
+    word-wrap: break-word;
+    margin-left: 20px; /* отступ галочки */
+  }
+
+  /* ——— фоновые картинки и размеры для каждой фазы ——— */
+  .mobile-phase.phase-1 .mobile-phase-content {
+    --bg-offset: -50px;
+    background-image: url("img/фон роадмап фаза 1.svg");
+    min-height: 182px;
+  }
+  .mobile-phase.phase-2 .mobile-phase-content {
+    --bg-offset: -50px;
+    background-image: url("img/фон роадмап фаза 2.svg");
+    min-height: 232px;
+  }
+  .mobile-phase.phase-3 .mobile-phase-content {
+    --bg-offset: -50px;
+    background-image: url("img/фон роадмап фаза 3.svg");
+    min-height: 220px;
+  }
+  .mobile-phase.phase-4 .mobile-phase-content {
+    --bg-offset: -50px;
+    background-image: url("img/фон роадмап фаза 4.svg");
+    min-height: 262px;
+  }
+}
+
 
 /* CSS from section:pre-seed-proof */
 .pre-seed-section {
