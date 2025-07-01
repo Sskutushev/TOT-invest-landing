@@ -3719,7 +3719,7 @@ a {
   /* 4) Ракета сверху карточки */
   .pre-seed-image-group .pre-seed-rocket {
     position: absolute;
-    top: 129px;  /* опустите/поднимите по макету */
+    top: 59px;  /* опустите/поднимите по макету */
     left: calc(50% - 180px); /* центрируем 360px по ширине */
     width: 360px;
     height: 360px;
