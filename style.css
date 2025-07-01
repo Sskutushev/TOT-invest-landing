@@ -161,35 +161,20 @@ a {
   border-radius: 90px;
   padding: 9px 7px;
   cursor: pointer;
-  margin-left: 20px; /* Отступ от меню */
-  position: relative; /* для абсолютного позиционирования выпадашки */
+  position: relative;
 }
 
-.lang-switcher {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #f4f4f4;
-  border-radius: 90px;
-  padding: 9px 7px;
-  cursor: pointer;
-  margin-left: 20px;
-}
-
-/* Флаги и стрелка внутри переключателя языка */
 .lang-switcher > img:first-child {
-  /* только флаг */
   width: 30px;
   height: 30px;
   object-fit: cover;
 }
+
 .lang-switcher > img:last-child {
-  /* стрелка остаётся без изменений */
   width: auto;
   height: auto;
 }
 
-/* Название языка в кнопке */
 .lang-switcher span {
   font-size: 14px;
   color: #000000;
@@ -207,7 +192,7 @@ a {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  z-index: 1001;
+  z-index: 1002;
   display: none;
 }
 
@@ -224,7 +209,6 @@ a {
   background-color: #f0f0f0;
 }
 
-/* Флаги внутри списка */
 .lang-dropdown img {
   width: 20px;
   height: 20px;
