@@ -184,16 +184,16 @@ a {
 .lang-dropdown {
   position: absolute;
   top: calc(100% + 5px);
-  right: 0;
+  right: 5%; /* Выравниваем по правому краю переключателя */
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   list-style: none;
   margin: 0;
   padding: 0;
-  overflow: visible;
+  overflow: hidden; /* Скрываем переполнение */
   z-index: 1002;
-  display: none;
+  display: none; /* Скрыто по умолчанию */
 }
 
 .lang-dropdown li {

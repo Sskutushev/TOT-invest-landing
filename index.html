@@ -1011,21 +1011,5 @@
     document.documentElement.classList.add(deviceClass);
   })();
 </script>
-
-<script>
-  // Функция для переключения языка
-  function switchLanguage(language) {
-    const elements = document.querySelectorAll('[data-en], [data-ru]');
-    elements.forEach(el => {
-      el.textContent = el.getAttribute(`data-${language}`);
-    });
-
-    // Меняем флаг в переключателе
-    const currentFlag = document.querySelector('.lang-switcher img');
-    const selectedFlag = document.querySelector(`.lang-btn[data-lang="${language}"] img`);
-    currentFlag.src = selectedFlag.src;
-    currentFlag.alt = selectedFlag.alt;
-  }
-</script>
 </body>
 </html>
