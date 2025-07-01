@@ -164,11 +164,15 @@ a {
   position: relative;
 }
 
-/* Настроим флаг, чтобы он подстраивался под размер */
-.lang-switcher > img {
+.lang-switcher > img:first-child {
   width: 30px;
   height: 30px;
   object-fit: cover;
+}
+
+.lang-switcher > img:last-child {
+  width: auto;
+  height: auto;
 }
 
 .lang-switcher span {
@@ -176,17 +180,11 @@ a {
   color: #000000;
 }
 
-.lang-btn {
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
 /* ===== Dropdown меню переключателя языка ===== */
 .lang-dropdown {
   position: absolute;
   top: calc(100% + 5px);
-  left: 0;
+  right: 0;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
