@@ -15,83 +15,71 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
-// === Scroll-reveal: анимация при каждом скролле ===
-const revealElems = document.querySelectorAll('.scroll-reveal');
 
-if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-      } else {
-        entry.target.classList.remove('is-visible');
-      }
-    });
-  }, {
-    threshold: 0.15
-  });
+    // === Scroll-reveal: анимация при каждом скролле ===
+    const revealElems = document.querySelectorAll('.scroll-reveal');
 
-  revealElems.forEach(el => observer.observe(el));
-} else {
-  // для старых браузеров сразу показать всё
-  revealElems.forEach(el => el.classList.add('is-visible'));
-}
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          } else {
+            entry.target.classList.remove('is-visible');
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+
+      revealElems.forEach(el => observer.observe(el));
+    } else {
+      // для старых браузеров сразу показать всё
+      revealElems.forEach(el => el.classList.add('is-visible'));
+    }
   }
   // Header logo (href="#") scrolls to top
   smoothScroll('header .logo, footer .logo');
   // Header nav links
   smoothScroll('.main-nav a, .footer-nav a');
 
-// Language switcher dropdown
+  // Language switcher buttons
   const langSwitcher = document.querySelector('.lang-switcher');
-  const langMenu     = document.createElement('ul');
-  langMenu.className = 'lang-dropdown';
-  langSwitcher.appendChild(langMenu);
+  const langBtns = document.querySelectorAll('.lang-btn');  // Переключатели флагов
 
   // Список языков с путями к иконкам
   const languages = [
-    { short: 'Рус', full: 'Русский', flag: 'img/Ellipse 2.svg' },
-    { short: 'Eng', full: 'English',  flag: 'img/eng.svg'     }
+    { short: 'Рус', full: 'Русский', flag: 'img/Ellipse 2.svg', code: 'ru' },
+    { short: 'Eng', full: 'English', flag: 'img/eng.svg', code: 'en' }
   ];
 
-  // Инициализируем текущее состояние — русский по умолчанию
+  // Устанавливаем текущий язык (по умолчанию русский)
   let current = languages[0];
   langSwitcher.innerHTML = `
-    <img src="${current.flag}" alt="${current.full} Flag">
+    <img src="${current.flag}" alt="${current.full} Flag" class="lang-flag">
     <span>${current.short}</span>
-    <img src="img/Vector 2 (Stroke).svg" alt="Dropdown Icon">
   `;
-  langSwitcher.appendChild(langMenu);
 
-  // Наполняем выпадающий список
-  languages.forEach(lang => {
-    const li = document.createElement('li');
-    li.innerHTML = `<img src="${lang.flag}" alt="${lang.full} Flag"><span>${lang.full}</span>`;
-    li.addEventListener('click', () => {
-      // смена иконки и текста в кнопке
-      current = lang;
-      langSwitcher.querySelector('img:first-child').src   = lang.flag;
-      langSwitcher.querySelector('img:first-child').alt   = `${lang.full} Flag`;
-      langSwitcher.querySelector('span').textContent      = lang.short;
-      langMenu.style.display = 'none';
+  // Смена языка по клику на флаг
+  langBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      current = languages[index];  // выбираем язык по индексу кнопки
+      langSwitcher.querySelector('img').src = current.flag;
+      langSwitcher.querySelector('img').alt = `${current.full} Flag`;
+      langSwitcher.querySelector('span').textContent = current.short;
 
-      // здесь ваша логика переключения языка...
-      console.log('Language switched to', lang.full);
+      // После выбора языка меняем текст на странице
+      switchLanguage(current.code);
     });
-    langMenu.appendChild(li);
   });
 
-  // Показываем/скрываем меню по клику на переключатель
-  langSwitcher.addEventListener('click', () => {
-    langMenu.style.display = (langMenu.style.display === 'block') ? 'none' : 'block';
-  });
-
-  // Закрываем меню по клику вне его
-  document.addEventListener('click', e => {
-    if (!langSwitcher.contains(e.target)) {
-      langMenu.style.display = 'none';
-    }
-  });
+  // Функция для переключения языка
+  function switchLanguage(language) {
+    const elements = document.querySelectorAll('[data-en], [data-ru]');
+    elements.forEach(el => {
+      el.textContent = el.getAttribute(`data-${language}`);
+    });
+  }
 
   // Presentation and form buttons
   document.querySelectorAll('.btn-primary[href="#contact"]').forEach(btn => {
@@ -106,34 +94,35 @@ if ('IntersectionObserver' in window) {
       window.open('https://docs.google.com/forms/d/e/1FAIpQLSepxg-kvVxeZqhKA_bnhKKQf-z73vcy0xZMofaEwBlPdazt5Q/viewform', '_blank');
     });
   });
-// === Карусель скриншотов ===
-  const wrapper    = document.querySelector('#screenshots .carousel-wrapper');
+
+  // === Карусель скриншотов ===
+  const wrapper = document.querySelector('#screenshots .carousel-wrapper');
   if (!wrapper) return;
 
-  const track      = wrapper.querySelector('.carousel-track');
-  const slides     = Array.from(wrapper.querySelectorAll('.carousel-slide'));
-  const prevBtn    = wrapper.querySelector('.carousel-prev');
-  const nextBtn    = wrapper.querySelector('.carousel-next');
+  const track = wrapper.querySelector('.carousel-track');
+  const slides = Array.from(wrapper.querySelectorAll('.carousel-slide'));
+  const prevBtn = wrapper.querySelector('.carousel-prev');
+  const nextBtn = wrapper.querySelector('.carousel-next');
 
   // Pop-up элементы
-  const popup      = document.getElementById('carouselPopup');
-  const popupImg   = popup.querySelector('.popup-image');
-  const closeBtn   = popup.querySelector('.popup-close');
-  const popupPrev  = popup.querySelector('.popup-prev');
-  const popupNext  = popup.querySelector('.popup-next');
+  const popup = document.getElementById('carouselPopup');
+  const popupImg = popup.querySelector('.popup-image');
+  const closeBtn = popup.querySelector('.popup-close');
+  const popupPrev = popup.querySelector('.popup-prev');
+  const popupNext = popup.querySelector('.popup-next');
 
   let currentIndex = 0;
-  let timer        = setInterval(nextSlide, 10000);
+  let timer = setInterval(nextSlide, 10000);
 
   function update() {
     slides.forEach((slide, i) => {
       slide.classList.toggle('main-slide', i === currentIndex);
-      slide.classList.toggle('side',       i !== currentIndex);
+      slide.classList.toggle('side', i !== currentIndex);
     });
     // Центрируем текущий слайд
-    const cw     = wrapper.getBoundingClientRect().width;
-    const cs     = slides[currentIndex];
-    const sw     = cs.getBoundingClientRect().width;
+    const cw = wrapper.getBoundingClientRect().width;
+    const cs = slides[currentIndex];
+    const sw = cs.getBoundingClientRect().width;
     const offset = cs.offsetLeft - (cw - sw) / 2;
     track.style.transform = `translateX(-${Math.max(0, offset)}px)`;
   }
@@ -142,6 +131,7 @@ if ('IntersectionObserver' in window) {
     currentIndex = (currentIndex + 1) % slides.length;
     update();
   }
+
   function prevSlide() {
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
     update();
@@ -193,9 +183,10 @@ if ('IntersectionObserver' in window) {
 
   // Инициализация
   update();
-// Бургер-меню
+
+  // Бургер-меню
   const burger = document.querySelector('.menu-toggle');
-  const nav    = document.querySelector('.main-nav');
+  const nav = document.querySelector('.main-nav');
 
   if (burger && nav) {
     burger.addEventListener('click', e => {

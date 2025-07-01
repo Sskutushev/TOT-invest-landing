@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
   <style>
     /* 1) Отключаем горизонтальный скролл */
     html, body {
@@ -50,47 +49,54 @@
 
 <header id="header" class="site-header">
   <div class="header-container">
-    <a href="#hero" class="logo" data-lang="logo">
+    <a href="#hero" class="logo">
       <img src="img/лого=Черный (1).svg" alt="TOT Logo">
     </a>
     <!-- Бургер-кнопка для мобильных -->
-    <button class="menu-toggle" aria-label="Открыть меню" data-lang="menu_toggle">
+    <button class="menu-toggle" aria-label="Открыть меню" data-en="Open Menu" data-ru="Открыть меню">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
         <path d="M3 6h18M3 12h18M3 18h18" stroke="#000" stroke-width="2"/>
       </svg>
     </button>
     <nav class="main-nav">
-      <a href="#about" data-lang="about">О проекте</a>
-      <a href="#market-scale" data-lang="market_scale">Потенциал</a>
-      <a href="#investment-round" data-lang="investment_round">Раунд инвестиций</a>
-      <a href="#contact" data-lang="contact">Контакты</a>
+      <a href="#about" data-en="About" data-ru="О проекте">О проекте</a>
+      <a href="#market-scale" data-en="Market Scale" data-ru="Потенциал">Потенциал</a>
+      <a href="#investment-round" data-en="Investment Round" data-ru="Раунд инвестиций">Раунд инвестиций</a>
+      <a href="#contact" data-en="Contact" data-ru="Контакты">Контакты</a>
     </nav>
     <div class="lang-switcher">
-      <img src="img/Ellipse 2.svg" alt="Russian Flag">
-      <span>Рус</span>
-      <img src="img/Vector 2 (Stroke).svg" alt="Dropdown Icon">
-    </div>
+  <button class="lang-btn" data-lang="ru">
+    <img src="img/Ellipse 2.svg" alt="Русский" />
+  </button>
+  <button class="lang-btn" data-lang="en">
+    <img src="img/eng.svg" alt="English" />
+  </button>
+</div>
   </div>
 </header>
+
 <section id="hero" class="hero-section scroll-reveal from-left">
   <div class="container">
     <div class="hero-content">
-      <div class="hero-tag" data-lang="hero_tag">Открыт раунд Pre‑Seed: $700 K • оценка $2.5 M</div>
-      <h1 class="hero-title" data-lang="hero_title">Первая мультиброкерская экосистема</h1>
-      <p class="hero-subtitle" data-lang="hero_subtitle">Торгуй. Обучай. Твори. Всё в одном месте.</p>
+      <div class="hero-tag" data-en="Pre-seed round opened: $700K • valuation $2.5M" data-ru="Открыт раунд Pre‑Seed: $700 K • оценка $2.5 M">Открыт раунд Pre‑Seed: $700 K • оценка $2.5 M</div>
+      <h1 class="hero-title" data-en="First multi-broker ecosystem" data-ru="Первая мультиброкерская экосистема">Первая мультиброкерская экосистема</h1>
+      <p class="hero-subtitle" data-en="Trade. Teach. Create. All in one place." data-ru="Торгуй. Обучай. Твори. Всё в одном месте.">Торгуй. Обучай. Твори. Всё в одном месте.</p>
       <div class="hero-buttons">
-        <a href="питч_русс.pdf" class="btn btn-primary" data-lang="request_presentation" target="_blank">Запросить презентацию</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSepxg-kvVxeZqhKA_bnhKKQf-z73vcy0xZMofaEwBlPdazt5Q/viewform" class="btn btn-outline" data-lang="contact_team" target="_blank">Связаться с командой</a>
+        <a href="питч_русс.pdf" class="btn btn-primary" data-en="Request Presentation" data-ru="Запросить презентацию" target="_blank">Запросить презентацию</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSepxg-kvVxeZqhKA_bnhKKQf-z73vcy0xZMofaEwBlPdazt5Q/viewform" class="btn btn-outline" data-en="Contact Team" data-ru="Связаться с командой" target="_blank">Связаться с командой</a>
       </div>
     </div>
   </div>
 </section>
+
 <section id="about" class="about-section scroll-reveal from-right">
   <div class="container">
     <div class="about-grid">
       <div class="about-text">
-        <h2 data-lang="about_platform">О платформе</h2>
-        <p data-lang="about_description">TOT — это масштабируемая мультиброкерская экосистема, которая объединяет инвесторов, управляющих, брокеров и блогеров. Модель монетизации многоканальна (подписки + комиссии + реклама), что снижает CAC и увеличивает LTV.</p>
+        <h2 data-en="About Platform" data-ru="О платформе">О платформе</h2>
+        <p data-en="TOT is a scalable multi-broker ecosystem that brings together investors, managers, brokers, and bloggers. The monetization model is multi-channel (subscriptions + commissions + ads), which reduces CAC and increases LTV." data-ru="TOT — это масштабируемая мультиброкерская экосистема, которая объединяет инвесторов, управляющих, брокеров и блогеров. Модель монетизации многоканальна (подписки + комиссии + реклама), что снижает CAC и увеличивает LTV.">
+          TOT — это масштабируемая мультиброкерская экосистема, которая объединяет инвесторов, управляющих, брокеров и блогеров. Модель монетизации многоканальна (подписки + комиссии + реклама), что снижает CAC и увеличивает LTV.
+        </p>
       </div>
       <div class="about-image-group">
         <img src="img/Container (1).svg" alt="About Image">
@@ -101,7 +107,7 @@
 
 <section id="problems-solutions" class="problems-solutions-section">
   <div class="container">
-    <h2 class="section-title" data-lang="tot_solves_pains">TOT решает реальные боли рынка</h2>
+    <h2 class="section-title" data-en="TOT solves real market pains" data-ru="TOT решает реальные боли рынка">TOT решает реальные боли рынка</h2>
     <div class="ps-grid">
       <div class="ps-column">
         <div class="ps-card problem-card scroll-reveal from-left">
@@ -110,43 +116,54 @@
             <img src="img/Problem Image Container.svg" class="ps-card-icon">
           </div>
           <div class="ps-card-text">
-            <h3 data-lang="high_risk">Высокие риски:</h3>
-            <p data-lang="high_risk_description">Зависимость от одного брокера приводит к риску банкротства и ограничивает возможности</p>
+            <h3 data-en="High Risks" data-ru="Высокие риски">Высокие риски:</h3>
+            <p data-en="Dependence on a single broker leads to the risk of bankruptcy and limits opportunities" data-ru="Зависимость от одного брокера приводит к риску банкротства и ограничивает возможности">
+              Зависимость от одного брокера приводит к риску банкротства и ограничивает возможности
+            </p>
           </div>
-          <span class="tag tag-problem" data-lang="problem">Проблема</span>
+          <span class="tag tag-problem" data-en="Problem" data-ru="Проблема">Проблема</span>
         </div>
+
         <div class="ps-card problem-card scroll-reveal from-left">
           <div class="ps-card-img-wrapper">
             <img src="img/Ellipse 50.svg" class="ps-card-blur">
             <img src="img/Problem Image Container (1).svg" class="ps-card-icon">
           </div>
           <div class="ps-card-text">
-            <h3 data-lang="hidden_fees">Скрытые комиссии:</h3>
-            <p data-lang="hidden_fees_description">Традиционные брокеры и системы снижают доходность инвесторов на 4–8% ежегодно</p>
+            <h3 data-en="Hidden Fees" data-ru="Скрытые комиссии">Скрытые комиссии:</h3>
+            <p data-en="Traditional brokers and systems reduce investor returns by 4–8% annually" data-ru="Традиционные брокеры и системы снижают доходность инвесторов на 4–8% ежегодно">
+              Традиционные брокеры и системы снижают доходность инвесторов на 4–8% ежегодно
+            </p>
           </div>
-          <span class="tag tag-problem" data-lang="problem">Проблема</span>
+          <span class="tag tag-problem" data-en="Problem" data-ru="Проблема">Проблема</span>
         </div>
+
         <div class="ps-card problem-card scroll-reveal from-left">
           <div class="ps-card-img-wrapper">
             <img src="img/Ellipse 50.svg" class="ps-card-blur">
             <img src="img/assets_task_01jwb4m354envvypq7qravm284_1748425706_img_1 1.svg" class="ps-card-icon">
           </div>
           <div class="ps-card-text">
-            <h3 data-lang="limited_access">Ограниченный доступ:</h3>
-            <p data-lang="limited_access_description">Примерно 50% инвесторов лишены доступа к глобальному рынку</p>
+            <h3 data-en="Limited Access" data-ru="Ограниченный доступ">Ограниченный доступ:</h3>
+            <p data-en="Approximately 50% of investors are deprived of access to the global market" data-ru="Примерно 50% инвесторов лишены доступа к глобальному рынку">
+              Примерно 50% инвесторов лишены доступа к глобальному рынку
+            </p>
           </div>
-          <span class="tag tag-problem" data-lang="problem">Проблема</span>
+          <span class="tag tag-problem" data-en="Problem" data-ru="Проблема">Проблема</span>
         </div>
+
         <div class="ps-card problem-card scroll-reveal from-left">
           <div class="ps-card-img-wrapper">
             <img src="img/Ellipse 50.svg" class="ps-card-blur">
             <img src="img/Problem Image Container (2).svg" class="ps-card-icon">
           </div>
           <div class="ps-card-text">
-            <h3 data-lang="fragmentation">Фрагментация:</h3>
-            <p data-lang="fragmentation_description">Инвесторы тратят до 40% времени, работая одновременно с 6–8 платформами</p>
+            <h3 data-en="Fragmentation" data-ru="Фрагментация">Фрагментация:</h3>
+            <p data-en="Investors spend up to 40% of their time working with 6-8 platforms simultaneously" data-ru="Инвесторы тратят до 40% времени, работая одновременно с 6–8 платформами">
+              Инвесторы тратят до 40% времени, работая одновременно с 6–8 платформами
+            </p>
           </div>
-          <span class="tag tag-problem" data-lang="problem">Проблема</span>
+          <span class="tag tag-problem" data-en="Problem" data-ru="Проблема">Проблема</span>
         </div>
       </div>
 
@@ -156,40 +173,48 @@
             <img src="img/assets_task_01jxf0f9r0empbctr1qg8ybh2c_1749629320_img_0 1.svg" class="ps-card-icon">
           </div>
           <div class="ps-card-text">
-            <h3 class="solution-title" data-lang="multibroker_model">Мультиброкерская модель:</h3>
-            <p class="solution-text" data-lang="multibroker_model_description">Один аккаунт дает доступ к 100+ брокерам и мировым биржам</p>
+            <h3 class="solution-title" data-en="Multi-broker model" data-ru="Мультиброкерская модель">Мультиброкерская модель:</h3>
+            <p class="solution-text" data-en="One account gives access to 100+ brokers and global exchanges" data-ru="Один аккаунт дает доступ к 100+ брокерам и мировым биржам">
+              Один аккаунт дает доступ к 100+ брокерам и мировым биржам
+            </p>
           </div>
-          <span class="tag tag-solution" data-lang="solution">Решение</span>
+          <span class="tag tag-solution" data-en="Solution" data-ru="Решение">Решение</span>
         </div>
         <div class="ps-card solution-card scroll-reveal from-right">
           <div class="ps-card-img-wrapper">
             <img src="img/assets_task_01jxf0n737fs1scnnd01jf634v_1749629500_img_0 1.svg" class="ps-card-icon">
           </div>
           <div class="ps-card-text">
-            <h3 class="solution-title" data-lang="transparency_and_yield">Прозрачность и доходность:</h3>
-            <p class="solution-text" data-lang="transparency_and_yield_description">0.1% фиксированная комиссия за ввод/вывод, 90% ребейтов управляющим</p>
+            <h3 class="solution-title" data-en="Transparency and Yield" data-ru="Прозрачность и доходность">Прозрачность и доходность:</h3>
+            <p class="solution-text" data-en="0.1% fixed commission for deposits/withdrawals, 90% rebates for managers" data-ru="0.1% фиксированная комиссия за ввод/вывод, 90% ребейтов управляющим">
+              0.1% фиксированная комиссия за ввод/вывод, 90% ребейтов управляющим
+            </p>
           </div>
-          <span class="tag tag-solution" data-lang="solution">Решение</span>
+          <span class="tag tag-solution" data-en="Solution" data-ru="Решение">Решение</span>
         </div>
         <div class="ps-card solution-card scroll-reveal from-right">
           <div class="ps-card-img-wrapper">
             <img src="img/assets_task_01jxf13fh9fa4rfxs37jt10g9n_1749629982_img_3 1.svg" class="ps-card-icon">
           </div>
           <div class="ps-card-text">
-            <h3 class="solution-title" data-lang="global_coverage">Глобальный охват и локализация под регуляторов:</h3>
-            <p class="solution-text" data-lang="global_coverage_description">Доступ к 90-95% мирового рынка; адаптация к MiFID II, SEC, ASIC и 90+ юрисдикциям</p>
+            <h3 class="solution-title" data-en="Global Coverage" data-ru="Глобальный охват">Глобальный охват:</h3>
+            <p class="solution-text" data-en="Access to 90-95% of the global market; adapting to MiFID II, SEC, ASIC, and 90+ jurisdictions" data-ru="Доступ к 90-95% мирового рынка; адаптация к MiFID II, SEC, ASIC и 90+ юрисдикциям">
+              Доступ к 90-95% мирового рынка; адаптация к MiFID II, SEC, ASIC и 90+ юрисдикциям
+            </p>
           </div>
-          <span class="tag tag-solution" data-lang="solution">Решение</span>
+          <span class="tag tag-solution" data-en="Solution" data-ru="Решение">Решение</span>
         </div>
         <div class="ps-card solution-card scroll-reveal from-right">
           <div class="ps-card-img-wrapper">
             <img src="img/assets_task_01jxf13ztzekdv3csgb5dep3ab_1749629990_img_2 1.svg" class="ps-card-icon">
           </div>
           <div class="ps-card-text">
-            <h3 class="solution-title" data-lang="unified_ecosystem">Единая экосистема:</h3>
-            <p class="solution-text" data-lang="unified_ecosystem_description">Инвестируй, копируй сделки, продавай стратегии, создавай и покупай курсы, общайся всё в одном месте</p>
+            <h3 class="solution-title" data-en="Unified Ecosystem" data-ru="Единая экосистема">Единая экосистема:</h3>
+            <p class="solution-text" data-en="Invest, copy trades, sell strategies, create and buy courses, communicate, all in one place" data-ru="Инвестируй, копируй сделки, продавай стратегии, создавай и покупай курсы, общайся всё в одном месте">
+              Инвестируй, копируй сделки, продавай стратегии, создавай и покупай курсы, общайся всё в одном месте
+            </p>
           </div>
-          <span class="tag tag-solution" data-lang="solution">Решение</span>
+          <span class="tag tag-solution" data-en="Solution" data-ru="Решение">Решение</span>
         </div>
       </div>
     </div>
@@ -198,14 +223,14 @@
 <section id="how-it-works" class="how-it-works-section scroll-reveal from-right">
   <div class="container">
     <div class="how-it-works-header">
-      <h2 data-lang="capital_knowledge_router">Маршрутизатор капитала и знаний</h2>
-      <span class="tag tag-problem" data-lang="how_it_works">Как это работает?</span>
+      <h2 data-en="Capital and Knowledge Router" data-ru="Маршрутизатор капитала и знаний">Маршрутизатор капитала и знаний</h2>
+      <span class="tag tag-problem" data-en="How It Works?" data-ru="Как это работает?">Как это работает?</span>
     </div>
     <div class="how-it-works-table">
       <div class="table-header">
         <div class="header-cell"></div>
-        <div class="header-cell" data-lang="what_happens">Что происходит</div>
-        <div class="header-cell" data-lang="participant_value">Ценность для участников</div>
+        <div class="header-cell" data-en="What Happens" data-ru="Что происходит">Что происходит</div>
+        <div class="header-cell" data-en="Participant Value" data-ru="Ценность для участников">Ценность для участников</div>
       </div>
       <div class="table-row">
         <div class="row-cell step-cell">
@@ -213,15 +238,15 @@
             <img src="img/Container (2).svg" alt="" class="step-icon-1">
           </div>
           <div class="step-info">
-            <span class="tag tag-dark" data-lang="step_1">Шаг 1</span>
-            <h3 data-lang="manager_to_broker">Управляющий → брокер</h3>
+            <span class="tag tag-dark" data-en="Step 1" data-ru="Шаг 1">Шаг 1</span>
+            <h3 data-en="Manager → Broker" data-ru="Управляющий → брокер">Управляющий → брокер</h3>
           </div>
         </div>
         <div class="row-cell">
-          <p data-lang="step_1_description">Подключает счёт у любого необходимого брокера внутри TOT</p>
+          <p data-en="Connects an account with any necessary broker inside TOT" data-ru="Подключает счёт у любого необходимого брокера внутри TOT">Подключает счёт у любого необходимого брокера внутри TOT</p>
         </div>
         <div class="row-cell">
-          <p data-lang="participant_value_1">Привычный терминал + лучшие условия + поток новых инвесторов</p>
+          <p data-en="Familiar terminal + better conditions + influx of new investors" data-ru="Привычный терминал + лучшие условия + поток новых инвесторов">Привычный терминал + лучшие условия + поток новых инвесторов</p>
         </div>
       </div>
       <div class="table-row">
@@ -230,15 +255,15 @@
             <img src="img/Container (3).svg" alt="" class="step-icon-1">
           </div>
           <div class="step-info">
-            <span class="tag tag-dark" data-lang="step_2">Шаг 2</span>
-            <h3 data-lang="investor_to_strategies">Инвестор → стратегии</h3>
+            <span class="tag tag-dark" data-en="Step 2" data-ru="Шаг 2">Шаг 2</span>
+            <h3 data-en="Investor → Strategies" data-ru="Инвестор → стратегии">Инвестор → стратегии</h3>
           </div>
         </div>
         <div class="row-cell">
-          <p data-lang="step_2_description">Из одного кабинета распределяет капитал по стратегиям, продуктам и инструментам разных брокеров</p>
+          <p data-en="Distributes capital across strategies, products, and tools from different brokers from a single account" data-ru="Из одного кабинета распределяет капитал по стратегиям, продуктам и инструментам разных брокеров">Из одного кабинета распределяет капитал по стратегиям, продуктам и инструментам разных брокеров</p>
         </div>
         <div class="row-cell">
-          <p data-lang="participant_value_2">Диверсификация и единый интерфейс управления</p>
+          <p data-en="Diversification and unified management interface" data-ru="Диверсификация и единый интерфейс управления">Диверсификация и единый интерфейс управления</p>
         </div>
       </div>
       <div class="table-row">
@@ -247,15 +272,15 @@
             <img src="img/Container (4).svg" alt="" class="step-icon-1">
           </div>
           <div class="step-info">
-            <span class="tag tag-dark" data-lang="step_3">Шаг 3</span>
-            <h3 data-lang="tot_to_commissions">TOT → комиссии</h3>
+            <span class="tag tag-dark" data-en="Step 3" data-ru="Шаг 3">Шаг 3</span>
+            <h3 data-en="TOT → Commissions" data-ru="TOT → комиссии">TOT → комиссии</h3>
           </div>
         </div>
         <div class="row-cell">
-          <p data-lang="step_3_description">Автоматически распределяет комиссии брокеру, управляющему, TOT</p>
+          <p data-en="Automatically distributes commissions to broker, manager, TOT" data-ru="Автоматически распределяет комиссии брокеру, управляющему, TOT">Автоматически распределяет комиссии брокеру, управляющему, TOT</p>
         </div>
         <div class="row-cell">
-          <p data-lang="participant_value_3">Прозрачная и предсказуемая монетизация</p>
+          <p data-en="Transparent and predictable monetization" data-ru="Прозрачная и предсказуемая монетизация">Прозрачная и предсказуемая монетизация</p>
         </div>
       </div>
       <div class="table-row">
@@ -264,15 +289,15 @@
             <img src="img/Container (5).svg" alt="" class="step-icon-single">
           </div>
           <div class="step-info">
-            <span class="tag tag-dark" data-lang="step_4">Шаг 4</span>
-            <h3 data-lang="opinion_leaders">Лидеры мнений</h3>
+            <span class="tag tag-dark" data-en="Step 4" data-ru="Шаг 4">Шаг 4</span>
+            <h3 data-en="Opinion Leaders" data-ru="Лидеры мнений">Лидеры мнений</h3>
           </div>
         </div>
         <div class="row-cell">
-          <p data-lang="step_4_description">Делятся портфелем, запускают подписки и партнёрку</p>
+          <p data-en="Share portfolio, start subscriptions and partnerships" data-ru="Делятся портфелем, запускают подписки и партнёрку">Делятся портфелем, запускают подписки и партнёрку</p>
         </div>
         <div class="row-cell">
-          <p data-lang="participant_value_4">Монетизируют экспертизу, расширяют аудиторию</p>
+          <p data-en="Monetize expertise, expand audience" data-ru="Монетизируют экспертизу, расширяют аудиторию">Монетизируют экспертизу, расширяют аудиторию</p>
         </div>
       </div>
       <div class="table-row">
@@ -281,15 +306,15 @@
             <img src="img/Container (6).svg" alt="" class="step-icon-single">
           </div>
           <div class="step-info">
-            <span class="tag tag-dark" data-lang="step_5">Шаг 5</span>
-            <h3 data-lang="scaling">Масштабирование</h3>
+            <span class="tag tag-dark" data-en="Step 5" data-ru="Шаг 5">Шаг 5</span>
+            <h3 data-en="Scaling" data-ru="Масштабирование">Масштабирование</h3>
           </div>
         </div>
         <div class="row-cell">
-          <p data-lang="step_5_description">TOT включает геймификацию и Ads-кабинет</p>
+          <p data-en="TOT includes gamification and Ads dashboard" data-ru="TOT включает геймификацию и Ads-кабинет">TOT включает геймификацию и Ads-кабинет</p>
         </div>
         <div class="row-cell">
-          <p data-lang="participant_value_5">Ускоряет привлечение клиентов и оборот капитала</p>
+          <p data-en="Accelerates customer acquisition and capital turnover" data-ru="Ускоряет привлечение клиентов и оборот капитала">Ускоряет привлечение клиентов и оборот капитала</p>
         </div>
       </div>
     </div>
@@ -299,65 +324,65 @@
       <div class="how-it-works-step">
         <div class="step-top">
           <img src="img/Container (2).svg" alt="" class="step-icon-single">
-          <span class="tag tag-dark" data-lang="step_1">Шаг 1</span>
+          <span class="tag tag-dark" data-en="Step 1" data-ru="Шаг 1">Шаг 1</span>
         </div>
-        <h3 data-lang="manager_to_broker">Управляющий → брокер</h3>
-        <p class="subtitle what" data-lang="what_happens">Что происходит</p>
-        <p class="text what-text" data-lang="step_1_description">Подключает счёт у любого необходимого брокера внутри TOT</p>
-        <p class="subtitle value" data-lang="participant_value">Ценность для участников</p>
-        <p class="text value-text" data-lang="participant_value_1">Привычный терминал + лучшие условия + поток новых инвесторов</p>
+        <h3 data-en="Manager → Broker" data-ru="Управляющий → брокер">Управляющий → брокер</h3>
+        <p class="subtitle what" data-en="What happens" data-ru="Что происходит">Что происходит</p>
+        <p class="text what-text" data-en="Connects an account with any necessary broker inside TOT" data-ru="Подключает счёт у любого необходимого брокера внутри TOT">Подключает счёт у любого необходимого брокера внутри TOT</p>
+        <p class="subtitle value" data-en="Participant value" data-ru="Ценность для участников">Ценность для участников</p>
+        <p class="text value-text" data-en="Familiar terminal + better conditions + influx of new investors" data-ru="Привычный терминал + лучшие условия + поток новых инвесторов">Привычный терминал + лучшие условия + поток новых инвесторов</p>
       </div>
 
       <!-- Шаг 2 -->
       <div class="how-it-works-step">
         <div class="step-top">
           <img src="img/Container (3).svg" alt="" class="step-icon-single">
-          <span class="tag tag-dark" data-lang="step_2">Шаг 2</span>
+          <span class="tag tag-dark" data-en="Step 2" data-ru="Шаг 2">Шаг 2</span>
         </div>
-        <h3 data-lang="investor_to_strategies">Инвестор → стратегии</h3>
-        <p class="subtitle what" data-lang="what_happens">Что происходит</p>
-        <p class="text what-text" data-lang="step_2_description">Из одного кабинета распределяет капитал по стратегиям, продуктам и инструментам разных брокеров</p>
-        <p class="subtitle value" data-lang="participant_value">Ценность для участников</p>
-        <p class="text value-text" data-lang="participant_value_2">Диверсификация и единый интерфейс управления</p>
+        <h3 data-en="Investor → Strategies" data-ru="Инвестор → стратегии">Инвестор → стратегии</h3>
+        <p class="subtitle what" data-en="What happens" data-ru="Что происходит">Что происходит</p>
+        <p class="text what-text" data-en="Distributes capital across strategies, products, and tools from different brokers from a single account" data-ru="Из одного кабинета распределяет капитал по стратегиям, продуктам и инструментам разных брокеров">Из одного кабинета распределяет капитал по стратегиям, продуктам и инструментам разных брокеров</p>
+        <p class="subtitle value" data-en="Participant value" data-ru="Ценность для участников">Ценность для участников</p>
+        <p class="text value-text" data-en="Diversification and unified management interface" data-ru="Диверсификация и единый интерфейс управления">Диверсификация и единый интерфейс управления</p>
       </div>
 
       <!-- Шаг 3 -->
       <div class="how-it-works-step">
         <div class="step-top">
           <img src="img/Container (4).svg" alt="" class="step-icon-single">
-          <span class="tag tag-dark" data-lang="step_3">Шаг 3</span>
+          <span class="tag tag-dark" data-en="Step 3" data-ru="Шаг 3">Шаг 3</span>
         </div>
-        <h3 data-lang="tot_to_commissions">TOT → комиссии</h3>
-        <p class="subtitle what" data-lang="what_happens">Что происходит</p>
-        <p class="text what-text" data-lang="step_3_description">Автоматически распределяет комиссии брокеру, управляющему, TOT</p>
-        <p class="subtitle value" data-lang="participant_value">Ценность для участников</p>
-        <p class="text value-text" data-lang="participant_value_3">Прозрачная и предсказуемая монетизация</p>
+        <h3 data-en="TOT → Commissions" data-ru="TOT → комиссии">TOT → комиссии</h3>
+        <p class="subtitle what" data-en="What happens" data-ru="Что происходит">Что происходит</p>
+        <p class="text what-text" data-en="Automatically distributes commissions to broker, manager, TOT" data-ru="Автоматически распределяет комиссии брокеру, управляющему, TOT">Автоматически распределяет комиссии брокеру, управляющему, TOT</p>
+        <p class="subtitle value" data-en="Participant value" data-ru="Ценность для участников">Ценность для участников</p>
+        <p class="text value-text" data-en="Transparent and predictable monetization" data-ru="Прозрачная и предсказуемая монетизация">Прозрачная и предсказуемая монетизация</p>
       </div>
 
       <!-- Шаг 4 -->
       <div class="how-it-works-step">
         <div class="step-top">
           <img src="img/Container (5).svg" alt="" class="step-icon-single">
-          <span class="tag tag-dark" data-lang="step_4">Шаг 4</span>
+          <span class="tag tag-dark" data-en="Step 4" data-ru="Шаг 4">Шаг 4</span>
         </div>
-        <h3 data-lang="opinion_leaders">Лидеры мнений</h3>
-        <p class="subtitle what" data-lang="what_happens">Что происходит</p>
-        <p class="text what-text" data-lang="step_4_description">Делятся портфелем, запускают подписки и партнёрку</p>
-        <p class="subtitle value" data-lang="participant_value">Ценность для участников</p>
-        <p class="text value-text" data-lang="participant_value_4">Монетизируют экспертизу, расширяют аудиторию</p>
+        <h3 data-en="Opinion Leaders" data-ru="Лидеры мнений">Лидеры мнений</h3>
+        <p class="subtitle what" data-en="What happens" data-ru="Что происходит">Что происходит</p>
+        <p class="text what-text" data-en="Share portfolio, start subscriptions and partnerships" data-ru="Делятся портфелем, запускают подписки и партнёрку">Делятся портфелем, запускают подписки и партнёрку</p>
+        <p class="subtitle value" data-en="Participant value" data-ru="Ценность для участников">Ценность для участников</p>
+        <p class="text value-text" data-en="Monetize expertise, expand audience" data-ru="Монетизируют экспертизу, расширяют аудиторию">Монетизируют экспертизу, расширяют аудиторию</p>
       </div>
 
       <!-- Шаг 5 -->
       <div class="how-it-works-step">
         <div class="step-top">
           <img src="img/Container (6).svg" alt="" class="step-icon-single">
-          <span class="tag tag-dark" data-lang="step_5">Шаг 5</span>
+          <span class="tag tag-dark" data-en="Step 5" data-ru="Шаг 5">Шаг 5</span>
         </div>
-        <h3 data-lang="scaling">Масштабирование</h3>
-        <p class="subtitle what" data-lang="what_happens">Что происходит</p>
-        <p class="text what-text" data-lang="step_5_description">TOT включает геймификацию и Ads-кабинет</p>
-        <p class="subtitle value" data-lang="participant_value">Ценность для участников</p>
-        <p class="text value-text" data-lang="participant_value_5">Ускоряет привлечение клиентов и оборот капитала</p>
+        <h3 data-en="Scaling" data-ru="Масштабирование">Масштабирование</h3>
+        <p class="subtitle what" data-en="What happens" data-ru="Что происходит">Что происходит</p>
+        <p class="text what-text" data-en="TOT includes gamification and Ads dashboard" data-ru="TOT включает геймификацию и Ads-кабинет">TOT включает геймификацию и Ads-кабинет</p>
+        <p class="subtitle value" data-en="Participant value" data-ru="Ценность для участников">Ценность для участников</p>
+        <p class="text value-text" data-en="Accelerates customer acquisition and capital turnover" data-ru="Ускоряет привлечение клиентов и оборот капитала">Ускоряет привлечение клиентов и оборот капитала</p>
       </div>
     </div>
   </div>
@@ -367,24 +392,24 @@
     <!-- DESKTOP / TABLET VERSION -->
     <div class="broker-content desktop-only">
       <div class="broker-text">
-        <h3 data-lang="we_dont_replace_brokers">Мы не замещаем, а усиливаем брокеров</h3>
-        <p data-lang="tot_unites_brokers">TOT соединяет управляющих, брокеров, инвесторов и блогеров в одном месте — превращая движение денег и знаний в масштабируемый бизнес с понятной моделью дохода</p>
+        <h3 data-en="We don't replace brokers, we reinforce them" data-ru="Мы не замещаем, а усиливаем брокеров">Мы не замещаем, а усиливаем брокеров</h3>
+        <p data-en="TOT connects managers, brokers, investors, and bloggers in one place, turning the movement of money and knowledge into a scalable business with a clear revenue model" data-ru="TOT соединяет управляющих, брокеров, инвесторов и блогеров в одном месте — превращая движение денег и знаний в масштабируемый бизнес с понятной моделью дохода">TOT соединяет управляющих, брокеров, инвесторов и блогеров в одном месте — превращая движение денег и знаний в масштабируемый бизнес с понятной моделью дохода</p>
       </div>
       <div class="broker-items">
         <div class="broker-item">
           <img src="img/assets_task_01jvyp166mej4ajxgs89jqy94v_1748007752_img_1 1.svg" alt="Управляющий icon">
-          <h4 data-lang="manager">Управляющий</h4>
-          <p data-lang="manager_description">Остаётся в своём терминале, где и привык работать</p>
+          <h4 data-en="Manager" data-ru="Управляющий">Управляющий</h4>
+          <p data-en="Stays in their terminal where they are used to working" data-ru="Остаётся в своём терминале, где и привык работать">Остаётся в своём терминале, где и привык работать</p>
         </div>
         <div class="broker-item">
           <img src="img/assets_task_01jvypa6ecfwnrsqw8s819kvwg_1748008047_img_2 1.svg" alt="Инвестор icon">
-          <h4 data-lang="investor">Инвестор</h4>
-          <p data-lang="investor_description">Видит консолидированный портфель разных брокеров</p>
+          <h4 data-en="Investor" data-ru="Инвестор">Инвестор</h4>
+          <p data-en="Sees a consolidated portfolio from different brokers" data-ru="Видит консолидированный портфель разных брокеров">Видит консолидированный портфель разных брокеров</p>
         </div>
         <div class="broker-item">
           <img src="img/assets_task_01jvyp4bezfr1bt2b13cra0xnp_1748007849_img_2 1.svg" alt="Брокер icon">
-          <h4 data-lang="broker">Брокер</h4>
-          <p data-lang="broker_description">Получает дополнительный оборот и маркетинг без конфликта интересов</p>
+          <h4 data-en="Broker" data-ru="Брокер">Брокер</h4>
+          <p data-en="Gets additional turnover and marketing without conflicts of interest" data-ru="Получает дополнительный оборот и маркетинг без конфликта интересов">Получает дополнительный оборот и маркетинг без конфликта интересов</p>
         </div>
       </div>
     </div>
@@ -392,27 +417,27 @@
     <!-- MOBILE VERSION (≤799px) -->
     <div class="broker-mobile mobile-only">
       <!-- 1. Main heading with manual line breaks -->
-      <h3 data-lang="we_dont_replace_brokers_mobile">
+      <h3 data-en="We don't replace brokers, we reinforce them" data-ru="Мы не замещаем, а<br> усиливаем<br> брокеров">
         Мы не замещаем, а<br>
         усиливаем<br>
         брокеров
       </h3>
       <!-- 2. Intro text -->
-      <p class="intro" data-lang="tot_unites_brokers_mobile">
+      <p class="intro" data-en="TOT connects managers, brokers, investors, and bloggers in one place, turning the movement of money and knowledge into a scalable business with a clear revenue model" data-ru="TOT соединяет управляющих, брокеров, инвесторов и блогеров в одном месте — превращая движение денег и знаний в масштабируемый бизнес с понятной моделью дохода">
         TOT соединяет управляющих, брокеров, инвесторов и блогеров в одном месте — превращая движение денег и знаний в масштабируемый бизнес с понятной моделью дохода
       </p>
       <!-- 3–5. Manager block -->
       <img src="img/assets_task_01jvyp166mej4ajxgs89jqy94v_1748007752_img_1 1.svg" alt="Управляющий icon">
-      <h4 data-lang="manager">Управляющий</h4>
-      <p class="detail" data-lang="manager_description_mobile">Остаётся в своём терминале, где и привык работать</p>
+      <h4 data-en="Manager" data-ru="Управляющий">Управляющий</h4>
+      <p class="detail" data-en="Stays in their terminal where they are used to working" data-ru="Остаётся в своём терминале, где и привык работать">Остаётся в своём терминале, где и привык работать</p>
       <!-- 6–8. Investor block -->
       <img src="img/assets_task_01jvypa6ecfwnrsqw8s819kvwg_1748008047_img_2 1.svg" alt="Инвестор icon">
-      <h4 data-lang="investor">Инвестор</h4>
-      <p class="detail" data-lang="investor_description_mobile">Видит консолидированный портфель разных брокеров</p>
+      <h4 data-en="Investor" data-ru="Инвестор">Инвестор</h4>
+      <p class="detail" data-en="Sees a consolidated portfolio from different brokers" data-ru="Видит консолидированный портфель разных брокеров">Видит консолидированный портфель разных брокеров</p>
       <!-- 9–11. Broker block -->
       <img src="img/assets_task_01jvyp4bezfr1bt2b13cra0xnp_1748007849_img_2 1.svg" alt="Брокер icon">
-      <h4 data-lang="broker">Брокер</h4>
-      <p class="detail" data-lang="broker_description_mobile">Получает дополнительный оборот и маркетинг без конфликта интересов</p>
+      <h4 data-en="Broker" data-ru="Брокер">Брокер</h4>
+      <p class="detail" data-en="Gets additional turnover and marketing without conflicts of interest" data-ru="Получает дополнительный оборот и маркетинг без конфликта интересов">Получает дополнительный оборот и маркетинг без конфликта интересов</p>
     </div>
   </div>
 </section>
@@ -421,8 +446,10 @@
     <div class="core-power-grid">
       <div class="core-power-left">
         <div class="core-power-text">
-          <h2 data-lang="core_strength">Основа нашей мощности</h2>
-          <p data-lang="core_strength_description">TOT модульная инфраструктура, построенная как экосистема. Все модули связаны между собой и работают как единый гибкий «двигатель»: платформа легко масштабируется, расширяет возможности и усиливает ценность для каждого участника</p>
+          <h2 data-en="Core of our power" data-ru="Основа нашей мощности">Основа нашей мощности</h2>
+          <p data-en="TOT's modular infrastructure built as an ecosystem. All modules are interconnected and work as a single flexible 'engine': the platform is easily scalable, expands opportunities, and strengthens value for each participant" data-ru="TOT модульная инфраструктура, построенная как экосистема. Все модули связаны между собой и работают как единый гибкий «двигатель»: платформа легко масштабируется, расширяет возможности и усиливает ценность для каждого участника">
+            TOT модульная инфраструктура, построенная как экосистема. Все модули связаны между собой и работают как единый гибкий «двигатель»: платформа легко масштабируется, расширяет возможности и усиливает ценность для каждого участника
+          </p>
         </div>
         <div class="core-power-image-group">
           <img src="img/Ellipse 51.svg" alt="Abstract blur shape" class="core-img-blur">
@@ -431,237 +458,236 @@
         </div>
       </div>
       <div class="core-power-right">
-        <span class="tag tag-dark" data-lang="technological_depth">Технологическая глубина</span>
+        <span class="tag tag-dark" data-en="Technological depth" data-ru="Технологическая глубина">Технологическая глубина</span>
         <div class="features-grid">
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_core">TOT Core:</h4>
-              <p data-lang="tot_core_description">Мультиброкерская STP/PAMM-инфраструктура.</p>
+              <h4 data-en="TOT Core" data-ru="TOT Core">TOT Core:</h4>
+              <p data-en="Multi-broker STP/PAMM infrastructure" data-ru="Мультиброкерская STP/PAMM-инфраструктура.">Мультиброкерская STP/PAMM-инфраструктура.</p>
             </div>
           </div>
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_market">TOT Market:</h4>
-              <p data-lang="tot_market_description">Маркетплейс стратегий и продуктов</p>
+              <h4 data-en="TOT Market" data-ru="TOT Market">TOT Market:</h4>
+              <p data-en="Marketplace for strategies and products" data-ru="Маркетплейс стратегий и продуктов">Маркетплейс стратегий и продуктов</p>
             </div>
           </div>
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_ai">TOT AI:</h4>
-              <p data-lang="tot_ai_description">Персональный ИИ-ассистент</p>
+              <h4 data-en="TOT AI" data-ru="TOT AI">TOT AI:</h4>
+              <p data-en="Personal AI assistant" data-ru="Персональный ИИ-ассистент">Персональный ИИ-ассистент</p>
             </div>
           </div>
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_ads">TOT Ads:</h4>
-              <p data-lang="tot_ads_description">Рекламный кабинет с AI-оптимизированными кампаниями внутри платформы</p>
+              <h4 data-en="TOT Ads" data-ru="TOT Ads">TOT Ads:</h4>
+              <p data-en="Advertising dashboard with AI-optimized campaigns within the platform" data-ru="Рекламный кабинет с AI-оптимизированными кампаниями внутри платформы">Рекламный кабинет с AI-оптимизированными кампаниями внутри платформы</p>
             </div>
           </div>
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_quest">TOT Quest:</h4>
-              <p data-lang="tot_quest_description">Геймификация — задания, уровни, награды</p>
+              <h4 data-en="TOT Quest" data-ru="TOT Quest">TOT Quest:</h4>
+              <p data-en="Gamification – tasks, levels, rewards" data-ru="Геймификация — задания, уровни, награды">Геймификация — задания, уровни, награды</p>
             </div>
           </div>
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_social">TOT Social:</h4>
-              <p data-lang="tot_social_description">Полноценная социальная сеть</p>
+              <h4 data-en="TOT Social" data-ru="TOT Social">TOT Social:</h4>
+              <p data-en="Full-fledged social network" data-ru="Полноценная социальная сеть">Полноценная социальная сеть</p>
             </div>
           </div>
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_education">TOT Education:</h4>
-              <p data-lang="tot_education_description">Конструктор и площадка для курсов</p>
+              <h4 data-en="TOT Education" data-ru="TOT Education">TOT Education:</h4>
+              <p data-en="Course builder and platform" data-ru="Конструктор и площадка для курсов">Конструктор и площадка для курсов</p>
             </div>
           </div>
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_analytics">TOT Analytics:</h4>
-              <p data-lang="tot_analytics_description">Дашборды и отчёты в реальном времени</p>
+              <h4 data-en="TOT Analytics" data-ru="TOT Analytics">TOT Analytics:</h4>
+              <p data-en="Real-time dashboards and reports" data-ru="Дашборды и отчёты в реальном времени">Дашборды и отчёты в реальном времени</p>
             </div>
           </div>
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_chain">TOT Chain:</h4>
-              <p data-lang="tot_chain_description">Инновационная и эффективная партнёрская программа</p>
+              <h4 data-en="TOT Chain" data-ru="TOT Chain">TOT Chain:</h4>
+              <p data-en="Innovative and efficient affiliate program" data-ru="Инновационная и эффективная партнёрская программа">Инновационная и эффективная партнёрская программа</p>
             </div>
           </div>
           <div class="feature-item">
             <img src="img/Vector 5 (Stroke).svg" alt="icon">
             <div class="feature-text">
-              <h4 data-lang="tot_stream">TOT Stream:</h4>
-              <p data-lang="tot_stream_description">Встроенный видеосервис для стримов и контента</p>
+              <h4 data-en="TOT Stream" data-ru="TOT Stream">TOT Stream:</h4>
+              <p data-en="Built-in video service for streams and content" data-ru="Встроенный видеосервис для стримов и контента">Встроенный видеосервис для стримов и контента</p>
             </div>
           </div>
         </div>
-        <a href="питч_русс.pdf" class="btn btn-primary" data-lang="request_presentation" target="_blank">Запросить презентацию</a>
+        <a href="питч_русс.pdf" class="btn btn-primary" data-en="Request Presentation" data-ru="Запросить презентацию" target="_blank">Запросить презентацию</a>
       </div>
     </div>
   </div>
 </section>
 <section id="screenshots" class="screenshots-section scroll-reveal from-left">
   <div class="container">
-    <h2 class="screenshots-title" data-lang="what_does_tot_look_like">Как выглядит ТОТ изнутри</h2>
+    <h2 class="screenshots-title" data-en="What does TOT look like inside?" data-ru="Как выглядит ТОТ изнутри">Как выглядит ТОТ изнутри</h2>
 
     <div class="carousel-wrapper">
-      <button class="carousel-arrow carousel-prev" aria-label="Назад" data-lang="previous">‹</button>
+      <button class="carousel-arrow carousel-prev" aria-label="Back" data-en="Previous" data-ru="Назад">‹</button>
 
       <div class="carousel-track">
         <div class="carousel-slide" data-index="1">
-          <img src="img/(1).png" alt="Скриншот 1">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(1).png" alt="Screenshot 1">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="2">
-          <img src="img/(2).png" alt="Скриншот 2">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(2).png" alt="Screenshot 2">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="3">
-          <img src="img/(3).png" alt="Скриншот 3">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(3).png" alt="Screenshot 3">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="4">
-          <img src="img/(4).png" alt="Скриншот 4">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(4).png" alt="Screenshot 4">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="5">
-          <img src="img/(5).png" alt="Скриншот 5">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(5).png" alt="Screenshot 5">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="6">
-          <img src="img/(6).png" alt="Скриншот 6">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(6).png" alt="Screenshot 6">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="7">
-          <img src="img/(7).png" alt="Скриншот 7">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(7).png" alt="Screenshot 7">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="8">
-          <img src="img/(8).png" alt="Скриншот 8">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(8).png" alt="Screenshot 8">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="9">
-          <img src="img/(9).png" alt="Скриншот 9">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(9).png" alt="Screenshot 9">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="10">
-          <img src="img/(10).png" alt="Скриншот 10">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(10).png" alt="Screenshot 10">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="11">
-          <img src="img/(11).png" alt="Скриншот 11">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(11).png" alt="Screenshot 11">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="12">
-          <img src="img/(12).png" alt="Скриншот 12">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(12).png" alt="Screenshot 12">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="13">
-          <img src="img/(13).png" alt="Скриншот 13">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(13).png" alt="Screenshot 13">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="14">
-          <img src="img/(14).png" alt="Скриншот 14">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(14).png" alt="Screenshot 14">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="15">
-          <img src="img/(15).png" alt="Скриншот 15">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(15).png" alt="Screenshot 15">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="16">
-          <img src="img/(16).png" alt="Скриншот 16">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(16).png" alt="Screenshot 16">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="17">
-          <img src="img/(17).png" alt="Скриншот 17">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(17).png" alt="Screenshot 17">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="18">
-          <img src="img/(18).png" alt="Скриншот 18">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(18).png" alt="Screenshot 18">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="19">
-          <img src="img/(19).png" alt="Скриншот 19">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(19).png" alt="Screenshot 19">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="20">
-          <img src="img/(20).png" alt="Скриншот 20">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(20).png" alt="Screenshot 20">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="21">
-          <img src="img/(21).png" alt="Скриншот 21">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(21).png" alt="Screenshot 21">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="22">
-          <img src="img/(22).png" alt="Скриншот 22">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(22).png" alt="Screenshot 22">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="23">
-          <img src="img/(23).png" alt="Скриншот 23">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(23).png" alt="Screenshot 23">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="24">
-          <img src="img/(24).png" alt="Скриншот 24">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(24).png" alt="Screenshot 24">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="25">
-          <img src="img/(25).png" alt="Скриншот 25">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(25).png" alt="Screenshot 25">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="26">
-          <img src="img/(26).png" alt="Скриншот 26">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(26).png" alt="Screenshot 26">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="27">
-          <img src="img/(27).png" alt="Скриншот 27">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(27).png" alt="Screenshot 27">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="28">
-          <img src="img/(28).png" alt="Скриншот 28">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(28).png" alt="Screenshot 28">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="29">
-          <img src="img/(29).png" alt="Скриншот 29">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(29).png" alt="Screenshot 29">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
         <div class="carousel-slide" data-index="30">
-          <img src="img/(30).png" alt="Скриншот 30">
-          <div class="slide-overlay"><span class="eye-icon" data-lang="view">👁 Смотреть</span></div>
+          <img src="img/(30).png" alt="Screenshot 30">
+          <div class="slide-overlay"><span class="eye-icon" >👁 Смотреть</span></div>
         </div>
       </div>
 
-      <button class="carousel-arrow carousel-next" aria-label="Вперёд" data-lang="next">›</button>
+      <button class="carousel-arrow carousel-next" aria-label="Forward" data-en="Next" data-ru="Вперёд">›</button>
     </div>
   </div>
 </section>
-
 <section id="market-scale" class="market-scale-section scroll-reveal from-left">
   <div class="container">
-    <h2 class="section-title" data-lang="market_scale_growth">Масштабность рынка и возможность роста</h2>
+    <h2 class="section-title" data-en="Market scale and growth potential" data-ru="Масштабность рынка и возможность роста">Масштабность рынка и возможность роста</h2>
     <div class="market-cards">
       <div class="market-card">
-        <span class="tag tag-problem" data-lang="by_2030">к 2030 году:</span>
-        <div class="market-value" data-lang="market_value">$10–15 млрд</div>
-        <p data-lang="market_traditional_social_trading">«Традиционный» social-trading (акции, FX, CFD); Crypto-social / copy trading</p>
+        <span class="tag tag-problem" data-en="By 2030:" data-ru="к 2030 году:">к 2030 году:</span>
+        <div class="market-value" data-en="$10–15 billion" data-ru="$10–15 млрд">$10–15 млрд</div>
+        <p data-en="Traditional social trading (stocks, FX, CFD); Crypto-social / copy trading" data-ru="«Традиционный» social-trading (акции, FX, CFD); Crypto-social / copy trading">«Традиционный» social-trading (акции, FX, CFD); Crypto-social / copy trading</p>
       </div>
       <div class="market-card">
-        <span class="tag tag-problem" data-lang="market_volume">Оборот:</span>
-        <div class="market-value" data-lang="market_volume_value">$8 трлн</div>
-        <p data-lang="market_forecast">Консервативный прогноз к 2030 году: 6–8 трлн USD в год</p>
+        <span class="tag tag-problem" data-en="Volume:" data-ru="Оборот:">Оборот:</span>
+        <div class="market-value" data-en="$8 trillion" data-ru="$8 трлн">$8 трлн</div>
+        <p data-en="Conservative forecast by 2030: $6-8 trillion per year" data-ru="Консервативный прогноз к 2030 году: 6–8 трлн USD в год">Консервативный прогноз к 2030 году: 6–8 трлн USD в год</p>
       </div>
       <div class="market-card">
-        <span class="tag tag-problem" data-lang="market_growth">Рост рынка на</span>
-        <div class="market-value" data-lang="market_growth_value">12% ежегодно</div>
-        <p data-lang="market_audience_ready">Готовность аудитории к новым решениям и платформам</p>
+        <span class="tag tag-problem" data-en="Market growth:" data-ru="Рост рынка на">Рост рынка на</span>
+        <div class="market-value" data-en="12% annually" data-ru="12% ежегодно">12% ежегодно</div>
+        <p data-en="Audience readiness for new solutions and platforms" data-ru="Готовность аудитории к новым решениям и платформам">Готовность аудитории к новым решениям и платформам</p>
       </div>
     </div>
   </div>
@@ -669,95 +695,94 @@
 
 <section id="roadmap" class="roadmap-section scroll-reveal from-right">
   <div class="container">
-    <h2 class="section-title" data-lang="path_to_global">Путь к глобальному доминированию</h2>
+    <h2 class="section-title" data-en="Path to global dominance" data-ru="Путь к глобальному доминированию">Путь к глобальному доминированию</h2>
     <div class="roadmap-steps">
       <div class="roadmap-step">
         <div class="step-icon">
           <img src="img/Group 1060.svg" alt="Bootstrap icon">
         </div>
-        <span class="tag tag-accent">2024 - 2025</span>
+        <span class="tag tag-accent" data-en="2024 - 2025" data-ru="2024 - 2025">2024 - 2025</span>
         <div class="step-text">
-          <h4 data-lang="phase_1">Bootstrap</h4>
-          <p data-lang="phase_1_description">Концепция, бренд, сбор команды, первый прототип</p>
+          <h4 data-en="Bootstrap" data-ru="Bootstrap">Bootstrap</h4>
+          <p data-en="Concept, brand, team building, first prototype" data-ru="Концепция, бренд, сбор команды, первый прототип">Концепция, бренд, сбор команды, первый прототип</p>
         </div>
       </div>
       <div class="roadmap-step">
         <div class="step-icon">
           <img src="img/Group 1060 (1).svg" alt="Pre-seed icon">
         </div>
-        <span class="tag tag-accent">2025 – 2026</span>
+        <span class="tag tag-accent" data-en="2025 – 2026" data-ru="2025 – 2026">2025 – 2026</span>
         <div class="step-text">
-          <h4 data-lang="phase_2">Pre-seed</h4>
-          <span class="step-amount">$700K</span>
-          <p data-lang="phase_2_description">MVP, первые пользователи, API-интеграции, старт маркетинга</p>
-          <span class="step-evaluation" data-lang="valuation">Оценка: $2.5M</span>
+          <h4 data-en="Pre-seed" data-ru="Pre-seed">Pre-seed</h4>
+          <span class="step-amount" data-en="$700K" data-ru="$700K">$700K</span>
+          <p data-en="MVP, first users, API integrations, start of marketing" data-ru="MVP, первые пользователи, API-интеграции, старт маркетинга">MVP, первые пользователи, API-интеграции, старт маркетинга</p>
+          <span class="step-evaluation" data-en="Valuation: $2.5M" data-ru="Оценка: $2.5M">Оценка: $2.5M</span>
         </div>
       </div>
       <div class="roadmap-step">
         <div class="step-icon">
           <img src="img/Group 1060 (1).svg" alt="Seed Series A icon">
         </div>
-        <span class="tag tag-accent">2026 - 2027</span>
+        <span class="tag tag-accent" data-en="2026 - 2027" data-ru="2026 - 2027">2026 - 2027</span>
         <div class="step-text">
-          <h4 data-lang="phase_3">Seed Series A</h4>
-          <span class="step-amount">$2.5M</span>
-          <p data-lang="phase_3_description">Расширение сети брокеров, выход в EU, LatAm, APAC</p>
-          <span class="step-evaluation" data-lang="valuation">Оценка: $12M</span>
+          <h4 data-en="Seed Series A" data-ru="Seed Series A">Seed Series A</h4>
+          <span class="step-amount" data-en="$2.5M" data-ru="$2.5M">$2.5M</span>
+          <p data-en="Expansion of broker network, entry into EU, LatAm, APAC" data-ru="Расширение сети брокеров, выход в EU, LatAm, APAC">Расширение сети брокеров, выход в EU, LatAm, APAC</p>
+          <span class="step-evaluation" data-en="Valuation: $12M" data-ru="Оценка: $12M">Оценка: $12M</span>
         </div>
       </div>
       <div class="roadmap-step">
         <div class="step-icon">
           <img src="img/Group 1060 (1).svg" alt="Seed Series B icon">
         </div>
-        <span class="tag tag-accent">2027 - 2028</span>
+        <span class="tag tag-accent" data-en="2027 - 2028" data-ru="2027 - 2028">2027 - 2028</span>
         <div class="step-text">
-          <h4 data-lang="phase_4">Seed Series B</h4>
-          <span class="step-amount">$12M</span>
-          <p data-lang="phase_4_description">Глобализация и выход на ключевые мировые рынки</p>
-          <span class="step-evaluation" data-lang="valuation">Оценка: $60M</span>
+          <h4 data-en="Seed Series B" data-ru="Seed Series B">Seed Series B</h4>
+          <span class="step-amount" data-en="$12M" data-ru="$12M">$12M</span>
+          <p data-en="Global expansion and entry into key world markets" data-ru="Глобализация и выход на ключевые мировые рынки">Глобализация и выход на ключевые мировые рынки</p>
+          <span class="step-evaluation" data-en="Valuation: $60M" data-ru="Оценка: $60M">Оценка: $60M</span>
         </div>
       </div>
       <div class="roadmap-step">
         <div class="step-icon">
           <img src="img/Group 1060 (1).svg" alt="Series C+IPO icon">
         </div>
-        <span class="tag tag-accent">2028 - 2030</span>
+        <span class="tag tag-accent" data-en="2028 - 2030" data-ru="2028 - 2030">2028 - 2030</span>
         <div class="step-text">
-          <h4 data-lang="phase_5">Series C+IPO</h4>
-          <span class="step-amount">$40M-$100M+</span>
-          <p data-lang="phase_5_description">Листинг на NASDAQ и глобальное признание бренда TOT</p>
-          <span class="step-evaluation" data-lang="valuation">Оценка: $300M-$1B+</span>
+          <h4 data-en="Series C+IPO" data-ru="Series C+IPO">Series C+IPO</h4>
+          <span class="step-amount" data-en="$40M-$100M+" data-ru="$40M-$100M+">$40M-$100M+</span>
+          <p data-en="Listing on NASDAQ and global recognition of the TOT brand" data-ru="Листинг на NASDAQ и глобальное признание бренда TOT">Листинг на NASDAQ и глобальное признание бренда TOT</p>
+          <span class="step-evaluation" data-en="Valuation: $300M-$1B+" data-ru="Оценка: $300M-$1B+">Оценка: $300M-$1B+</span>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <section id="pre-seed-proof" class="pre-seed-section scroll-reveal from-left">
   <div class="container">
     <div class="pre-seed-grid">
       <div class="pre-seed-left">
-        <h2 data-lang="what_we_will_prove">Что докажем за Pre‑Seed</h2>
+        <h2 data-en="What we will prove during Pre‑Seed" data-ru="Что докажем за Pre‑Seed">Что докажем за Pre‑Seed</h2>
         <div class="proof-list">
           <div class="proof-item">
             <img src="img/Icon (1).svg" alt="icon">
-            <p data-lang="proof_mvp">MVP с реальной брокерской торговлей</p>
+            <p data-en="MVP with real brokerage trading" data-ru="MVP с реальной брокерской торговлей">MVP с реальной брокерской торговлей</p>
           </div>
           <div class="proof-item">
             <img src="img/Icon (2).svg" alt="icon">
-            <p data-lang="proof_100_users">100+ пользователей, из них ≥20 платящих или активных</p>
+            <p data-en="100+ users, of which ≥20 are paying or active" data-ru="100+ пользователей, из них ≥20 платящих или активных">100+ пользователей, из них ≥20 платящих или активных</p>
           </div>
           <div class="proof-item">
             <img src="img/Icon (3).svg" alt="icon">
-            <p data-lang="proof_first_deals">Первые сделки, ARPU ≥ $10, CAC ≤ $7 (на основе факта)</p>
+            <p data-en="First trades, ARPU ≥ $10, CAC ≤ $7 (based on facts)" data-ru="Первые сделки, ARPU ≥ $10, CAC ≤ $7 (на основе факта)">Первые сделки, ARPU ≥ $10, CAC ≤ $7 (на основе факта)</p>
           </div>
           <div class="proof-item">
             <img src="img/Icon (4).svg" alt="icon">
-            <p data-lang="proof_first_brokers">Первые интегрированные брокеры</p>
+            <p data-en="First integrated brokers" data-ru="Первые интегрированные брокеры">Первые интегрированные брокеры</p>
           </div>
           <div class="proof-item">
             <img src="img/Icon (5).svg" alt="icon">
-            <p data-lang="proof_metrics">Метрики, подтверждающие готовность к Seed и расширению</p>
+            <p data-en="Metrics proving readiness for Seed and expansion" data-ru="Метрики, подтверждающие готовность к Seed и расширению">Метрики, подтверждающие готовность к Seed и расширению</p>
           </div>
         </div>
       </div>
@@ -766,7 +791,7 @@
           <img src="img/фон.svg" class="pre-seed-blur">
           <img src="img/линия.svg" class="pre-seed-lines">
           <div class="pre-seed-card">
-            <h3 data-lang="model_proven">Модель доказана — Seed нужен для ускорения роста</h3>
+            <h3 data-en="Model proven – Seed needed for scaling" data-ru="Модель доказана — Seed нужен для ускорения роста">Модель доказана — Seed нужен для ускорения роста</h3>
           </div>
           <img src="img/ракета.svg" class="pre-seed-rocket">
         </div>
@@ -779,27 +804,23 @@
   <div class="container">
     <div class="contact-grid">
       <div class="contact-left">
-        <h2 class="heading--desktop" data-lang="join_tot">Станьте частью TOT — будьте на шаг впереди</h2>
-        <h2 class="heading--mobile" data-lang="join_tot_mobile">Стать частью TOT — значит быть на шаг впереди</h2>
-        <p data-lang="contact_us">
-          Мы открыты к диалогу. Готовы обсудить детали и ответить на любые вопросы.
-          Свяжитесь с нами удобным способом или оставьте заявку ниже — мы перезвоним
-          или напишем вам в течение 24 часов.
-        </p>
+        <h2 class="heading--desktop" data-en="Join TOT — be one step ahead" data-ru="Станьте частью TOT — будьте на шаг впереди">Станьте частью TOT — будьте на шаг впереди</h2>
+        <h2 class="heading--mobile" data-en="Becoming a part of TOT means staying ahead" data-ru="Стать частью TOT — значит быть на шаг впереди">Стать частью TOT — значит быть на шаг впереди</h2>
+        <p data-en="We are open to dialogue. Ready to discuss the details and answer any questions. Contact us in any convenient way, or leave an application below — we will get back to you within 24 hours." data-ru="Мы открыты к диалогу. Готовы обсудить детали и ответить на любые вопросы. Свяжитесь с нами удобным способом или оставьте заявку ниже — мы перезвоним или напишем вам в течение 24 часов.">Мы открыты к диалогу. Готовы обсудить детали и ответить на любые вопросы. Свяжитесь с нами удобным способом или оставьте заявку ниже — мы перезвоним или напишем вам в течение 24 часов.</p>
         <div class="contact-methods">
           <a href="https://t.me/val_world"
              target="_blank" rel="noopener"
              class="contact-card contact-card--clickable">
             <img src="img/Icon (6).svg" alt="Telegram">
             <div class="contact-info">
-              <span class="contact-label" data-lang="contact_telegram">Telegram:</span>
+              <span class="contact-label" data-en="Telegram:" data-ru="Telegram:">Telegram:</span>
               <strong class="contact-value">@val_world</strong>
             </div>
           </a>
           <div class="contact-card contact-card--clickable">
             <img src="img/Icon (7).svg" alt="Phone">
             <div class="contact-info">
-              <span class="contact-label" data-lang="contact_phone">Телефон:</span>
+              <span class="contact-label" data-en="Phone:" data-ru="Телефон:">Телефон:</span>
               <strong class="contact-value">+7 (952) 208-22-55</strong>
             </div>
           </div>
@@ -807,7 +828,7 @@
              class="contact-card contact-card--clickable">
             <img src="img/Icon (8).svg" alt="Email">
             <div class="contact-info">
-              <span class="contact-label" data-lang="contact_email">E-mail:</span>
+              <span class="contact-label" data-en="E-mail:" data-ru="E-mail:">E-mail:</span>
               <strong class="contact-value">founders@tot.ai</strong>
             </div>
           </a>
@@ -817,8 +838,7 @@
           class="btn btn-primary apply-btn"
           target="_blank"
           rel="noopener"
-          data-lang="submit_request"
-        >
+          data-en="Submit request" data-ru="Оставить заявку">
           Оставить заявку <img src="img/arrow.svg" alt="arrow">
         </a>
       </div>
@@ -836,26 +856,26 @@
       <a href="#hero" class="logo">
         <img src="img/лого=Черный (1).svg" alt="TOT Logo">
       </a>
-      <p data-lang="footer_text">Торгуй. Обучайся. Твори. — всё в одном месте.</p>
+      <p data-en="Trade. Learn. Create. — all in one place." data-ru="Торгуй. Обучайся. Твори. — всё в одном месте.">Торгуй. Обучайся. Твори. — всё в одном месте.</p>
     </div>
     <nav class="footer-nav">
-      <a href="#about" data-lang="footer_about">О проекте</a>
-      <a href="#market-scale" data-lang="footer_potential">Потенциал</a>
-      <a href="#investment-round" data-lang="footer_investment_round">Раунд инвестиций</a>
-      <a href="#contact" data-lang="footer_contacts">Контакты</a>
+      <a href="#about" data-en="About the project" data-ru="О проекте">О проекте</a>
+      <a href="#market-scale" data-en="Potential" data-ru="Потенциал">Потенциал</a>
+      <a href="#investment-round" data-en="Investment round" data-ru="Раунд инвестиций">Раунд инвестиций</a>
+      <a href="#contact" data-en="Contacts" data-ru="Контакты">Контакты</a>
     </nav>
   </div>
 </footer>
-
 <!-- Попап -->
 <div id="carouselPopup" class="popup-overlay">
   <div class="popup-content">
-    <button class="popup-close" aria-label="Закрыть" data-lang="close_popup">&times;</button>
-    <button class="popup-prev" aria-label="Предыдущий" data-lang="previous">‹</button>
+    <button class="popup-close" aria-label="Закрыть" >&times;</button>
+    <button class="popup-prev" aria-label="Предыдущий" >‹</button>
     <img class="popup-image" src="" alt="Полноэкранный скриншот">
-    <button class="popup-next" aria-label="Следующий" data-lang="next">›</button>
+    <button class="popup-next" aria-label="Следующий" >›</button>
   </div>
 </div>
+
 <script src="script.js"></script>
 <script>
   (function(){
@@ -871,7 +891,24 @@
     document.documentElement.classList.add(deviceClass);
   })();
 </script>
+
 <script>
+  // Функция для переключения языка
+  function switchLanguage(language) {
+    const elements = document.querySelectorAll('[data-en], [data-ru]');
+    elements.forEach(el => {
+      el.textContent = el.getAttribute(`data-${language}`);
+    });
+  }
+
+  // Изменение языка при клике на переключатель
+  const langSwitcher = document.querySelector('.lang-switcher');
+  langSwitcher.addEventListener('click', () => {
+    const currentLang = langSwitcher.querySelector('span').textContent;
+    const newLang = currentLang === 'Рус' ? 'en' : 'ru';
+    langSwitcher.querySelector('span').textContent = newLang === 'ru' ? 'Рус' : 'Eng';
+    switchLanguage(newLang);
+  });
 </script>
 </body>
 </html>

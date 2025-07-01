@@ -164,20 +164,22 @@ a {
   position: relative;
 }
 
-.lang-switcher > img:first-child {
+/* Настроим флаг, чтобы он подстраивался под размер */
+.lang-switcher > img {
   width: 30px;
   height: 30px;
   object-fit: cover;
 }
 
-.lang-switcher > img:last-child {
-  width: auto;
-  height: auto;
-}
-
 .lang-switcher span {
   font-size: 14px;
   color: #000000;
+}
+
+.lang-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 
 /* ===== Dropdown меню переключателя языка ===== */
