@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <!-- ★ ВСТАВИТЬ В <head> вашего HTML (перед всеми стилями) ★ -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<style>
+  /* 1) Отключаем горизонтальный скролл */
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* 2) Универсальный box-sizing для предсказуемой вёрстки */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  /* 3) Плавающая типографика: масштабируется между 14px и 18px в зависимости от ширины */
+  html {
+    font-size: clamp(14px, 1.5vw, 18px);
+  }
+
+  /* 4) Утилиты для точного таргетинга, если потребуется */
+  @media (max-width: 359px) {
+    /* супер-мобайл */
+  }
+  @media (min-width: 360px) and (max-width: 799px) {
+    /* мобильник */
+  }
+  @media (min-width: 800px) and (max-width: 1279px) {
+    /* планшет */
+  }
+  @media (min-width: 1280px) {
+    /* десктоп */
+  }
+</style>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TOT — Мультиброкерская экосистема</title>
@@ -569,40 +604,126 @@
       <button class="carousel-arrow carousel-prev" aria-label="Назад">‹</button>
 
       <div class="carousel-track">
-        <!-- Пример: -->
-        <div class="carousel-slide" data-index="1">
-          <img src="img/Скрины/Автоследование.png" alt="Скриншот 1">
+         <div class="carousel-slide" data-index="1">
+          <img src="img/(1).png" alt="Скриншот 1">
           <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
         </div>
-        <div class="carousel-slide" data-index="1">
-          <img src="img/Скрины/Каталог Инвестиции Атоследование.png" alt="Скриншот 1">
+        <div class="carousel-slide" data-index="2">
+          <img src="img/(2).png" alt="Скриншот 2">
           <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
         </div>
-        <div class="carousel-slide" data-index="1">
-          <img src="img/Скрины/Каталог Инвестиции Рынок ММВБ.png" alt="Скриншот 1">
+        <div class="carousel-slide" data-index="3">
+          <img src="img/(3).png" alt="Скриншот 3">
           <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
         </div>
-        <div class="carousel-slide" data-index="1">
-          <img src="img/Скрины/Каталог Инвестиции фонды.png" alt="Скриншот 1">
+        <div class="carousel-slide" data-index="4">
+          <img src="img/(4).png" alt="Скриншот 4">
           <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
         </div>
-        <div class="carousel-slide" data-index="1">
-          <img src="img/Скрины/Маркетплейс.png" alt="Скриншот 1">
+        <div class="carousel-slide" data-index="5">
+          <img src="img/(5).png" alt="Скриншот 5">
           <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
         </div>
-        <div class="carousel-slide" data-index="1">
-          <img src="img/Скрины/Рабочий стол Инвестиции Фонд попап.png" alt="Скриншот 1">
+        <div class="carousel-slide" data-index="6">
+          <img src="img/(6).png" alt="Скриншот 6">
           <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
         </div>
-        <div class="carousel-slide" data-index="1">
-          <img src="img/Скрины/Рабочий стол Инвестиции фонды.png" alt="Скриншот 1">
+        <div class="carousel-slide" data-index="7">
+          <img src="img/(7).png" alt="Скриншот 7">
           <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
         </div>
-        <div class="carousel-slide" data-index="1">
-          <img src="img/Скрины/Рабочий стол обучение.png" alt="Скриншот 1">
+        <div class="carousel-slide" data-index="8">
+          <img src="img/(8).png" alt="Скриншот 8">
           <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
         </div>
-        <!-- ... ещё 24 .carousel-slide ... -->
+        <div class="carousel-slide" data-index="9">
+          <img src="img/(9).png" alt="Скриншот 9">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="10">
+          <img src="img/(10).png" alt="Скриншот 10">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="11">
+          <img src="img/(11).png" alt="Скриншот 11">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="12">
+          <img src="img/(12).png" alt="Скриншот 12">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="13">
+          <img src="img/(13).png" alt="Скриншот 13">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="14">
+          <img src="img/(14).png" alt="Скриншот 14">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="15">
+          <img src="img/(15).png" alt="Скриншот 15">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="16">
+          <img src="img/(16).png" alt="Скриншот 16">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="17">
+          <img src="img/(17).png" alt="Скриншот 17">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="18">
+          <img src="img/(18).png" alt="Скриншот 18">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="19">
+          <img src="img/(19).png" alt="Скриншот 19">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="20">
+          <img src="img/(20).png" alt="Скриншот 20">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="21">
+          <img src="img/(21).png" alt="Скриншот 21">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="22">
+          <img src="img/(22).png" alt="Скриншот 22">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="23">
+          <img src="img/(23).png" alt="Скриншот 23">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="24">
+          <img src="img/(24).png" alt="Скриншот 24">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="25">
+          <img src="img/(25).png" alt="Скриншот 25">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="26">
+          <img src="img/(26).png" alt="Скриншот 26">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="27">
+          <img src="img/(27).png" alt="Скриншот 27">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="28">
+          <img src="img/(28).png" alt="Скриншот 28">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="29">
+          <img src="img/(29).png" alt="Скриншот 29">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
+        <div class="carousel-slide" data-index="30">
+          <img src="img/(30).png" alt="Скриншот 30">
+          <div class="slide-overlay"><span class="eye-icon">👁 Смотреть</span></div>
+        </div>
       </div>
 
       <button class="carousel-arrow carousel-next" aria-label="Вперёд">›</button>
@@ -1104,11 +1225,14 @@
     <div class="contact-grid">
 
       <div class="contact-left">
-        <h2>Станьте частью TOT — будьте на шаг впереди</h2>
+        <!-- для десктопа и планшета -->
+  <h2 class="heading--desktop">Станьте частью TOT — будьте на шаг впереди</h2>
+        <!-- для мобильных -->
+  <h2 class="heading--mobile">Стать частью TOT — значит быть на шаг впереди</h2>
         <p>
           Мы открыты к диалогу. Готовы обсудить детали и ответить на любые вопросы.
           Свяжитесь с нами удобным способом или оставьте заявку ниже — мы перезвоним
-          или напишем вам в течение 24 ч.
+          или напишем вам в течение 24 часов.
         </p>
 
         <div class="contact-methods">
@@ -1188,5 +1312,19 @@
     </div>
   </div>
 <script src="script.js"></script>
+<script>
+  (function(){
+    const ua = navigator.userAgent;
+    let deviceClass = 'device-desktop';
+
+    if (/Mobi|Android/i.test(ua)) {
+      deviceClass = 'device-mobile';
+    } else if (/Tablet|iPad/i.test(ua)) {
+      deviceClass = 'device-tablet';
+    }
+
+    document.documentElement.classList.add(deviceClass);
+  })();
+</script>
 </body>
 </html>

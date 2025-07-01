@@ -1,7 +1,8 @@
 /* TT Travels Next is a custom font, using a placeholder name. Please replace with the correct @font-face definition. */
 @font-face {
-  font-family: 'TT Travels Next';
+  font-family: 'TT Travels Next' 'TT Travels Next Trl';
   src: url('fonts/TT_Travels_Next_Bold.woff2') format('woff2');
+  src: url('fonts/TT_Travels_Next_Medium.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
 }
@@ -3436,8 +3437,6 @@ a {
     min-height: 262px;
   }
 }
-
-
 /* CSS from section:pre-seed-proof */
 .pre-seed-section {
     background-color: #f4f4f4;
@@ -3624,6 +3623,127 @@ a {
     left: -90px;
   }
 }
+/* Mobile (≤799px) */
+@media (max-width: 799px) {
+  .pre-seed-section .container {
+    padding: 40px 16px;
+  }
+
+  /* Одна колонка 328px */
+  .pre-seed-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 328px;
+    margin: 0 auto;
+  }
+
+  /* Заголовок доказательств 328×55, принудительный <br> */
+  .pre-seed-left h2 {
+    width: 328px;
+    height: 55px;
+    font-family: 'TT Travels Next', sans-serif;
+    font-size: 28px;
+    line-height: 28px;
+    margin: 0 auto -35px;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Список доказательств */
+  .proof-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px; /* отступ снизу */
+  }
+  .proof-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 9px 20px 9px 10px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .proof-item img {
+    flex-shrink: 0;
+    width: 32px;  /* или ваш родной размер иконок */
+    height: 32px;
+  }
+  .proof-item p {
+    margin: 0;
+    color: #000;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  /* Группа изображения + фон + линия + карточка + ракета */
+  .pre-seed-image-group {
+    position: relative;
+    width: 328px;
+    height: 394px;
+    margin: 0;
+    overflow: visible;
+  }
+
+  /* 1) Фоновый эллипс */
+  .pre-seed-image-group .pre-seed-blur {
+    position: absolute;
+    top: 120px;  /* сдвиг вниз относительно группы */
+    left: 0;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    filter: blur(100px);
+    z-index: 4;
+  }
+
+  /* 2) Вертикальная линия */
+  .pre-seed-image-group .pre-seed-lines {
+    position: absolute;
+    top: 180px;       /* сдвиг вниз относительно группы */
+    left: -50px;      /* 20px от левого края */
+    width: 424px;
+    height: 320px;
+    object-fit: cover;
+    z-index: 4;
+  }
+
+  /* 3) Карточка “Модель доказана…” */
+  .pre-seed-image-group .pre-seed-card {
+    position: absolute;
+    top: -10px;      /* от верха группы */
+    left: 0;
+    width: 328px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ff7255;
+    border-radius: 20px;
+    z-index: 3;
+  }
+  .pre-seed-card h3 {
+    width: 288px;
+    height: 60px;
+    margin: 0 0 0px;
+    font-family: 'TT Travels Next medium' , sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    color: #fff;
+  }
+
+  /* 4) Ракета сверху карточки */
+  .pre-seed-image-group .pre-seed-rocket {
+    position: absolute;
+    top: 129px;  /* опустите/поднимите по макету */
+    left: calc(50% - 180px); /* центрируем 360px по ширине */
+    width: 360px;
+    height: 360px;
+    object-fit: contain;
+    z-index: 5;
+  }
+}
+
 /* CSS from section:contact */
 .contact-section {
     padding: 132px 0;
@@ -3810,9 +3930,114 @@ a {
     height: auto;
   }
 }
+/* скрываем/показываем нужный заголовок */
+.heading--desktop { display: block; }
+.heading--mobile  { display: none; }
+
+@media (max-width: 799px) {
+  /* переключаем заголовки */
+  .heading--desktop { display: none; }
+  .heading--mobile {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    width: 328px;
+    margin: 0;
+    order: 0;
+  }
+  .contact-section {
+    width: 380px !important;
+    height: 1150px !important;
+    padding-bottom: 0 !important;
+    margin-top: -100px !important; /* убираем отступ сверху */
+    margin-bottom: 0 !important;
+    overflow: hidden;            /* всё, что свыше — обрезаем */
+  }
+  /* Общий контейнер: 50px слева */
+  .contact-grid {
+    padding-left: 5px;
+    /* остальные правила как было */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* теперь контент идёт с учётом отступа */
+    width: 360px;
+    margin: 0 auto;
+    gap: 0px;
+    padding-bottom: 0 !important;
+  }
+
+  /* Мобильный заголовок — добавляем нижний margin */
+  .heading--mobile {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    width: 360px;
+    margin: 0 0 200px 0; /* 40px от заголовка до иллюстрации */
+    order: 0;
+  }
+
+  /* Иллюстрация */
+  .contact-right {
+    order: 1;
+    width: 195px;
+    height: 195px;
+    margin: 0 0 0px 0; /* дополнительно отступ под картинкой */
+    position: relative;
+  }
+  .contact-right .contact-blur,
+  .contact-right .contact-main-img {
+    position: absolute;
+    top: -750px; left: 150px; /* сдвиг вправо */
+    width: 195px; height: 195px;
+  }
+  .contact-right .contact-blur {
+    filter: blur(5px);
+  }
+
+  /* Текст становится третьим блоком */
+  .contact-text {
+    order: 2;
+    font-size: 14px;
+    line-height: 16px;
+    color: #858585;
+    width: calc(328px - 96px); /* 232px */
+    margin: 0 0 0 0; 
+    text-align: left;
+  }
+
+  /* Карточки */
+  .contact-methods {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 328px;
+    margin: 0px 0 0 0; /* отступ сверху, если нужно */
+  }
+  .contact-methods .contact-card {
+    width: 328px;
+  }
+
+  /* Кнопка */
+  .apply-btn {
+    order: 4;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: -0px auto 0 auto; /* сверху 40px, по центру */
+    margin-bottom: 0 !important;
+  }
+}
+
 
 /* CSS from section:footer */
 .site-footer {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
     padding: 59px 0;
     background-color: #ffffff;
   }
@@ -3888,6 +4113,68 @@ a {
     padding: 5px 8px;
   }
 }
+/* Mobile footer (до 799px) */
+@media (max-width: 799px) {
+  /* сам футер */
+  .site-footer {
+    padding: 20px 16px;    /* сверху/снизу 20px, по бокам 16px */
+    height: 170px;         /* фиксированная высота */
+    background-color: #ffffff;
+    margin-top: 0;         /* вплотную к предыдущему блоку */
+    overflow: hidden;
+  }
+
+  /* контейнер внутри футера */
+  .footer-container {
+    width: 360px;           /* ширина макета */
+    height: 100%;           /* растягиваем на всю высоту .site-footer */
+    margin: 0 auto;         /* центрируем */
+    padding: 0;             /* боковые паддинги уже заданы у .site-footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* логотипный блок сверху, навигация внизу */
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+
+  /* верхний блок: логотип + слоган */
+  .footer-logo-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;               /* уменьшили с 23px */
+    width: 328px;            /* 360 − 2×16 */
+    margin: 0;
+  }
+  .footer-logo-area .logo img {
+    width: 118px;
+    height: 29px;
+  }
+  .footer-logo-area p {
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+    margin: 0;
+  }
+
+  /* нижний блок: навигационные вкладки */
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;                /* чуть уже, чем на десктопе */
+    width: 328px;
+    margin: 0;
+  }
+  .footer-nav a {
+    font-size: 12px;         /* уменьшили с 16px */
+    padding: 5px 8px;        /* чуть уже, чем планшет */
+    color: #868686;
+    transition: color 0.3s;
+  }
+  .footer-nav a:hover {
+    color: #000000;
+  }
+}
+
 /* === Секция === */
 .screenshots-section {
   width: 100%;
