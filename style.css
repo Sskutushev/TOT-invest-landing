@@ -2600,333 +2600,7 @@ a {
 
 
 /* CSS from section:investment-round */
-.investment-section {
-    padding: 60px 0;
-  }
-  .investment-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 104px;
-    align-items: flex-start;
-  }
-  .investment-info {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: flex-start;
-  }
-  .investment-info h2 {
-    font-size: 32px;
-    line-height: 35px;
-  }
-  .round-purpose {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .round-purpose h4 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 20px;
-    margin: 0;
-  }
-  .round-purpose ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .round-purpose li {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 8px 0;
-  }
-  .round-purpose li span {
-    font-size: 14px;
-    line-height: 16px;
-    color: #868686;
-  }
-  .financial-distribution {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .financial-distribution h4 {
-    font-family: 'TT Travels Next Trl', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 20px;
-    color: #868686;
-    margin: 0 0 20px 0;
-  }
-  .dist-item {
-    background-color: #f4f4f4;
-    border-radius: 20px;
-    padding: 11px 18px 11px 30px;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    overflow: visible;
-  }
-  .dist-text {
-    flex-grow: 1;
-  }
-  .dist-amount {
-    font-family: 'TT Travels Next', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 35px;
-  }
-  .dist-category {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 20px;
-    margin: 4px 0 8px;
-  }
-  .dist-text p {
-    font-size: 14px;
-    line-height: 16px;
-  }
-  .dist-chart {
-    position: relative;
-    width: 150px;
-    height: 150px;
-    flex-shrink: 0;
-    overflow: visible;    /* фон может «вылезать» */
-  }
-  .dist-chart-bg {
-  position: absolute;
-  top: -12.5px;           /* поднимите фон чуть вверх */
-  right: -13px;         /* сдвиньте фон вправо к углу */
-  width: 180px;         /* подберите нужный размер */
-  height: 180px;
-  background-image: url('img/Ellipse\ 55.svg');
-  background-size: cover;
-  background-position: top right;
-  border-radius: 25px;
-  filter: blur(16px);
-  z-index: 0;
-}
-  .dist-chart img {
-  position: relative;
-  z-index: 2;
-  width: 100%;     /* или фиксированный размер, как вам нужно */
-  height: 100%;
-  }
-  .dist-chart .tag {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  z-index: 3;
-  }
-/* ===== Tablet (800–1279px) refinements for Investment Round ===== */
-@media (min-width: 800px) and (max-width: 1279px) {
-  /* Section padding */
-  .investment-section {
-    padding: 40px 0;
-  }
 
-  /* Make grid single-column and center it */
-  .investment-section .investment-grid {
-    max-width: 740px;
-    margin: 0 auto;
-    gap: 30px;
-    grid-template-columns: 1fr;
-  }
-
-  /* Slightly smaller heading */
-  .investment-section .investment-info h2 {
-    font-size: 28px;
-    line-height: 32px;
-  }
-
-  /* Purpose list: two columns, 3 items on left, 2 on right */
-  .investment-section .round-purpose ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 30px;
-    row-gap: 12px;
-    max-width: 740px;
-    margin: 0 auto;
-  }
-  .investment-section .round-purpose ul li:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .investment-section .round-purpose ul li:nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .investment-section .round-purpose ul li:nth-child(3) {
-    grid-column: 1;
-    grid-row: 3;
-  }
-  .investment-section .round-purpose ul li:nth-child(4) {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .investment-section .round-purpose ul li:nth-child(5) {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .investment-section .round-purpose {
-    gap: 16px;
-  }
-  .investment-section .round-purpose h4 {
-    font-size: 16px;
-    line-height: 18px;
-  }
-  .investment-section .round-purpose li {
-    gap: 16px;
-    padding: 6px 0;
-  }
-  .investment-section .round-purpose li span {
-    font-size: 14px;
-    line-height: 16px;
-  }
-
-  /* Distribution cards fixed 740×170px, centered */
-  .investment-section .dist-item {
-    width: 740px !important;
-    height: 170px !important;
-    margin: 0 auto;
-    padding: 10px 20px;
-    gap: 20px;
-    overflow: hidden;
-  }
-}
-/* —— Мобильная адаптация секции «Раунд инвестиций» (≤799px) —— */
-@media (max-width: 799px) {
-  /* превращаем грид в одну колонку шириной 328px */
-  .investment-section .investment-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 328px;
-    margin: 0 auto;
-  }
-
-  /* базовые стили для карточек */
-  .investment-section .dist-item {
-    position: relative;
-    width: 328px;
-    height: 272px;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 20px;
-    overflow: hidden;
-    z-index: 1;
-  }
-
-  /* 1-я карточка */
-  .investment-section .dist-item:nth-of-type(1) .dist-chart-bg {
-    top: -65px;
-    left: -35px;
-  }
-  .investment-section .dist-item:nth-of-type(1) img {
-    top: -45px;
-    left: 0px;
-  }
-  .investment-section .dist-item:nth-of-type(1) .tag {
-    top: -40px;
-    right: -135px;
-  }
-
-  /* 2-я карточка */
-  .investment-section .dist-item:nth-of-type(2) .dist-chart-bg {
-    top: -65px;
-    left: -35px;
-  }
-  .investment-section .dist-item:nth-of-type(2) img {
-    top: -45px;
-    left: -0px;
-  }
-  .investment-section .dist-item:nth-of-type(2) .tag {
-    top: -40px;
-    right: -135px;
-  }
-
-  /* 3-я карточка */
-  .investment-section .dist-item:nth-of-type(3) .dist-chart-bg {
-    top: -65px;
-    left: -35px;
-  }
-  .investment-section .dist-item:nth-of-type(3) img {
-    top: -45px;
-    left: -0px;
-  }
-  .investment-section .dist-item:nth-of-type(3) .tag {
-    top: -40px;
-    right: -135px;
-  }
-
-  /* единый фон-эллипс */
-  .investment-section .dist-chart-bg {
-    position: absolute;
-    width: 143px;
-    height: 182px;
-    background-image: url('img/Ellipse 55.svg');
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    filter: blur(16px);
-    z-index: 0;
-  }
-
-  /* единая иконка */
-  .investment-section .dist-item img {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    z-index: 1;
-  }
-
-  /* единая плашка процентов */
-  .investment-section .dist-chart .tag {
-    position: absolute;
-    width: 65px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border-radius: 15px;
-    z-index: 2;
-  }
-
-  /* текстовый блок фиксированного размера 288×144px */
-  .investment-section .dist-text {
-    position: absolute;
-    top: 120px;        /* 20px отступ + 100px высота иконки */
-    left: 20px;        /* отступ слева */
-    width: 288px;
-    height: 144px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    z-index: 1;
-  }
-  .investment-section .dist-amount {
-    font-size: 24px;
-    line-height: 28px;
-    margin: 0;
-  }
-  .investment-section .dist-category {
-    font-size: 16px;
-    line-height: 18px;
-    margin: 0;
-  }
-  .investment-section .dist-text p {
-    font-size: 12px;
-    line-height: 16px;
-    color: #858585;
-    margin: 15px 0 0;
-  }
-}
 
 /* CSS from section:detailed-roadmap */
 .detailed-roadmap-section {
@@ -3421,6 +3095,155 @@ a {
     min-height: 262px;
   }
 }
+/* ======== Секция Инвест-Раунд ======== */
+.investment-round-section {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.investment-round-section .container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.investment-round-left,
+.investment-round-right {
+  flex: 1;
+}
+
+.investment-round-left .badge {
+  background-color: #FF7255;
+  color: #fff;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-size: 12px ;
+}
+
+.investment-round-left .investment-title {
+  font-family: 'TT Travels Next', sans-serif;
+  font-size: 32px;
+  line-height: 35px;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.investment-round-left .subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.investment-round-left .vector-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #868686;
+  margin-bottom: 10px;
+  line-height: 1.8;
+}
+
+.investment-round-left .vector-item img {
+  margin-right: 20px;
+}
+
+.investment-round-left .btn-primary {
+  background-color: #FF2B00;
+  margin-top: 50px;
+  color: #fff;
+  padding: 15px 35px;
+  border-radius: 90px;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.investment-round-left .financial-title  {
+  font-size: 20px;
+  font-family: 'TT Travels Next', sans-serif;;
+  color: #868686;
+  margin-bottom: 20px;
+}
+
+.investment-round-right .card {
+  position: relative;
+  width: 570px;
+  height: 170px;
+  background-color: #f4f4f4;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.investment-round-right .card-header h2 {
+  margin-left: 15px;
+  width: 340px;
+  margin-top: 20px;
+  font-size: 32px;
+  font-family: 'TT Travels Next';
+  color: #000;
+}
+
+.investment-round-right .card-header h3 {
+  margin-left: 15px;
+  width: 340px;
+  font-size: 18px;
+  font-family: 'Open Sans';
+  color: #000;
+}
+
+.investment-round-right .card-description {
+  margin-left: 15px;
+  width: 340px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: 'Open Sans';
+  color: #868686;
+}
+
+.investment-round-right .card-image {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  margin-top: -20px;
+  right: 0px;
+}
+
+.investment-round-right .card-image img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.investment-round-right .card-image .badge {
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  background-color: #AA1D00;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 /* CSS from section:pre-seed-proof */
 .pre-seed-section {
     background-color: #f4f4f4;
