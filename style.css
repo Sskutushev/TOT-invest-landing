@@ -3172,6 +3172,7 @@ a {
 }
 
 .investment-round-left .financial-title  {
+  display: block; /* Убираем inline или flex, чтобы элемент был блочным */
   font-size: 20px;
   font-family: 'TT Travels Next', sans-serif;;
   color: #868686;
@@ -3243,6 +3244,181 @@ a {
   font-size: 16px;
   font-weight: 700;
 }
+/* ======== Секция Инвест-Раунд ======== */
+@media (max-width: 1279px) and (min-width: 800px) {
+  .investment-round-section {
+    padding: 40px 0; /* уменьшил отступы сверху и снизу для планшета */
+  }
+
+  .investment-round-section .container {
+    flex-direction: column; /* расположение контейнеров друг под другом */
+    max-width: 740px; /* ширина контейнера для планшетной версии */
+    gap: 40px; /* расстояние между блоками */
+    padding: 0 20px;
+    margin: 0 auto; /* центрирование контейнера */
+  }
+
+  .investment-round-left,
+  .investment-round-right {
+    flex: 1;
+    width: 100%; /* контейнеры растягиваются на всю ширину */
+  }
+
+  .investment-round-left .investment-title {
+    font-size: 24px; /* уменьшил размер шрифта для планшета */
+    margin-bottom: 20px;
+  }
+
+  .investment-round-left .subtitle {
+    font-size: 16px; /* уменьшил размер шрифта */
+    margin-bottom: 15px;
+  }
+
+  .investment-round-left .vector-items-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0px;
+    line-height: 5px;
+  }
+
+  .investment-round-left .left-column,
+  .investment-round-left .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0px; /* расстояние между элементами */
+    width: 48%; /* для каждой колонки - 48% ширины */
+  }
+
+  .investment-round-left .vector-item {
+    font-size: 16px; /* немного увеличил размер шрифта для лучшего восприятия */
+    margin-bottom: 15px; /* увеличил отступы между элементами */
+  }
+
+  .investment-round-left .btn-primary {
+    font-size: 16px; /* уменьшил размер шрифта на кнопке */
+    padding: 12px 30px; /* уменьшил отступы */
+  }
+
+  .investment-round-right .card {
+    width: 100%; /* карточки растягиваются на всю ширину */
+    height: 170px; /* высота автоматически подстраивается */
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .investment-round-right .card-header h2 {
+    font-size: 24px; /* уменьшил размер шрифта */
+  }
+
+  .investment-round-right .card-description {
+    font-size: 16px; /* увеличил размер шрифта */
+  }
+
+  .investment-round-right .card-image {
+    width: 150px; /* уменьшил размер изображения */
+    height: 150px;
+    margin-top: -20px;
+    left: 550px;
+  }
+
+  .investment-round-right .card-image .badge {
+    font-size: 14px; /* уменьшил размер шрифта на бейдже */
+  }
+}
+/* Mobile View (≤799px) */
+@media (max-width: 799px) {
+  .investment-round-section {
+    padding: 40px 0;
+  }
+
+  .investment-round-section .container {
+    flex-direction: column;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    gap: 40px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+
+  .investment-round-left,
+  .investment-round-right {
+    width: 100%;
+  }
+
+  .investment-round-left .investment-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .investment-round-left .subtitle {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .investment-round-left .vector-items-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0px;
+    line-height: 5px;
+  }
+
+  .investment-round-left .left-column,
+  .investment-round-left .right-column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    width: 100%;
+  }
+
+  .investment-round-left .vector-item {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .investment-round-left .btn-primary {
+    font-size: 14px;
+    padding: 10px 25px;
+  }
+  .investment-round-left .financial-title {
+    width: 360px;
+    position: absolute;
+    margin-bottom: 10px; /* Можно уменьшить отступ снизу, если нужно */
+  }
+
+  .investment-round-right .card {
+    position: relative;
+    width: 360px;
+    height: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .investment-round-right .card-header h2 {
+    margin-top: 150px;
+    font-size: 18px;
+  }
+
+  .investment-round-right .card-description {
+    width: 328px;
+    font-size: 14px;
+  }
+
+  .investment-round-right .card-image {
+    width: 150px;
+    height: 150px;
+    margin-top: -10px;
+    right: 200px;
+  }
+
+  .investment-round-right .card-image .badge {
+    margin-left: 200px;
+    font-size: 12px;
+  }
+}
+
 
 /* CSS from section:pre-seed-proof */
 .pre-seed-section {
